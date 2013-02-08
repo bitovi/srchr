@@ -48,33 +48,37 @@
                 src='../../steal/steal.js'>   
         </script>
 		<script type='text/javascript'>
-		  steal('srchr/search_result', function(){
+		  steal('srchr/search_result', 'srchr/models/search.js','can/util/fixture',function(SearchResult, Search, fixture){
+		  	
+		  	currentSearch = can.compute();
+		  	
 		    SEARCHNUM = 0;
-  			Google = {
-  				findAll : function(q, success){
-  					var results = [];
-  					var length = parseInt( Math.random()*10+1 );
-  					for(var i =0; i < length; i++){
-  						results.push({
-  							title : i+"th search result for "+q.query,
-  							text : "foo bar baz",
-  							href : "http://blah.com/"+i
-  						})
-  					}
-  					SEARCHNUM++;
-  					$("#searchNum").html(SEARCHNUM)
-  					success(results)
-  				}
-  			}
+  			var Google = can.Model({
+  				findAll: "/google"
+  			},{})
+  			
+  			fixture("/google",function(request){
+  				var results = [];
+				var length = parseInt( Math.random()*10+1 );
+				for(var i =0; i < length; i++){
+					results.push({
+						title : i+"th search result for "+request.data.query,
+						text : "foo bar baz",
+						href : "http://blah.com/"+i
+					})
+				}
+				return results;
+  			});
 
-  			$("#content").srchr_search_result({
-  				modelType : Google
+  			new SearchResult("#content",{
+  				modelType : Google,
+  				currentSearch: currentSearch
   			})
   			$("#searchForm").submit(function(ev){
   				ev.preventDefault();
-  				$([Srchr.Models.Search]).trigger("search",{
+  				currentSearch( new Search({
   					query : $("#searchVal").val()
-  				});
+  				} ) )
   			})
   			$("#toggle").click(function(){
   				var c =  $("#content")

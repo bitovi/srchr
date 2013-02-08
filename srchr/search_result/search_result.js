@@ -1,32 +1,34 @@
-steal('jquery/controller',
-	'jquery/view/ejs',
-	'jquery/controller/view',
+steal('can',
 	'srchr/models/search.js',
-	'steal/less').then('./search_result.less', function($){
+	'./results.ejs',
+	'./search_result.less',
+	function(can, Search, resultsEJS){
 	
 /**
  * Shows the search results of a query.
  * @tag controllers, home
  */
-$.Controller("Srchr.SearchResult",
+return can.Control(
 /* @static */
 {
 	defaults: {
-		resultView : "//srchr/search_result/views/result.ejs"
-	},
-	listensTo : ["show"]
+		resultView : "//srchr/search_result/result.ejs"
+	}
 },
 /* @prototype */
 {	
+	init: function(){
+		this.options.list = new this.options.modelType.List();
+		this.options.searching = can.compute(false);
+		this.element.html( resultsEJS(this.options) );
+	},
 	/**
 	 * If the results panel is visible, then get the results.
 	 * @param {Object} el The element that the event was called on.
 	 * @param {Object} ev The event that was called.
 	 * @param {Object} searchInst The search instance to get results for.
 	 */
-	"{Srchr.Models.Search} search": function(el, ev, searchInst){
-		this.currentSearch = searchInst.query;
-		
+	"{currentSearch} change": function(curSearch, ev, newValue){
 		if (this.element.is(':visible')){
 			this.getResults();
 		}
@@ -35,43 +37,35 @@ $.Controller("Srchr.SearchResult",
 	/**
 	 * Show the search results. 
 	 */
-	"show": function(){
-		this.getResults();
-	},
-	
+	" show": "getResults",
 	/**
 	 * Get the appropriate search results that this Search Results container is supposed to show.
 	 */
 	getResults: function(){
 		// If we have a search...
-		if (this.currentSearch){
+		var currentSearch = this.options.currentSearch()
+		if (currentSearch){
 			
 			// and our search is new ...
-			if(this.searched != this.currentSearch){
-				// put placeholder text in the panel...
-				this.element.html("Searching for <b>"+this.currentSearch+"</b>");
+			if(this.searched != currentSearch.query){
 				// and set a callback to render the results.
-				this.options.modelType.findAll({query: this.currentSearch}, this.callback('renderResults'));
-				this.searched = this.currentSearch;
+				var searching = this.options.searching;
+				searching(true)
+				
+				var deferredItems = this.options.modelType.findAll(
+						{query: currentSearch.query}, 
+						function(){
+							searching(false)
+						})
+						
+				this.options.list.replace( deferredItems );
+				
+				this.searched = currentSearch.query;
 			}
 			
 		}else{
 			// Tell the user to make a valid query
 			this.element.html("Enter a search term!");
-		}
-		
-	},
-	
-	/**
-	 * Bind the data for this controller to its view.
-	 * @param {Object} data The data to bind.
-	 */
-	renderResults: function(data){
-		if(data && data.length > 0){
-			this.element.html(this.view('results',{data: data, options: this.options }));
-		} else {
-			this.element.html("No data found for <b>" + this.currentSearch + "</b>")
-		
 		}
 		
 	}
