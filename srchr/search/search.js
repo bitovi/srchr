@@ -1,18 +1,17 @@
-steal('jquery/controller',
+steal(
+	"can",
+	"srchr/models/search.js",
+	"./init.ejs",
 	'jquery/dom/form_params',
-	'jquery/view/ejs',
-	'jquery/controller/view',
-	'steal/less')
-.then(
-	"srchr/models/search.js", './search.less',
-	function($){
+	'./search.less',
+	function(can, Search, initEJS){
 
 /**
  * Creates a form to search with, as well as defining a search type (Model).
  * 
  * @tag controllers, home
  */
-$.Controller("Srchr.Search",
+return can.Control(
 /* @static */
 {
 	defaults : {
@@ -25,7 +24,7 @@ $.Controller("Srchr.Search",
 	 * Initialize a new instance of the Search controller.
 	 */
 	init : function(){
-		this.element.html(this.view(this.options));
+		this.element.html(initEJS(this.options));
 	},
 	
 	/**
@@ -50,27 +49,26 @@ $.Controller("Srchr.Search",
 	"form submit" : function(el, ev){
 		ev.preventDefault();
 		
-		var search = new Srchr.Models.Search(el.formParams()),
+
+		var search = new Search(el.formParams()),
 			ok = true;
 		
 		// If no search type was selected, flash the .options UL and don't trigger search.created
 		if(!search.types){
-			this.flash(this.find('.options'));
+			this.flash(this.element.find('.options'));
 			ok = false;
 		}
 		
 		// If the default wasn't changed, flash the text field and don't trigger search.created
 		if(search.query == this.options.defaultText){
-			this.flash(this.find('input[type=text]'));
+			this.flash(this.element.find('input[type=text]'));
 			ok = false;
 		}
 		
 		// If everything is valid, trigger search.created
 		if(ok){
-			$([Srchr.Models.Search]).trigger("search",search);
-		}
-		
-		
+			this.options.currentSearch(search);
+		}	
 	},
 	
 	/**
@@ -101,20 +99,20 @@ $.Controller("Srchr.Search",
 	 */
 	"{document} load" : function(){
 		//if we are attached when the page loads, focus on our element
-		this.find("input[name=query]")[0].focus();
+		this.element.find("input[name=query]")[0].focus();
 	},
 	
 	/**
 	 * Updates the checkboxes to reflect the user's desired search engine preferences.  Also fires search. 
 	 */
-	val : function(data){
-		this.find("input[name=query]").val(data.query)[0].focus();
-		var checks = this.find("input[type=checkbox]").attr("checked",false);
-		for(var i =0; i < data.types.length; i++){
-			checks.filter("[value="+data.types[i].replace(/\./g,"\\.")+"]").attr("checked",true);
+	"{currentSearch} change" : function(currentSearch, ev, newVal, oldVal){
+
+		this.element.find("input[name=query]").val(newVal.query)[0].focus();
+
+		var checks = this.element.find("input[type=checkbox]").attr("checked",false);
+		for(var i =0; i < newVal.types.length; i++){
+			checks.filter("[value="+newVal.types[i].replace(/\./g,"\\.")+"]").attr("checked",true);
 		}
-		
-		$([Srchr.Models.Search]).trigger('search', data);
 	}
 });
 

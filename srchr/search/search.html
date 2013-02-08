@@ -30,22 +30,21 @@
                 src='../../steal/steal.js'>   
         </script>
 		<script type='text/javascript'>
-			steal('srchr/search', function(){
-			  $('#content').srchr_search();
-  			$([Srchr.Models.Search]).bind("search", function(ev, data){
-  				$('#results').hide().html('Search Created '+data.query).fadeIn();
-  			});
+			steal('srchr/search', 'srchr/models/search.js', function(Search, SearchModel){
+			 	var currentSearch = can.compute();
+			 	new Search('#content', {currentSearch: currentSearch});
+  			
+	  			currentSearch.bind("change", function(ev, data){
+	  				$('#results').hide().html('Search Created '+data.query).fadeIn();
+	  			});
 
-  			$("#set").click(function(){
-  				var search = new Srchr.Models.Search({
-  					query: "foo", 
-  					types : ["Srchr.Models.Yahoo"]
-  				})
-  				$('#content').srchr_search("val",search);
-  			})
+	  			$("#set").click(function(){
+	  				currentSearch(new SearchModel({
+	  					query: "foo", 
+	  					types : ["Srchr.Models.Yahoo"]
+	  				}))
+	  			})
 			})
-			
-			
 			
 		</script>
 	</body>
