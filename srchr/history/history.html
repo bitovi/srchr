@@ -10,16 +10,19 @@
 				border: solid 1px;
 				width: 200px;
 			}
+			#description.error {
+				border-color: red;	
+			}
 		</style>
 	</head>
 	<body>
         <h1>Srchr.History</h1>
-		<p>History provides a cookie-saved list of model instances
+		<p>History provides a list of model instances saved in local storage
 		and a means to remove them from the list.</p>
 		
 		<h2>Demo</h2>
 		<p>The following boxes shows the list of items
-		   added to the srchr_history widget:</p>
+		   added to the srchr.history widget:</p>
 		<ul id='list'></ul>
 		<p>Add to the list by entering a todo task:</p>
 		<form id='todoForm' action=''>
@@ -30,31 +33,35 @@
 		   and you should still see it.</p>
 		
 		<script type='text/javascript' src='../../steal/steal.js'></script>
-		<script type='text/javascript' >
-		  steal('srchr/history', function(){
-  		  $.Model.extend("Todo",{
-  				id: "description"
-  			},{});
-			
-  			$("#list").srchr_history({
-  				titleHelper : function(todo){
-  					return todo.description;
+		<script type='text/javascript'>
+		  steal('can', 'srchr/history', '/srchr/srchr/models/history.js', function(can, History, HistoryModel){
+		  	new History("#list", {
+  				titleHelper : function(history){
+  					return history.description;
   				},
-  				storeName : "todoCookie"
+  				storeName : "historyStorage"
   			});
-			
-			
 			
   			$("#todoForm").submit(function(ev){
   				ev.preventDefault();
-  				var todo = new Todo({
+
+  				// remove the error class
+  				$("input#description").removeClass("error");
+  				
+  				// validate
+  				if (!$("#description").val().length) {
+  					$("input#description").addClass("error");
+  					return false;
+  				}
+
+  				var todo = new HistoryModel({
   					description: $("#description").val()
   				});
+
+				todo.save();
 				
-  				$("#list").srchr_history("add", todo );
-				
-  				$("#description").val("")[0].focus();
-  			})
+  			 	$("#description").val("")[0].focus();
+  			});
   		})
 		</script>
 	</body>

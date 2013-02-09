@@ -1,0 +1,6 @@
+<% list(historyList, function(history){ %>
+<li <%= (el)-> el.data('history', history) %>>
+	<span class="text"><%= titleHelper(history); %></span>
+	<a href="#" class="remove">X</a>
+</li>
+<% }) %>
