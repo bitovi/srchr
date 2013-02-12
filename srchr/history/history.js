@@ -14,8 +14,6 @@
 	/* @static */
 	{
 		defaults : {
-			//what localStorage name to store this in
-			storeName : "searchHistory",
 			//returns html to be displayed for each item on the list
 			titleHelper : function(instance){
 				return "HistoryItem"+instance.id;

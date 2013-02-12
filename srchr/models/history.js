@@ -1,7 +1,7 @@
 steal('can/model', function(Model) {
 	return can.Model('History', {
 	    localStore: function(cb){
-	    var name = "fara",
+	    var name = "search-history-store",
 	       data = JSON.parse( window.localStorage[name] || (window.localStorage[name] = '[]') ),
 	       res = cb.call(this, data);
 	     if(res !== false){
