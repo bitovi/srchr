@@ -1,7 +1,18 @@
 <ul>
-<%for(var i = 0 ; i < data.length; i++){%>
-	<li>
-		<%== $.View(options.resultView,data[i]) %>
-	</li>
+<% if(searching() && currentSearch()) { %>
+	<%
+	
+	console.log("cs",currentSearch())
+	
+	%>
+	<li>Searching for <%= currentSearch().query %></li>
+<% } else if(list.attr('length')) { %>
+	<%list.each(function(item){%>
+		<li>
+			<%== can.view.render(resultView,item) %>
+		</li>
+	<%})%>
+<%} else if(currentSearch()){ %>
+	<li>No data found for <%= currentSearch().query %></li>
 <%}%>
 </ul>
