@@ -31,7 +31,7 @@ steal('funcunit', 'srchr/history', 'srchr/models/history.js', function( S, Histo
 			});
 		},
 		teardown: function() {
-			$("<div id='content'/>").remove();
+			$("#content").remove();
 			$("#todoForm").remove();
 		}
 	});
@@ -57,11 +57,11 @@ steal('funcunit', 'srchr/history', 'srchr/models/history.js', function( S, Histo
 			ok(localStorage.getItem('search-history-store').length > 0, "Length is set to zero");
 		});
 
-		// S("input#description").type("New");
-		// S("input[type=submit]").click("Submit the form", function(){
-		// 	console.log("after", localStorage.getItem('search-history-store'));
-		// 	ok(localStorage.getItem('search-history-store').length > 0, "Length is set to zero");
-		// });
+		S("input#description").type("New");
+		S("input[type=submit]").click("Submit the form", function(){
+			console.log("after", localStorage.getItem('search-history-store'));
+			ok(localStorage.getItem('search-history-store').length > 0, "Length is set to zero");
+		});
 		//S("#content ul li:")
 		// wait for the li to appear
 		// S("ul li:last").visible(function(){
