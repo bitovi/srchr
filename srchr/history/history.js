@@ -1,4 +1,4 @@
-steal('can', '/srchr/srchr/models/history.js', './init.ejs', './history.less', function( can, History, initEJS ) {
+steal('can', '//srchr/models/history.js', './init.ejs', './history.less', function( can, History, initEJS ) {
 
 	/**
 	 * Provides a list of model instances stored in localStorage. 
@@ -23,6 +23,7 @@ steal('can', '/srchr/srchr/models/history.js', './init.ejs', './history.less', f
 		init: function() {
 			var self = this;
 			History.findAll({}, function( historyList ) {
+				console.log("history list", historyList);
 				self.options.historyList = historyList;
 				self.element.html(initEJS(self.options));
 			});
@@ -32,6 +33,7 @@ steal('can', '/srchr/srchr/models/history.js', './init.ejs', './history.less', f
 		 * @param {Object} newInstance The data to add to the instances list.
 		 */
 		"{History} created": function( list, ev, historyItem ) {
+			alert('created');
 			this.options.historyList.push(historyItem);
 		},
 
