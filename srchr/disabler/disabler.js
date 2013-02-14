@@ -9,6 +9,9 @@ steal('can', 'jquery/event/pause', function( can ) {
 	return can.Control(
 	/** @prototype */
 	{
+		init: function(){
+			this.update()
+		},
 		/**
 		 * Binds {activateSelector} to the "activate" event to prevent the default behavior if it has the 'disabled' class.
 		 * @param {Object} el The element to prevent the default behavior on.
@@ -21,18 +24,21 @@ steal('can', 'jquery/event/pause', function( can ) {
 		},
 
 		// Listen for the search type
+
+		"{currentSearch} change": "update",
 		/**
-		 * Determines the search types that were allowed and sets the "disabled" class on those that weren't.  Also activates the first that LI that is not disabled.
-		 * @param {Object} el The element that the event was called on.
-		 * @param {Object} ev The event that was called.
-		 * @param {Object} data The data that was passed to the event.
+		 * Determines the search types that were allowed and sets the "disabled" class on those that 
+		 * weren't.  Also activates the first that LI that is not disabled.
 		 */
-		"{currentSearch} change": function( currentSearch, ev, search ) {
-			var types = {},
+		update: function( ) {
+			
+			var search = this.options.currentSearch()
+				types = {},
 				first = true;
 
+
 			// Fill the list of types to check against.
-			$.each(search.types, function( index, type ) {
+			$.each((search && search.types) || [], function( index, type ) {
 				
 				// Model types come in as Srchr.Model.typeName, so just get the last part
 				types[type.split('.').pop()] = true;
