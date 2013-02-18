@@ -5,6 +5,7 @@
 		<title>search</title>
 		<style>
 			#results {font-weight: bold;color: red;}
+			#content {position: static;}
 		</style>
 	</head>
 	<body>
@@ -24,15 +25,16 @@
 		
 		<div id="results"></div>
 		
-		<p>Finally, click 'Set Search To Foo', to set the search to Foo and trigger a search.</p>
+		<p>Finally, click 'Set Search To Cats', to set the search to Foo and trigger a search.</p>
 		<a href='javascript://' id='set'>Set Search To Foo</a>
 		<script type='text/javascript' 
                 src='../../steal/steal.js'>   
         </script>
 		<script type='text/javascript'>
-			steal('srchr/search', 'srchr/models/search.js', function(Search, SearchModel){
+			steal('srchr/search', 'srchr/models/search.js', function(SearchControl, SearchModel){
 			 	var currentSearch = can.compute();
-			 	new Search('#content', {currentSearch: currentSearch});
+			 	
+			 	new SearchControl('#content', {currentSearch: currentSearch});
   			
 	  			currentSearch.bind("change", function(ev, data){
 	  				$('#results').hide().html('Search Created '+data.query).fadeIn();
@@ -40,8 +42,8 @@
 
 	  			$("#set").click(function(){
 	  				currentSearch(new SearchModel({
-	  					query: "foo", 
-	  					types : ["Srchr.Models.Yahoo"]
+	  					query: "Cats", 
+	  					types : ["Srchr.Models.Flickr"]
 	  				}))
 	  			})
 			})

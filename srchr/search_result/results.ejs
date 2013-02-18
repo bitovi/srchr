@@ -1,18 +1,17 @@
 <ul>
-<% if(searching() && currentSearch()) { %>
-	<%
-	
-	console.log("cs",currentSearch())
-	
-	%>
+<% if( searching() && currentSearch() ) { %>
 	<li>Searching for <%= currentSearch().query %></li>
 <% } else if(list.attr('length')) { %>
 	<%list.each(function(item){%>
-		<li>
-			<%== can.view.render(resultView,item) %>
+		<li class='result'>
+			<%== typeof resultTemplate == "string" ? 
+				can.view.render(resultTemplate,item) :
+				resultTemplate.render(item) %>
 		</li>
 	<%})%>
 <%} else if(currentSearch()){ %>
 	<li>No data found for <%= currentSearch().query %></li>
-<%}%>
+<%} else {%>
+	<li>Please search above.</li>
+<% } %>
 </ul>

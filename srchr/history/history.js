@@ -1,21 +1,19 @@
-steal('can', '//srchr/models/history.js', './init.ejs', './history.less', 
-	function( can, History, initEJS ) {
+steal('can',
+	'./init.ejs', 
+	'srchr/models/history.js', 
+	'srchr/models/search.js',
+	'./history.less', 
+	function( can, initEJS, History, Search ) {
+
+
 
 	/**
 	 * Provides a list of model instances stored in localStorage. 
 	 * It allows you to remove these items from the list. 
 	 * @tag controllers, home
 	 */
-	return can.Control(
-	/* @static */
-	{
-		defaults: {
-			//returns html to be displayed for each item on the list
-			titleHelper: function( instance ) {
-				return "HistoryItem" + instance.id;
-			},
-			History: History
-		}
+	return can.Control({
+		pluginName: "srchr-history"
 	},
 	/* @prototype */
 	{
@@ -23,30 +21,61 @@ steal('can', '//srchr/models/history.js', './init.ejs', './history.less',
 		 * Waits for the page to be loaded
 		 */
 		init: function() {
-			var self = this;
-
-			History.findAll({}, function( historyList ) {
-				self.options.historyList = historyList;
-				self.element.html(initEJS(self.options));
-			});
+			var currentSearch = this.options.currentSearch
+			// create a list of items retrieved from the model
+			this.options.histories = 
+				new History.List( History.findAll({}) );
+			
+			// render the list
+			this.element.html(initEJS(this.options,{
+				// helper to display the types
+				prettyTypes: function(history){
+					return  history.attr('types').attr().map(function(type){ 
+						return type.substr(0,1).toLowerCase()
+					}).join();
+				},
+				// helper to let us know if selected
+				isSelected: function(history){
+					var current = currentSearch()
+					if(current && current.query == history.query){
+						return true;
+					}
+				}
+			}));
+			
+			// make sure we are listening to changes 
+			// in the model
+			this.on()
 		},
-		/**
-		 * Adds an instance to this list.
-		 * @param {Object} newInstance The data to add to the instances list.
-		 */
-		"{History} created": function( list, ev, historyItem ) {
-			this.options.historyList.push(historyItem);
+		"{currentSearch} change": function( current, ev, search ) {
+			// check if the store has a history object that shares the search's query
+			var history = History.store[search.query]
+			if( history ){
+				// update that history with the search's attributes
+				history.attr(search.attr(),true).save()
+				// move that history to the start of the list
+				this.options.histories.splice(
+						this.options.histories.indexOf(history),
+						1);
+				this.options.histories.unshift(history);	
+			} else {
+				// create a new history and move it to the start of the list
+				var history = new History(search.attr())
+				this.options.histories.unshift(history)
+				history.save()
+			}
 		},
-
 		/**
 		 * Binds the "remove" class on click.  Removes a history entry.
 		 * @param {Object} el The history event to remove.
 		 * @param {Object} ev The event that was fired.
 		 */
 		".remove click": function( el, ev ) {
+			// get the history instance from $.data
 			var li = el.closest('li'),
 				toBeRemoved = li.data('history');
 
+			// fade it out and destroy
 			li.fadeOut(function() {
 				toBeRemoved.destroy();
 			});
@@ -59,8 +88,10 @@ steal('can', '//srchr/models/history.js', './init.ejs', './history.less',
 		 * @param {Object} ev The event that was fired.
 		 */
 		"li click": function( el, ev ) {
-			var selected = el.data('history');
-			el.trigger("selected", selected);
+			// update the current selected
+			this.options.currentSearch(
+				new Search(el.data('history').attr())
+			);
 		}
 	});
 });

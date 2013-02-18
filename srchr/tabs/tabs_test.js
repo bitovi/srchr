@@ -6,14 +6,16 @@ var tabsHTML ="<ul id='resultsTab'>\
 	<li><a href='#upcoming'>Upcoming</a></li>\
 </ul>\
 <div id='flickr' class='tab'>one</div>\
-<div id='yahoo' class='tab'>two</div>\
-<div id='upcoming' class='tab'>three</div>";
+<div id='upcoming' class='tab'>three</div>\
+<div id='yahoo' class='tab'>two</div>";
 
 
 	module("srchr/tabs",{
 		setup : function(){
 			$("#qunit-test-area").html(tabsHTML);
-			new Tabs("#resultsTab")
+			this.flickrLI = $("#resultsTab li:eq(0)");
+			this.upcomingLI = $("#resultsTab li:eq(1)");
+			this.yahooLI = $("#resultsTab li:eq(1)");
 		},
 		teardown: function(){
 			$("#qunit-test-area").empty()
@@ -22,6 +24,11 @@ var tabsHTML ="<ul id='resultsTab'>\
 	
 	
 	test("Proper hiding and showing", function() {
+		var enabled  = can.compute(['flickr','yahoo','upcoming']);
+		new Tabs("#resultsTab",{
+			enabled: enabled
+		});
+		
 		S("[href=\\#yahoo]").click();
 		S("#yahoo").visible(function() {
 			equals(S("#flickr").css('display'), 'none', "Old tab contents are hidden");
@@ -31,6 +38,10 @@ var tabsHTML ="<ul id='resultsTab'>\
 	});
 	
 	test("Clicking twice doesn't break anything", function() {
+		var enabled  = can.compute(['flickr','yahoo','upcoming']);
+		new Tabs("#resultsTab",{
+			enabled: enabled
+		});
 		S("[href=\\#upcoming]").click();
 		S("[href=\\#upcoming]").click();
 	
@@ -40,4 +51,44 @@ var tabsHTML ="<ul id='resultsTab'>\
 		});
 	});
 
+	
+	test('disabled without a search',function(){
+		var enabled  = can.compute([]);
+		new Tabs("#resultsTab",{
+			enabled: enabled
+		});
+		ok( this.flickrLI.hasClass('disabled'),"first button disabled" );
+		ok( this.upcomingLI.hasClass('disabled'),"second button disabled" )
+	})
+	
+	test('setting enabled to a type enables a tab', function(){
+		var enabled  = can.compute([]);
+		new Tabs("#resultsTab",{
+			enabled: enabled
+		});
+		enabled(['flickr'])
+		// make sure that only flickr looks enabled
+		ok(! this.flickrLI.hasClass('disabled'),"first button disabled" );
+		ok( this.upcomingLI.hasClass('disabled'),"second button disabled" )
+		
+	})
+	
+	test('clicking only creates show event on enabled tab content elements', function(){
+		var enabled  = can.compute(['flickr']);
+		new Tabs("#resultsTab",{
+			enabled: enabled
+		});
+		
+		$("#flickr").bind('show',function(){
+			ok(true,"default activate event is called on flickr")
+		});
+		$("#upcoming").bind('show',function(){
+			ok(false,"default activate event is called on flickr")
+		})
+		
+		S(this.flickrLI).click();
+		S(this.upcomingLI).click();
+
+		
+	});
 })

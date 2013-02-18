@@ -1,111 +1,89 @@
-steal('./search_result.js','funcunit', function(SearchResult, S){
+steal('./search_result.js',
+	'srchr/models/search.js',
+	'funcunit', 
+	'can/util/fixture',
+	function(SearchResult, Search, S, fixture){
 	
-module("srchr/search_result",{
-	setup : function(){
-		S.open('//srchr/search_result/search_result.html')
-	}
-})
-
-test("results shown", function(){
-	S("#searchVal").type("search\r");
-	S("li").exists(function(){
-		ok(true, "results have been shown");
+	module("srchr/search_result",{
+		setup: function(){
+			var self = this;
+			
+			this.currentSearch = can.compute();
+		  	
+		    this.searches = 0;
+  			var Google = can.Model({
+  				findAll: "/google"
+  			},{})
+  			
+  			fixture("/google",function(request){
+  				var results = [];
+				var length = parseInt( Math.random()*10+1 );
+				for(var i =0; i < length; i++){
+					results.push({
+						title : i+"th search result for "+request.data.query,
+					})
+				}
+				this.searches++;
+				return results;
+  			});
+			$("<div id='content'/>").appendTo("#qunit-test-area");
+  			new SearchResult("#content",{
+  				modelType : Google,
+  				currentSearch: this.currentSearch
+  			})
+  			
+		},
+		teardown: function(){
+			$("#qunit-test-area").empty()
+		}
 	})
-})
+	
+	test("results shown", function(){
+		this.currentSearch( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Flickr"]
+		}) );
+		
+		S("#content li.result").exists("results have been shown");
+	})
 
-test("results not shown when hidden", function(){
-	S("#toggle").click();
-	S("#searchVal").type("search\r");
-	S.wait(20, function(){
-		equals(S('li').size(), 0, "there are no li's")
+	test("results not retrieved when hidden", function(){
+		$("#content").hide();
+		
+		this.currentSearch( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Flickr"]
+		}) );
+		var self = this;
+		
+		
+		S.wait(20, function(){
+			equal( self.searches, 0, "" )
+		});
+		
 	});
+	
+	test("results retrieved when shown",function(){
+		$("#content").hide();
+		
+		this.currentSearch( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Flickr"]
+		}) );
+		
+		var self = this;
+		S.wait(40, function(){
+			equal( self.searches, 0, "" )
+		});
+		
+		$("#content").trigger("show");
+		S("#content li.result").exists("results have been shown",function(){
+			equal( self.searches, 1, "" )
+		});
+		
+	})
+	
 });
-
-test("don't query when hidden", function(){
-	S("#searchVal").type("search\r");
-	S("li").exists(function(){
-		ok(true, "results have been shown")
-	})
-	S("#toggle").click();
-	S("#searchVal").type("\r");
-	S.wait(20, function(){
-		equals(S('#searchNum').text(), "1", "only 1 query")
-		
-	})
-	
-})
-	
-})
-
-"<ul><li><a href='#apples'>Apples</a></li>"+
-"<li><a href='#oranges'>Oranges</a></li>"
-
-"</ul><div id='apples'></div><div id='oranges'></div>"
-
-
-var Tabs = function(element){
-  if(!element){ return }
-  this.element = element
-  this.init()
-}
-
-Tabs.prototype ={
-  init: function(){
-    var lis = this.element.querySelectorAll("li"),
- 		self = this;
-    for(var i = 0 ; i< lis.length; i++ ){
-    	   if(i > 0) {
-   		  tab(lis[i]).style.display = "none"
-    	   } else {
-    	   	  this.active = lis[i];
-    	   }
-    }
-    this.bind();
-  },
-  tab : function(li){
-  	document.querySelector( li.querySelector("a").getAttribute("href") )
-  },
-  bind : function(){
-  	var self = this;
-  	this.element.querySelectorAll("li").forEach(function(li){
-  		li.addEventListener("click",function(){
-    	   		self.activate(this)
-    	   },false)
-  	})
-  },
-  activate: function(li){
-  	self.tab( this.active ).style.display = "none"
-	self.tab( li.querySelector("a") ).style.display = "block";
-	self.active = li;
-  }
-}
-
-HistoryTabs = function(element){
-  if(!element){ return }
-  Tabs.apply( this, arguments)
-}
-HistoryTabs.prototype = new Tabs
-
-HistoryTabs.prototype.init = function(){
-	Tabs.prototype.init.apply(this, arguments);
-	
-	if(window.location.hash){
-		tab(this.active).style.display = "none";
-		
-		var li = document.querySelector("a[href=" +window.location.hash+"]").parentNode;
-		this.active = li;
-		tab(li).style.display = "block";
-	}
-}
-HistoryTabs.prototype.bind = function(){
-	var self;
-	window.addEventListener("hashchange", function(){
-		self.activate( document.querySelector("a[href=" +window.location.hash+"]").parentNode );
-	})
-}
-
-
-
 
 
 

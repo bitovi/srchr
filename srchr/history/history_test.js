@@ -1,71 +1,100 @@
-steal('funcunit', 'srchr/history', 'srchr/models/history.js', function( S, History, HistoryModel ) {
+steal('funcunit', 
+	'srchr/history', 
+	'srchr/models/history.js', 
+	'srchr/models/search.js',
+	function( S, HistoryControl, HistoryModel, Search ) {
+		
+		
 	module("srchr/history", {
 		setup: function() {
-			$("<div id='content'/>" + "<form id='todoForm' action=''>" + "<input type='text' id='description'>" + "<input type='submit' value='Create Todo' /></form>").appendTo(document.body);
-
-			new History("#content", {
-				titleHelper: function( history ) {
-					return history.description;
-				}
-			});
-
-			$("#todoForm").submit(function( ev ) {
-				ev.preventDefault();
-
-				// remove the error class
-				$("input#description").removeClass("error");
-
-				// validate
-				if (!$("#description").val().length ) {
-					$("input#description").addClass("error");
-					return false;
-				}
-
-				var todo = new HistoryModel({
-					description: $("#description").val()
-				});
-
-				todo.save();
-
-				$("#description").val("")[0].focus();
-			});
+			
+			var currentSearch = this.current = can.compute();
+			
+			$("<div id='history'>").appendTo( "#qunit-test-area" )
+			
+			stop();
+			// set history to use a different part of the store
+			HistoryModel.localStoreName = "history-test"
+			// remove all items in the store
+			HistoryModel.findAll({}, function(items){
+				can.makeArray(items).forEach(function(item){
+					item.destroy()
+				})
+				// create the history control
+				
+				new HistoryControl("#history", {
+	  				currentSearch: currentSearch
+	  			});
+				
+				start();
+			})
 		},
 		teardown: function() {
-			$("#content").remove();
-			$("#todoForm").remove();
+			$("#qunit-test-area").empty()
 		}
 	});
+	test("creating history records by changing the current search", function(){
+		
+		this.current( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Flickr"]
+		}));
+		
+		equal( $("#history li").length, 1, "there is only one history item")
+		equal( $("#history li .query").text(), "Cats", "cats created");
+		
+		this.current( new Search({
+			query: "Dogs",
+			types: ["Srchr.Models.Twitter"]
+		}));
+		
+		equal( $("#history li").length, 2, "there are two items")
+		equal( $("#history li:first .query").text(), "Dogs", "Dogs created in first stop");
+		
+		this.current( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Twitter"]
+		}));
+		
+		equal( $("#history li").length, 2, "there are two items");
+		equal( $("#history li:first .query").text(), "Cats", "Cats moved to first stop");
+		
+	})
 
+	test("removing a history", function() {
 
-	test("Add and remove history", function() {
-		S("input#description").type("New");
-		S("input[type=submit]").click("Submit the form", function() {
-			S("#content ul li span").html("New", "Correct list item title");
+		this.current( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Flickr"]
+		}));
+		
+		// delete all todos
+		S("#history a.remove").click();
 
-			// delete all todos
-			$("#content ul li a.remove").each(function() {
-				S(this).click();
-			});
+		S("#history li").size(0,function(){
+			ok(!JSON.parse(localStorage.getItem('history-test')).length,"nothing in local storage")
+		},"all todos deleted");
 
-			S("#content ul li").size(0, "all todos deleted");
-		});
 	});
-
-	test("Test localStorage", function() {
-		S("#content ul").visible(function() {
-			console.log("before", localStorage.getItem('search-history-store'));
-			ok(localStorage.getItem('search-history-store').length > 0, "Length is set to zero");
-		});
-
-		S("input#description").type("New");
-		S("input[type=submit]").click("Submit the form", function(){
-			console.log("after", localStorage.getItem('search-history-store'));
-			ok(localStorage.getItem('search-history-store').length > 0, "Length is set to zero");
-		});
-		//S("#content ul li:")
-		// wait for the li to appear
-		// S("ul li:last").visible(function(){
-		// 	equal($("ul li:last span").html(), "New", "Correct List item title");
-		// })
-	});
+	
+	test("updating current search", function(){
+		this.current( new Search({
+			query: "Cats",
+			types: ["Srchr.Models.Flickr"]
+		}));
+		
+		this.current( new Search({
+			query: "Dogs",
+			types: ["Srchr.Models.Twitter"]
+		}));
+		var self = this;
+		S("#history li:eq(1)").click(function(){
+			var cur = self.current()
+			equal(cur.query,"Cats","set back to cats")
+			
+			
+		})
+	})
+	
+	
 });

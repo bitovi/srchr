@@ -1,0 +1,24 @@
+steal('can', 'can/construct/super',function(can){
+	
+	return can.Model({
+		findAll : function(params){
+			return $.ajax({
+				url : "http://www.reddit.com/search/.json",
+				dataType : "jsonp",
+				data : {
+					q: params.query
+				},
+				jsonp: "jsonp"
+			})
+			
+		},
+		models : function(data){
+			return this._super(data.data.children)
+		},
+		model: function(data){
+			return this._super(data.data)
+		}
+	},{});
+
+});
+

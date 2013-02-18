@@ -7,6 +7,7 @@
 			#content {
 				border: solid 1px black;
 				padding: 20px;
+				position: static;
 			}
 			#count {
 				border: solid 1px red;
@@ -17,7 +18,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>Srchr.SearchResult</h1>
+		<h1>srchr/search_result</h1>
 		<p>Uses a model to show search results.  SearchResult only
 			gets results when visible and won't repeat searches. </p>
 		<h2>Demo</h2>
@@ -48,9 +49,12 @@
                 src='../../steal/steal.js'>   
         </script>
 		<script type='text/javascript'>
-		  steal('srchr/search_result', 'srchr/models/search.js','can/util/fixture',function(SearchResult, Search, fixture){
+		  steal('srchr/search_result', 
+		  		'srchr/models/search.js',
+		  		'can/util/fixture',
+		  		function(SearchResult, Search, fixture){
 		  	
-		  	currentSearch = can.compute();
+		  	var currentSearch = can.compute();
 		  	
 		    SEARCHNUM = 0;
   			var Google = can.Model({
@@ -67,6 +71,8 @@
 						href : "http://blah.com/"+i
 					})
 				}
+				SEARCHNUM++;
+				$("#searchNum").text(SEARCHNUM)
 				return results;
   			});
 

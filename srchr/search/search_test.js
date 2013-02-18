@@ -3,7 +3,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 	module("srchr/search",{
 		setup : function(){
 			this.currentSearch = can.compute(false);
-			$("<div id='content'/>").appendTo(document.body);					
+			$("<div id='content'/>").appendTo("#qunit-test-area");					
 		 	new Search('#content', {currentSearch: this.currentSearch});
 		},
 		teardown: function () {
@@ -17,8 +17,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 			ok(!$('input[name=query]').val().length, 'Text field is empty!')
 		})
 		
-		S('input[type=checkbox]').click( function(){	
-		console.log($('input[name=query]').val());		
+		S('input[type=checkbox]').click( function(){		
 			ok($('input[name=query]').val(), 'Text field is filled!')
 			ok($('input[name=query]').hasClass('blurred'), 'Clicked query box is grayed out')
 		})
@@ -59,7 +58,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 			var srch = self.currentSearch();
 		
 			equal(srch.query, 'testing...', 'Current search contains valid query');
-			equal(srch.types[0], 'Srchr.Models.Twitter', 'Current search contains a valid type');
+			equal(srch.types[0], 'Twitter', 'Current search contains a valid type');
 		}, 'A search was submitted');	
 	});
 });

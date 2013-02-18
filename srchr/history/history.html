@@ -5,9 +5,6 @@
 		<title>srchr.history</title>
 		<style>
 			#list {
-				padding-top: 10px;
-				padding-bottom: 10px;
-				border: solid 1px;
 				width: 200px;
 			}
 			#description.error {
@@ -16,50 +13,48 @@
 		</style>
 	</head>
 	<body>
-        <h1>Srchr.History</h1>
+        <h1>srchr/history</h1>
 		<p>History provides a list of model instances saved in local storage
 		and a means to remove them from the list.</p>
 		
 		<h2>Demo</h2>
 		<p>The following boxes shows the list of items
 		   added to the srchr.history widget:</p>
-		<div id='list'></div>
+		<ul id='list'></ul>
 		<p>Add to the list by entering a todo task:</p>
-		<form id='todoForm' action=''>
-			<input type='text' id='description'>
-			<input type='submit' value='Create Todo' />
+		<form id='history' action=''>
+			<input type='text' id='name'>
+			<input type='submit' value='Create Search' />
 		</form>
 		<p>When you add it, it will appear above.  Refresh the page,
 		   and you should still see it.</p>
 		
-		<script type='text/javascript' src='../../steal/steal.js'></script>
-		<script type='text/javascript'>
-		  steal('can', 'srchr/history', '//srchr/models/history.js', function(can, History, HistoryModel){
+		<script src='../../steal/steal.js'></script>
+		<script>
+		  steal('srchr/history', 
+		  'srchr/models/search.js', 
+		  function(History, Search){
+		  	
+		  	var currentSearch = can.compute()
+		  	
 		  	new History("#list", {
-  				titleHelper : function(history){
-  					return history.description;
-  				}
+  				currentSearch: currentSearch
   			});
 			
-  			$("#todoForm").submit(function(ev){
+			
+			
+			
+  			$("#history").submit(function(ev){
   				ev.preventDefault();
 
   				// remove the error class
-  				$("input#description").removeClass("error");
+  				currentSearch(new Search({
+  					query: $("#name").val(),
+  					types: ["Srchr.Models.Flickr"]
+  				}));
   				
-  				// validate
-  				if (!$("#description").val().length) {
-  					$("input#description").addClass("error");
-  					return false;
-  				}
-
-  				var todo = new HistoryModel({
-  					description: $("#description").val()
-  				});
-
-				todo.save();
-				
-  			 	$("#description").val("")[0].focus();
+  				
+  			 	$("#name").val("")[0].focus();
   			});
   		})
 		</script>

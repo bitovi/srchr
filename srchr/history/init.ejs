@@ -1,8 +1,8 @@
-<ul>
-<% list(historyList, function(history){ %>
-	<li <%= (el)-> el.data('history', history) %>>
-		<span class="text"><%= titleHelper(history); %></span>
+<% histories.each(function(history){ %>
+	<li <%= (el)-> el.data('history', history) %> 
+		<%= isSelected(history)? 'class="selected"' : ''%>>
+		<span class='query'><%= history.attr('query') %></span> 
+		<span class='models'><%=prettyTypes(history)%></span>
 		<a href="#" class="remove">X</a>
 	</li>
 <% }) %>
-</ul>

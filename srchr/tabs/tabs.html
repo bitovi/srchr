@@ -7,6 +7,13 @@
 			.tab {
 				border: solid 1px black;
 			}
+			.disabled a{
+				color: gray;
+				text-decoration: none;
+			}
+			.active a {
+				color: orange;
+			}
 		</style>
 	</head>
 	<body>
@@ -20,21 +27,30 @@
 			<li><a href='#upcoming'>Upcoming</a></li>
 		</ul>
 
-		<div id='flickr' class='tab'>one</div>
-		<div id='yahoo' class='tab'>two</div>
-		<div id='upcoming' class='tab'>three</div>
+		<div id='flickr' class='tab'>Flickr Stuff</div>
+		<div id='yahoo' class='tab'>Yahoo Stuff</div>
+		<div id='upcoming' class='tab'>Upcoming Stuff</div>
 
-		
+		<button id='enable'>Enable flickr and upcoming</button>
 		<script type='text/javascript' 
                 src='../../steal/steal.js'>
         </script>
 		
 		<script type='text/javascript' >
 			steal('srchr/tabs', function(Tabs){
-			  new Tabs('#resultsTab');
+			
+				var enabled = can.compute(['flickr','yahoo'])
+				
+				new Tabs('#resultsTab',{
+				  	enabled: enabled
+				});
+			
+			
+			
+				$("#enable").click(function(){
+					enabled(['flickr','upcoming'])
+				})
 			})
-			
-			
 		</script>
 		
 	</body>

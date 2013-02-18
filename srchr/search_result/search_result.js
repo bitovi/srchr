@@ -4,6 +4,10 @@ steal('can',
 	'./search_result.less',
 	function(can, Search, resultsEJS){
 	
+	window.foo = function(){
+		debugger;
+	}
+	
 /**
  * Shows the search results of a query.
  * @tag controllers, home
@@ -12,15 +16,24 @@ return can.Control(
 /* @static */
 {
 	defaults: {
-		resultView : "//srchr/search_result/result.ejs"
-	}
+		resultTemplate : "//srchr/search_result/result.ejs"
+	},
+	pluginName: 'srchr-search-result'
 },
 /* @prototype */
 {	
 	init: function(){
+		this.options.id = this.element.prop('id')
 		this.options.list = new this.options.modelType.List();
 		this.options.searching = can.compute(false);
 		this.element.html( resultsEJS(this.options) );
+		this.on();
+	},
+	"{list} length": function(){
+		console.log("length change",this.options.list.length)
+	},
+	"{searching} change": function(searching, ev, newVal){
+		console.log("searching change",newVal)
 	},
 	/**
 	 * If the results panel is visible, then get the results.
@@ -48,6 +61,7 @@ return can.Control(
 			
 			// and our search is new ...
 			if(this.searched != currentSearch.query){
+				console.log("searching")
 				// and set a callback to render the results.
 				var searching = this.options.searching;
 				searching(true)
@@ -55,6 +69,7 @@ return can.Control(
 				var deferredItems = this.options.modelType.findAll(
 						{query: currentSearch.query}, 
 						function(){
+							console.log("changing searching")
 							searching(false)
 						})
 						
@@ -63,9 +78,6 @@ return can.Control(
 				this.searched = currentSearch.query;
 			}
 			
-		}else{
-			// Tell the user to make a valid query
-			this.element.html("Enter a search term!");
 		}
 		
 	}

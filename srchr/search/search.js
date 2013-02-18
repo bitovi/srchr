@@ -15,8 +15,11 @@ return can.Control(
 /* @static */
 {
 	defaults : {
-		defaultText : "Search for things here"
-	}
+		defaultText : "Search for things here",
+		modelNames: ['Twitter','Upcoming','Flickr']
+	},
+	pluginName: 'srchr-search',
+	
 },
 /* @prototype */
 {
@@ -106,13 +109,17 @@ return can.Control(
 	 * Updates the checkboxes to reflect the user's desired search engine preferences.  Also fires search. 
 	 */
 	"{currentSearch} change" : function(currentSearch, ev, newVal, oldVal){
+		if(newVal){
+			this.element.find("input[name=query]").val(newVal.query)[0].focus();
 
-		this.element.find("input[name=query]").val(newVal.query)[0].focus();
-
-		var checks = this.element.find("input[type=checkbox]").attr("checked",false);
-		for(var i =0; i < newVal.types.length; i++){
-			checks.filter("[value="+newVal.types[i].replace(/\./g,"\\.")+"]").attr("checked",true);
+			var checks = this.element.find("input[type=checkbox]").attr("checked",false);
+			for(var i =0; i < newVal.types.length; i++){
+				checks.filter("[value="+newVal.types[i].replace(/\./g,"\\.")+"]").attr("checked",true);
+			}
+		} else {
+			this.element.find("input[name=query]").val("").focus()
 		}
+		
 	}
 });
 
