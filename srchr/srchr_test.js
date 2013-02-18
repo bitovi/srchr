@@ -10,12 +10,6 @@ steal('funcunit',
 	module("srchr", {
 		setup: function() {
 			S.open("//srchr/srchr.html");
-		},
-		checkYahooOnlyResults: function() {
-			ok(S('#flickr').html(), 'Results were retrieved.')
-			ok(!S('#resultsTab li:eq(0)').hasClass('disabled'), "Selected tab Twitter is enabled.")
-			ok(S('#resultsTab li:eq(1)').hasClass('disabled'), "Non-selected tab Upcoming is disabled.")
-			ok(S('#resultsTab li:eq(2)').hasClass('disabled'), "Non-selected tab Flickr is disabled.")
 		}
 	});
 
