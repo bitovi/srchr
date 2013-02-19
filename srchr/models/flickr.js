@@ -1,8 +1,22 @@
 steal('can', 'can/construct/super',function(can){
-	
+	/**
+	 * @class srchr/models/flickr
+	 * @inherits can.Construct
+	 * @parent index
+	 * 
+	 * 
+	 */
 	return can.Model({
+		/**
+		 * @attribute
+		 * 
+		 * Specifies the flickr API key
+		 */
 		apiKey: "245a802eca20febde31c0d3d6a373add",
-		findAll : function(params, success, error){
+		/**
+		 * Gets flickr images
+		 */
+		findAll : function(params){
 			return $.ajax({
 				url : "http://query.yahooapis.com/v1/public/yql",
 				dataType : "jsonp",

@@ -1,26 +1,44 @@
 steal('can','./tabs.less', function(can) {
 
 	/**
-	 * A basic tabs controller for showing and hiding content.
-	 *
-	 * @codestart
-	 &lt;ul id='resultsTab'&gt;
-	 &lt;li&gt;&lt;a href='#flickr'&gt;Flickr&lt;/a&gt;&lt;/li&gt;
-	 &lt;li&gt;&lt;a href='#upcoming'&gt;Upcoming&lt;/a&gt;&lt;/li&gt;
-	 &lt;/ul&gt;
-	 
-	 &lt;div id='flickr'&gt;&lt;/div&gt;
-	 &lt;div id='yahoo'&gt;&lt;/div&gt;
-	 &lt;div id='upcoming'&gt;&lt;/div&gt;
-	 @codeend
+	 * @class srchr/tabs
+	 * @parent index
+	 * @inherits can.Control
+	 * @test srchr/tabs/test.html
 	 * 
-	 * @codestart
-	 $("#resultsTab").srchr_tabs();
-	 * @codeend
+	 * A Tabs widget for showing and hiding content. Given
+	 * content like:
 	 * 
-	 * <code>#resultsTab</code> Will be transformed into working tabs that the user can click to use.  The <code>href</code>s must correspond the to the jQuery selector of the content element it represents.
+	 *     <ul id='resultsTab'>
+	 *       <li><a href='#flickr'>Flickr</a></li>
+	 *       <li><a href='#yahoo'>Yahoo</a></li>
+	 *       <li><a href='#upcoming'>Upcoming</a></li>
+	 *     </ul>
 	 * 
-	 * @tag controllers, home
+	 *     <div id='flickr'></div>
+	 *     <div id='yahoo'></div>
+	 *     <div id='upcoming'></div>
+	 * 
+	 * Create a Tabs like:
+	 * 
+	 *     new Tabs("#resultsTab",{
+	 *       enabled: can.compute(["flickr","yahoo"])
+	 *     })
+	 * 
+	 * Notice that each `li` should have an `href` that points to an id of 
+	 * the tab content to be shown.
+	 * 
+	 * @demo srchr/tabs/tabs.html
+	 * 
+	 * @param {HTMLElement} element The element to create the tab on.
+	 * @param {Object} options A object of option name-value pairs. The
+	 * supported options are:
+	 * 
+	 * __enabled__ `can.compute`
+	 * 
+	 * Enabled is a [can.compute] that specifies which tabs should be enabled. The 
+	 * compute should return an array of tab content ids.
+	 * 
 	 */
 	return can.Control(
 	/** @prototype */

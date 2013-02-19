@@ -1,3 +1,9 @@
 steal('can',function(can) {
-	return can.Model({},{});
+	/**
+	 * @class srchr/models/search
+	 * @inherits can.Model
+	 */
+	return can.Model({
+		id: "query"
+	},{});
 })

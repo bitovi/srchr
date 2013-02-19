@@ -13,13 +13,6 @@
 		</style>
 	</head>
 	<body>
-        <h1>srchr/history</h1>
-		<p>History provides a list of model instances saved in local storage
-		and a means to remove them from the list.</p>
-		
-		<h2>Demo</h2>
-		<p>The following boxes shows the list of items
-		   added to the srchr.history widget:</p>
 		<ul id='list'></ul>
 		<p>Add to the list by entering a todo task:</p>
 		<form id='history' action=''>
@@ -28,35 +21,32 @@
 		</form>
 		<p>When you add it, it will appear above.  Refresh the page,
 		   and you should still see it.</p>
-		
-		<script src='../../steal/steal.js'></script>
 		<script>
-		  steal('srchr/history', 
-		  'srchr/models/search.js', 
-		  function(History, Search){
-		  	
-		  	var currentSearch = can.compute()
-		  	
-		  	new History("#list", {
-  				currentSearch: currentSearch
-  			});
-			
-			
-			
-			
-  			$("#history").submit(function(ev){
-  				ev.preventDefault();
+			DEMO_HTML = "<ul id='list'></ul>"
+		</script>
+		<script src='../../steal/steal.js'></script>
+		<script id='demo-source'>
+steal('srchr/history', 
+  'srchr/models/search.js', 
+  function(History, Search){
+  	
+    var currentSearch = can.compute()
+  	
+    new History("#list", {
+      currentSearch: currentSearch
+    });
+	
+    $("#history").submit(function(ev){
+      ev.preventDefault();
 
-  				// remove the error class
-  				currentSearch(new Search({
-  					query: $("#name").val(),
-  					types: ["Srchr.Models.Flickr"]
-  				}));
-  				
-  				
-  			 	$("#name").val("")[0].focus();
-  			});
-  		})
+      // remove the error class
+      currentSearch(new Search({
+        query: $("#name").val(),
+        types: ["Flickr"]
+      }));
+      $("#name").val("")[0].focus();
+    });
+})
 		</script>
 	</body>
 </html>

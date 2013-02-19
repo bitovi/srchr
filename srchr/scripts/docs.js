@@ -1,3 +1,8 @@
-//js srchr/scripts/doc.js
-_args = ['srchr/srchr.html']
-load("documentjs/document");
+//js cookbook/scripts/doc.js
+
+load('steal/rhino/rhino.js');
+steal("documentjs", function(DocumentJS){
+	DocumentJS('srchr/srchr.html', {
+		markdown : ['srchr']
+	});
+});

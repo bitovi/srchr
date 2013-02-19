@@ -9,6 +9,11 @@ steal(
 	'./srchr.less',
 	function( History, models, Search, SearchResult, Tabs, templates){
 	
+	// don't run if rhino
+	if(steal.isRhino){
+		return
+	}
+	
 	// This is the Srchr application.  It intergrates all of the Srchr modules.
 	
 	

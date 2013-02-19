@@ -4,13 +4,12 @@ steal('can',
 	'./search_result.less',
 	function(can, Search, resultsEJS){
 	
-	window.foo = function(){
-		debugger;
-	}
-	
 /**
+ * @class srchr/search_result
+ * @parent index
+ * @inherits can.Control
+ * 
  * Shows the search results of a query.
- * @tag controllers, home
  */
 return can.Control(
 /* @static */

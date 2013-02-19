@@ -7,9 +7,14 @@ steal(
 	function(can, Search, initEJS){
 
 /**
- * Creates a form to search with, as well as defining a search type (Model).
+ * @class srchr/search
+ * @parent index
+ * @inherits can.Control
+ *  
+ * Creates a form to search with, as well as 
+ * defining a search type (Model).
  * 
- * @tag controllers, home
+ * 
  */
 return can.Control(
 /* @static */
