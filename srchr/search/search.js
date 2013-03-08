@@ -44,8 +44,7 @@ steal(
  * 
  * #### defaultText `{String}`
  * 
- * A [can.Model] with a `.findAll` method that can be used to retrieve 
- * the search results.
+ * The placeholder text.
  * 
  * #### modelNames `{Array.<String>}`
  * 
