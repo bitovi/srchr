@@ -12,7 +12,7 @@ Clone srchr and install its submodules:
 
     git clone git://github.com/bitovi/srchr srchr
     cd srchr
-    git submodule update --recursive
+    git submodule update --init --recursive
 
 ## Running
 

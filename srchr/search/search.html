@@ -18,7 +18,7 @@
                 src='../../steal/steal.js'>   
         </script>
 <script>
-	steal('srchr/search', 'srchr/models/search.js', function(SearchControl, SearchModel){
+	steal('srchr/search',  function(SearchControl){
 	 	var currentSearch = can.compute();
 	 	
 	 	new SearchControl('#search', {currentSearch: currentSearch});
@@ -28,10 +28,10 @@
 		});
 
 		$("#set").click(function(){
-			currentSearch(new SearchModel({
+			currentSearch({
 				query: "Cats", 
 				types : ["Flickr"]
-			}))
+			})
 		})
 	})
 	

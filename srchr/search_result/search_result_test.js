@@ -1,8 +1,7 @@
 steal('./search_result.js',
-	'srchr/models/search.js',
 	'funcunit', 
 	'can/util/fixture',
-	function(SearchResult, Search, S, fixture){
+	function(SearchResult, S, fixture){
 	
 	module("srchr/search_result",{
 		setup: function(){
@@ -39,10 +38,10 @@ steal('./search_result.js',
 	})
 	
 	test("results shown", function(){
-		this.currentSearch( new Search({
+		this.currentSearch({
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
-		}) );
+		} );
 		
 		S("#content li.result").exists("results have been shown");
 	})
@@ -50,10 +49,10 @@ steal('./search_result.js',
 	test("results not retrieved when hidden", function(){
 		$("#content").hide();
 		
-		this.currentSearch( new Search({
+		this.currentSearch( {
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
-		}) );
+		} );
 		var self = this;
 		
 		
@@ -66,10 +65,10 @@ steal('./search_result.js',
 	test("results retrieved when shown",function(){
 		$("#content").hide();
 		
-		this.currentSearch( new Search({
+		this.currentSearch({
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
-		}) );
+		} );
 		
 		var self = this;
 		S.wait(40, function(){

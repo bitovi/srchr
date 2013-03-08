@@ -1,10 +1,9 @@
 steal(
 	"can",
-	"srchr/models/search.js",
 	"./init.ejs",
 	'jquery/dom/form_params',
 	'./search.less',
-	function(can, Search, initEJS){
+	function(can, initEJS){
 
 /**
  * @class srchr/search
@@ -50,7 +49,7 @@ steal(
  * 
  * An array of model names to use as the checkbox values.
  * 
- * ### currentSearch `{can.compute}`
+ * #### currentSearch `{can.compute}`
  * 
  * The current search that should be performed.
  */
@@ -96,7 +95,7 @@ return can.Control(
 		ev.preventDefault();
 		
 
-		var search = new Search(el.formParams()),
+		var search = el.formParams(),
 			ok = true;
 		
 		// If no search type was selected, flash the .options UL and don't trigger search.created

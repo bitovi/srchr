@@ -43,8 +43,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 		S('input[type=submit]').click({}, function(){
 			var srch = self.currentSearch();
 
-			equal(srch.query, 'hello world', 'Current search contains valid query');
-			ok(!srch.types.length, 'Current search contains no type');
+			equal(srch, false, "no search submitted");
 		}, 'A search was not submitted')
 	});
 	

@@ -41,9 +41,8 @@
         </script>
 <script type='text/javascript' id='demo-source'>
 steal('srchr/search_result', 
-	'srchr/models/search.js',
 	'can/util/fixture',
-	function(SearchResult, Search, fixture){
+	function(SearchResult, fixture){
 
 // setup Google model
 var SEARCHNUM = 0;
@@ -77,9 +76,9 @@ new SearchResult("#content",{
 // user searches
 $("#searchForm").submit(function(ev){
 	ev.preventDefault();
-	currentSearch( new Search({
+	currentSearch({
 		query : $("#searchVal").val()
-	} ) )
+	} )
 });
 
 // toggle visiblity

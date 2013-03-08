@@ -1,8 +1,7 @@
 steal('can',
-	'srchr/models/search.js',
 	'./results.ejs',
 	'./search_result.less',
-	function(can, Search, resultsEJS){
+	function(can, resultsEJS){
 	
 /**
  * @class srchr/search_result
@@ -13,9 +12,9 @@ steal('can',
  * `new SearchResult(element, options)` show search results
  * for a given model, but only when the current element is visible.
  * 
- *     var currentSearch = can.compute(new Search({
+ *     var currentSearch = can.compute({
  *       query: "Cats"
- *     }))
+ *     })
  *     
  *     $("#google-results").hide()
  *     
@@ -65,12 +64,6 @@ return can.Control(
 		this.element.html( resultsEJS(this.options) );
 		this.on();
 	},
-	"{list} length": function(){
-		console.log("length change",this.options.list.length)
-	},
-	"{searching} change": function(searching, ev, newVal){
-		console.log("searching change",newVal)
-	},
 	/**
 	 * If the results panel is visible, then get the results.
 	 * @param {Object} el The element that the event was called on.
@@ -97,7 +90,6 @@ return can.Control(
 			
 			// and our search is new ...
 			if(this.searched != currentSearch.query){
-				console.log("searching")
 				// and set a callback to render the results.
 				var searching = this.options.searching;
 				searching(true)
@@ -105,7 +97,6 @@ return can.Control(
 				var deferredItems = this.options.modelType.findAll(
 						{query: currentSearch.query}, 
 						function(){
-							console.log("changing searching")
 							searching(false)
 						})
 						

@@ -1,9 +1,8 @@
 steal('can',
 	'./init.ejs', 
 	'srchr/models/history.js', 
-	'srchr/models/search.js',
 	'./history.less', 
-	function( can, initEJS, History, Search ) {
+	function( can, initEJS, History ) {
 
 
 
@@ -49,7 +48,7 @@ steal('can',
 			this.element.html(initEJS(this.options,{
 				// helper to display the types
 				prettyTypes: function(history){
-					return  history.attr('types').attr().map(function(type){ 
+					return  can.map(history.types,function(type){ 
 						return type.substr(0,1).toLowerCase()
 					}).join();
 				},
@@ -71,7 +70,7 @@ steal('can',
 			var history = History.store[search.query]
 			if( history ){
 				// update that history with the search's attributes
-				history.attr(search.attr(),true).save()
+				history.attr(search,true).save()
 				// move that history to the start of the list
 				this.options.histories.splice(
 						this.options.histories.indexOf(history),
@@ -79,7 +78,7 @@ steal('can',
 				this.options.histories.unshift(history);	
 			} else {
 				// create a new history and move it to the start of the list
-				var history = new History(search.attr())
+				var history = new History(search)
 				this.options.histories.unshift(history)
 				history.save()
 			}
@@ -109,7 +108,7 @@ steal('can',
 		"li click": function( el, ev ) {
 			// update the current selected
 			this.options.currentSearch(
-				new Search(el.data('history').attr())
+				el.data('history').attr()
 			);
 		}
 	});

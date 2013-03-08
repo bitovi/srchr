@@ -1,8 +1,7 @@
 steal('funcunit', 
 	'srchr/history', 
 	'srchr/models/history.js', 
-	'srchr/models/search.js',
-	function( S, HistoryControl, HistoryModel, Search ) {
+	function( S, HistoryControl, HistoryModel ) {
 		
 		
 	module("srchr/history", {
@@ -35,26 +34,26 @@ steal('funcunit',
 	});
 	test("creating history records by changing the current search", function(){
 		
-		this.current( new Search({
+		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
-		}));
+		});
 		
 		equal( $("#history li").length, 1, "there is only one history item")
 		equal( $("#history li .query").text(), "Cats", "cats created");
 		
-		this.current( new Search({
+		this.current( {
 			query: "Dogs",
 			types: ["Srchr.Models.Twitter"]
-		}));
+		});
 		
 		equal( $("#history li").length, 2, "there are two items")
 		equal( $("#history li:first .query").text(), "Dogs", "Dogs created in first stop");
 		
-		this.current( new Search({
+		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Twitter"]
-		}));
+		});
 		
 		equal( $("#history li").length, 2, "there are two items");
 		equal( $("#history li:first .query").text(), "Cats", "Cats moved to first stop");
@@ -63,10 +62,10 @@ steal('funcunit',
 
 	test("removing a history", function() {
 
-		this.current( new Search({
+		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
-		}));
+		} );
 		
 		// delete all todos
 		S("#history a.remove").click();
@@ -78,16 +77,17 @@ steal('funcunit',
 	});
 	
 	test("updating current search", function(){
-		this.current( new Search({
+		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
-		}));
+		});
 		
-		this.current( new Search({
+		this.current( {
 			query: "Dogs",
 			types: ["Srchr.Models.Twitter"]
-		}));
+		});
 		var self = this;
+
 		S("#history li:eq(1)").click(function(){
 			var cur = self.current()
 			equal(cur.query,"Cats","set back to cats")
