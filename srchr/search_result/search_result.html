@@ -9,94 +9,93 @@
 				padding: 20px;
 				position: static;
 			}
-			#count {
-				border: solid 1px red;
-			}
+
 			#searchNum {
 				font-weight: bold;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>srchr/search_result</h1>
-		<p>Uses a model to show search results.  SearchResult only
-			gets results when visible and won't repeat searches. </p>
-		<h2>Demo</h2>
-		<p>Enter a search term in the the following form and click "Search".</p>
-		
-		<form action='' id='searchForm'>
-			<input type='text' id='searchVal'/>
-			<input type='submit' value='Search' />
-		</form>
-		<p>The results of your search will appear below:</p>
-		<div id='content'></div>
-		<p>Each time the model performs a request, it increments the following counter:</p>
-		<div id='count'>
-			Number of Ajax Requests = <span id='searchNum'></span>
-		</div>
-		<p>You can see that searching two times in a row for 'flowers' does
-		not increment the Ajax request count.</p>
-		<p>By toggling (hiding) the search result panel with the following "Toggle" link, 
-		and creating another search, you'll notice that the number of ajax requests stays the same.
-		However, when you toggle it (show it) again, an ajax request will be made.</p>
-		<p>This demonstrates that the searches are only performed when needed.</p>
-		<a href="javascript://" id='toggle'>Toggle</a>
+<div id='demo-html'>
+<form action='' id='searchForm'>
+  <input type='text' id='searchVal' 
+         placeholder="Enter Search Term"/>
+  <input type='submit' value='Search' />
+</form>
+<p>Search Results:</p>
+<div id='content'></div>
+<a href="javascript://" id='toggle'>
+  Toggle search results visibility.
+</a>
+<div id='count'>
+  Ajax Request Count: <span id='searchNum'>0</span>
+</div>
+</div>
 		
         
 		
-		
+		<script>
+			DEMO_HTML = document.getElementById('demo-html').innerHTML
+		</script>
 		<script type='text/javascript' 
                 src='../../steal/steal.js'>   
         </script>
-		<script type='text/javascript'>
-		  steal('srchr/search_result', 
-		  		'srchr/models/search.js',
-		  		'can/util/fixture',
-		  		function(SearchResult, Search, fixture){
-		  	
-		  	var currentSearch = can.compute();
-		  	
-		    SEARCHNUM = 0;
-  			var Google = can.Model({
-  				findAll: "/google"
-  			},{})
-  			
-  			fixture("/google",function(request){
-  				var results = [];
-				var length = parseInt( Math.random()*10+1 );
-				for(var i =0; i < length; i++){
-					results.push({
-						title : i+"th search result for "+request.data.query,
-						text : "foo bar baz",
-						href : "http://blah.com/"+i
-					})
-				}
-				SEARCHNUM++;
-				$("#searchNum").text(SEARCHNUM)
-				return results;
-  			});
+<script type='text/javascript' id='demo-source'>
+steal('srchr/search_result', 
+	'srchr/models/search.js',
+	'can/util/fixture',
+	function(SearchResult, Search, fixture){
 
-  			new SearchResult("#content",{
-  				modelType : Google,
-  				currentSearch: currentSearch
-  			})
-  			$("#searchForm").submit(function(ev){
-  				ev.preventDefault();
-  				currentSearch( new Search({
-  					query : $("#searchVal").val()
-  				} ) )
-  			})
-  			$("#toggle").click(function(){
-  				var c =  $("#content")
-  				if(c.is(":visible")){
-  					c.hide()
-  				}else{
-  					c.show();
-  					c.trigger("show")
-  				}
-  			})
-		  })
-			
-		</script>
+// setup Google model
+var SEARCHNUM = 0;
+var Google = can.Model({
+	findAll: "/google"
+},{})
+
+fixture("/google",function(request){
+	var results = [];
+	var length = parseInt( Math.random()*5+1 );
+	for(var i =0; i < length; i++){
+		results.push({
+			title : i+"th search result for "+request.data.query,
+			text : "foo bar baz",
+			href : "http://blah.com/"+i
+		})
+	}
+	SEARCHNUM++;
+	$("#searchNum").text(SEARCHNUM)
+	return results;
+});
+
+var currentSearch = can.compute();
+
+new SearchResult("#content",{
+	modelType : Google,
+	currentSearch: currentSearch
+});
+
+// update currentSearch when
+// user searches
+$("#searchForm").submit(function(ev){
+	ev.preventDefault();
+	currentSearch( new Search({
+		query : $("#searchVal").val()
+	} ) )
+});
+
+// toggle visiblity
+$("#toggle").click(function(){
+	var c =  $("#content")
+	if(c.is(":visible")){
+		c.hide()
+	}else{
+		c.show()
+		 .trigger("show")
+	}
+});
+	
+})
+	
+</script>
 	</body>
 </html>

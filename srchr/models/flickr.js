@@ -1,10 +1,19 @@
 steal('can', 'can/construct/super',function(can){
 	/**
 	 * @class srchr/models/flickr
-	 * @inherits can.Construct
+	 * @inherits can.Model
+	 * @test srchr/models/test.html
 	 * @parent index
 	 * 
+	 * Provides `Flickr.findAll(params, success(results))` to retrieve
+	 * Flickr images like:
 	 * 
+	 *     Flickr.findAll({query: "Cats"}, function(results){
+	 *       
+	 *     })
+	 * 
+	 * Make sure you update [srchr/models/flickr.apiKey Flikr.apiKey]
+	 * with your API key.
 	 */
 	return can.Model({
 		/**

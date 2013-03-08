@@ -7,9 +7,46 @@ steal('can',
 /**
  * @class srchr/search_result
  * @parent index
+ * @test srchr/search_result/test.html
  * @inherits can.Control
  * 
- * Shows the search results of a query.
+ * `new SearchResult(element, options)` show search results
+ * for a given model, but only when the current element is visible.
+ * 
+ *     var currentSearch = can.compute(new Search({
+ *       query: "Cats"
+ *     }))
+ *     
+ *     $("#google-results").hide()
+ *     
+ *     new SearchResult("#google-results",{
+ *       modelType: Google,
+ *       resultTemplate: can.view.ejs("<h2><%= title %></h2>"),
+ *       currentSearch: currentSearch
+ *     });
+ * 
+ *     $("#google-results").trigger("show").show()
+ * 
+ * @demo srchr/search_result/search_result.html
+ * 
+ * 
+ * @param {HTMLElement} element the element to show results within.
+ * @param {Object} options An object of the following options:
+ * 
+ * #### modelType `can.Model`
+ * 
+ * A [can.Model] with a `.findAll` method that can be used to retrieve 
+ * the search results.
+ * 
+ * #### resultTemplate `can.view`
+ * 
+ * A template that is passed an individual instance of the search 
+ * results.  The template should provide the html for that single instance.
+ * 
+ * ### currentSearch `can.compute`
+ * 
+ * The current search that should be performed.
+ * 
  */
 return can.Control(
 /* @static */

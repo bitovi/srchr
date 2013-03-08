@@ -1,5 +1,19 @@
 steal('can', 'can/construct/super',function(can){
 	
+	/**
+	 * @class srchr/models/reddit
+	 * @inherits can.Model
+	 * @test srchr/models/test.html
+	 * @parent index
+	 * 
+	 * Provides `Reddit.findAll(params, success(results))` to retrieve
+	 * Reddit images like:
+	 * 
+	 *     Reddit.findAll({query: "Cats"}, function(results){
+	 *       
+	 *     })
+	 * 
+	 */
 	return can.Model({
 		findAll : function(params){
 			return $.ajax({

@@ -23,7 +23,7 @@ return can.Control(
 		defaultText : "Search for things here",
 		modelNames: ['Twitter','Upcoming','Flickr']
 	},
-	pluginName: 'srchr-search',
+	pluginName: 'srchr-search'
 	
 },
 /* @prototype */

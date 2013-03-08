@@ -1,6 +1,39 @@
 steal('can','can/util/object', function( can, Object ) {
 	
+	/**
+	 * @class srchr/models/history
+	 * @inherits can.Model
+	 * @test srchr/models/test.html
+	 * @parent index
+	 * 
+	 * Provides a History model that allows data to be saved and retrieved from
+	 * localStorage.  Example:
+	 * 
+	 *     // Create a new item
+	 *     var history = new History({query: "cats", types: ["big"]});
+	 *     // save it
+	 *     history.save();
+	 * 
+	 *     // change a property and save it back
+	 *     history.attr("types").push("lolz")
+	 *     history.save()
+	 * 
+	 *     // destroy it
+	 *     history.destroy()
+	 *    
+	 *     
+	 *     // get all items from localStorage
+	 *     History.findAll({}, function(items){
+	 *         
+	 *     })
+	 * 
+	 * 
+	 * 
+	 */
 	return  can.Model({
+		/**
+		 * The name of the localStorage property used to store instances of this model.
+		 */
 		localStoreName: "search-history-store",
 		id: "query",
 		localStore: function( cb ) {
