@@ -10,11 +10,50 @@ steal(
  * @class srchr/search
  * @parent index
  * @inherits can.Control
+ * @test srchr/search/test.html
  *  
- * Creates a form to search with, as well as 
- * defining a search type (Model).
+ * `new SearchControl(element, options)` 
+ * listens to a search form being submitted and 
+ * updates `currentSearch` with a new
+ * [srchr/models/search Search] instance.
+ *  
+ * If another module (ex: [srchr/history]) changes
+ * `currentSearch`, `SearchControl` will update
+ * the search form accordingly.
+ * 
+ * Other features of `SearchControl` include:
+ * 
+ *  - basic placeholder functionality
+ *  - search validation
+ * 
+ * Example:
+ * 
+ *     var currentSearch = can.compute();
+ * 
+ *     new SearchControl("#search",{
+ *       currentSearch: currentSearch,
+ *       defaultText: "Enter search text",
+ *       modelNames: ["Google","Facebook"]
+ *     })
+ * 
+ * @demo srchr/search/search.html
  * 
  * 
+ * @param {HTMLElement} element the element to show results within.
+ * @param {Object} options An object of the following options:
+ * 
+ * #### defaultText `{String}`
+ * 
+ * A [can.Model] with a `.findAll` method that can be used to retrieve 
+ * the search results.
+ * 
+ * #### modelNames `{Array.<String>}`
+ * 
+ * An array of model names to use as the checkbox values.
+ * 
+ * ### currentSearch `{can.compute}`
+ * 
+ * The current search that should be performed.
  */
 return can.Control(
 /* @static */
@@ -62,7 +101,7 @@ return can.Control(
 			ok = true;
 		
 		// If no search type was selected, flash the .options UL and don't trigger search.created
-		if(!search.types){
+		if(!search.types || !search.types.length){
 			this.flash(this.element.find('.options'));
 			ok = false;
 		}
