@@ -1,13 +1,13 @@
-steal('./search_result.js',
+steal('./list.js',
 	'funcunit', 
 	'can/util/fixture',
-	function(SearchResult, S, fixture){
+	function(List, S, fixture){
 	
-	module("srchr/search_result",{
+	module("ui/list",{
 		setup: function(){
 			var self = this;
 			
-			this.currentSearch = can.compute();
+			this.params = can.compute();
 		  	
 		    this.searches = 0;
   			var Google = can.Model({
@@ -26,9 +26,9 @@ steal('./search_result.js',
 				return results;
   			});
 			$("<div id='content'/>").appendTo("#qunit-test-area");
-  			new SearchResult("#content",{
+  			new List("#content",{
   				modelType : Google,
-  				currentSearch: this.currentSearch
+  				params: this.params
   			})
   			
 		},
@@ -38,9 +38,8 @@ steal('./search_result.js',
 	})
 	
 	test("results shown", function(){
-		this.currentSearch({
-			query: "Cats",
-			types: ["Srchr.Models.Flickr"]
+		this.params({
+			query: "Cats"
 		} );
 		
 		S("#content li.result").exists("results have been shown");
@@ -49,9 +48,8 @@ steal('./search_result.js',
 	test("results not retrieved when hidden", function(){
 		$("#content").hide();
 		
-		this.currentSearch( {
-			query: "Cats",
-			types: ["Srchr.Models.Flickr"]
+		this.params( {
+			query: "Cats"
 		} );
 		var self = this;
 		
@@ -65,9 +63,8 @@ steal('./search_result.js',
 	test("results retrieved when shown",function(){
 		$("#content").hide();
 		
-		this.currentSearch({
-			query: "Cats",
-			types: ["Srchr.Models.Flickr"]
+		this.params({
+			query: "Cats"
 		} );
 		
 		var self = this;

@@ -1,7 +1,8 @@
 steal('can',
 	'./results.ejs',
-	'./search_result.less',
-	function(can, resultsEJS){
+	'can/util/object',
+	'./list.less',
+	function(can, resultsEJS, object){
 	
 /**
  * @class srchr/search_result
@@ -12,7 +13,7 @@ steal('can',
  * `new SearchResult(element, options)` show search results
  * for a given model, but only when the current element is visible.
  * 
- *     var currentSearch = can.compute({
+ *     var params = can.compute({
  *       query: "Cats"
  *     })
  *     
@@ -21,7 +22,7 @@ steal('can',
  *     new SearchResult("#google-results",{
  *       modelType: Google,
  *       resultTemplate: can.view.ejs("<h2><%= title %></h2>"),
- *       currentSearch: currentSearch
+ *       params: params
  *     });
  * 
  *     $("#google-results").trigger("show").show()
@@ -42,7 +43,7 @@ steal('can',
  * A template that is passed an individual instance of the search 
  * results.  The template should provide the html for that single instance.
  * 
- * ### currentSearch `can.compute`
+ * ### params `can.compute`
  * 
  * The current search that should be performed.
  * 
@@ -51,9 +52,9 @@ return can.Control(
 /* @static */
 {
 	defaults: {
-		resultTemplate : "//srchr/search_result/result.ejs"
+		resultTemplate : "//ui/list/result.ejs"
 	},
-	pluginName: 'srchr-search-result'
+	pluginName: 'ui-list'
 },
 /* @prototype */
 {	
@@ -70,7 +71,7 @@ return can.Control(
 	 * @param {Object} ev The event that was called.
 	 * @param {Object} searchInst The search instance to get results for.
 	 */
-	"{currentSearch} change": function(curSearch, ev, newValue){
+	"{params} change": function(curSearch, ev, newValue){
 		if (this.element.is(':visible')){
 			this.getResults();
 		}
@@ -85,24 +86,24 @@ return can.Control(
 	 */
 	getResults: function(){
 		// If we have a search...
-		var currentSearch = this.options.currentSearch()
-		if (currentSearch){
+		var params = this.options.params()
+		if (params){
 			
 			// and our search is new ...
-			if(this.searched != currentSearch.query){
+			if( !object.same(this.oldParams, params) ){
 				// and set a callback to render the results.
 				var searching = this.options.searching;
 				searching(true)
 				
 				var deferredItems = this.options.modelType.findAll(
-						{query: currentSearch.query}, 
+						params, 
 						function(){
 							searching(false)
 						})
 						
 				this.options.list.replace( deferredItems );
 				
-				this.searched = currentSearch.query;
+				this.oldParams = params;
 			}
 			
 		}

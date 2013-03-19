@@ -1,4 +1,4 @@
-steal("srchr/tabs","funcunit",function(Tabs, S){
+steal("./tabs.js","funcunit",function(Tabs, S){
 	
 var tabsHTML ="<ul id='resultsTab'>\
 	<li><a href='#flickr'>Flickr</a></li>\
@@ -10,7 +10,7 @@ var tabsHTML ="<ul id='resultsTab'>\
 <div id='yahoo' class='tab'>two</div>";
 
 
-	module("srchr/tabs",{
+	module("ui/tabs",{
 		setup : function(){
 			$("#qunit-test-area").html(tabsHTML);
 			this.flickrLI = $("#resultsTab li:eq(0)");

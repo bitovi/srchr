@@ -40,9 +40,9 @@
                 src='../../steal/steal.js'>   
         </script>
 <script type='text/javascript' id='demo-source'>
-steal('srchr/search_result', 
+steal('ui/list', 
 	'can/util/fixture',
-	function(SearchResult, fixture){
+	function(List, fixture){
 
 // setup Google model
 var SEARCHNUM = 0;
@@ -65,20 +65,20 @@ fixture("/google",function(request){
 	return results;
 });
 
-var currentSearch = can.compute();
+var params = can.compute();
 
-new SearchResult("#content",{
+new List("#content",{
 	modelType : Google,
-	currentSearch: currentSearch
+	params: params
 });
 
 // update currentSearch when
 // user searches
 $("#searchForm").submit(function(ev){
 	ev.preventDefault();
-	currentSearch({
+	params({
 		query : $("#searchVal").val()
-	} )
+	})
 });
 
 // toggle visiblity

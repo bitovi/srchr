@@ -7,7 +7,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 		 	new Search('#content', {currentSearch: this.currentSearch});
 		},
 		teardown: function () {
-			$("#content").remove();
+			//$("#content").remove();
 		}
 	});
 	
@@ -19,14 +19,14 @@ steal("funcunit", 'srchr/search', function(S, Search){
 		
 		S('input[type=checkbox]').click( function(){		
 			ok($('input[name=query]').val(), 'Text field is filled!')
-			ok($('input[name=query]').hasClass('blurred'), 'Clicked query box is grayed out')
+			ok($('input[name=query]').hasClass('placeholder'), 'Clicked query box is grayed out')
 		})
 	});
 	
 	
 	test("Selected search box is not blurred and is empty", function(){		
 		S('input[name=query]').click({}, function(){
-			ok(!$('input[name=query]').hasClass('blurred'), 'Clicked query box is not grayed out')
+			ok(!$('input[name=query]').hasClass('placeholder'), 'Clicked query box is not grayed out')
 		})
 	});
 	

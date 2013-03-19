@@ -1,7 +1,7 @@
 steal('can','./tabs.less', function(can) {
 
 	/**
-	 * @class srchr/tabs
+	 * @class ui/tabs
 	 * @parent index
 	 * @inherits can.Control
 	 * @test srchr/tabs/test.html

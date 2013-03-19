@@ -1,6 +1,6 @@
 <ul>
-<% if( searching() && currentSearch() ) { %>
-	<li>Searching for <%= currentSearch().query %></li>
+<% if( searching() && params() ) { %>
+	<li>Searching for <%= params().query %></li>
 <% } else if(list.attr('length')) { %>
 	<%list.each(function(item){%>
 		<li class='result'>
@@ -9,8 +9,8 @@
 				resultTemplate.render(item) %>
 		</li>
 	<%})%>
-<%} else if(currentSearch()){ %>
-	<li>No data found for <%= currentSearch().query %></li>
+<%} else if(params() && params().query){ %>
+	<li>No data found for <%= params().query %></li>
 <%} else {%>
 	<li>Please search above.</li>
 <% } %>

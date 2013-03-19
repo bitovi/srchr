@@ -1,9 +1,10 @@
 steal(
 	"can",
 	"./init.ejs",
+	'ui/placeholder',
 	'jquery/dom/form_params',
 	'./search.less',
-	function(can, initEJS){
+	function(can, initEJS, Placeholder){
 
 /**
  * @class srchr/search
@@ -70,6 +71,9 @@ return can.Control(
 	 */
 	init : function(){
 		this.element.html(initEJS(this.options));
+		new Placeholder("#query",{
+			placeholder: this.options.defaultText
+		})
 	},
 	
 	/**
@@ -115,30 +119,6 @@ return can.Control(
 			this.options.currentSearch(search);
 		}	
 	},
-	
-	/**
-	 * Binds on the search box for when it is focused.  Removes the blurred class and removes the default text.
-	 * @param {Object} el The event target element.
-	 * @param {Object} ev The event being fired.
-	 */
-	"input[type=text] focusin" : function(el, ev){
-		if(el.val() == this.options.defaultText){
-			el.val("");
-		}
-		el.removeClass('blurred');
-	},
-	
-	/**
-	 * Binds on the search box for when it is blurred.  Adds the blurred class and inputs the default text if none was provided by the user.
-	 * @param {Object} el The event target element.
-	 * @param {Object} ev The event being fired.
-	 */
-	"input[type=text] focusout" : function(el, ev){
-		if(el.val() === ""){
-			el.val(this.options.defaultText).addClass('blurred');
-		}
-	},
-	
 	/**
 	 * Focuses on the search query box on page load.
 	 */
