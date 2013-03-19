@@ -4,7 +4,7 @@ steal('can','./tabs.less', function(can) {
 	 * @class ui/tabs
 	 * @parent index
 	 * @inherits can.Control
-	 * @test srchr/tabs/test.html
+	 * @test ui/tabs/test.html
 	 * 
 	 * A Tabs widget for showing and hiding content. Given
 	 * content like:
@@ -28,7 +28,7 @@ steal('can','./tabs.less', function(can) {
 	 * Notice that each `li` should have an `href` that points to an id of 
 	 * the tab content to be shown.
 	 * 
-	 * @demo srchr/tabs/tabs.html
+	 * @demo ui/tabs/tabs.html
 	 * 
 	 * @param {HTMLElement} element The element to create the tab on.
 	 * @param {Object} options A object of option name-value pairs. The

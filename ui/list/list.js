@@ -5,13 +5,14 @@ steal('can',
 	function(can, resultsEJS, object){
 	
 /**
- * @class srchr/search_result
+ * @class ui/list
  * @parent index
- * @test srchr/search_result/test.html
+ * @test ui/list/test.html
  * @inherits can.Control
  * 
- * `new SearchResult(element, options)` show search results
- * for a given model, but only when the current element is visible.
+ * `new List(element, options)` lists search results
+ * for a given model, but only when the current 
+ * element is visible.
  * 
  *     var params = can.compute({
  *       query: "Cats"
@@ -19,7 +20,7 @@ steal('can',
  *     
  *     $("#google-results").hide()
  *     
- *     new SearchResult("#google-results",{
+ *     new List("#google-results",{
  *       modelType: Google,
  *       resultTemplate: can.view.ejs("<h2><%= title %></h2>"),
  *       params: params
@@ -27,7 +28,7 @@ steal('can',
  * 
  *     $("#google-results").trigger("show").show()
  * 
- * @demo srchr/search_result/search_result.html
+ * @demo ui/list/list.html
  * 
  * 
  * @param {HTMLElement} element the element to show results within.
@@ -45,7 +46,7 @@ steal('can',
  * 
  * ### params `can.compute`
  * 
- * The current search that should be performed.
+ * The params that should be passed to `Model.findAll`.
  * 
  */
 return can.Control(

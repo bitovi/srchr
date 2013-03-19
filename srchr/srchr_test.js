@@ -1,9 +1,12 @@
 steal('funcunit',
+	'ui/tabs/tabs_test.js',
+	'ui/list/list_test.js',
+	'ui/placeholder/placeholder_test.js',
 	'srchr/history/history_test.js',
 	'srchr/models/models_test.js',
 	'srchr/search/search_test.js',
-	'srchr/search_result/search_result_test.js',
-	'srchr/tabs/tabs_test.js',
+	'srchr/results/results_test.js',
+	
 	function( S ) {
 
 
@@ -30,8 +33,8 @@ steal('funcunit',
 			ok(r.test(S("#history li.selected").text()), "we see dogs correctly");
 
 			// make sure flickr and everyone else is diabled
-			ok(S('#resultsTab li:contains(Flickr)').hasClass('disabled'), "Flickr is disabled.");
-			ok(S('#resultsTab li:contains(Google)').hasClass('disabled'), "Google is disabled.");
+			ok(S('#results li:contains(Flickr)').hasClass('disabled'), "Flickr is disabled.");
+			ok(S('#results li:contains(Google)').hasClass('disabled'), "Google is disabled.");
 		});
 
 
@@ -52,7 +55,7 @@ steal('funcunit',
 
 		})
 
-		S('#resultsTab li:contains(Twitter) a').exists().click(function() {
+		S('#results li:contains(Twitter) a').exists().click(function() {
 			equals(S('#Flickr').css('display'), 'none', 'Twitter results panel is hidden')
 			equals(S('#Twitter').css('display'), 'block', 'Flickr results panel is visible')
 		})
