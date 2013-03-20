@@ -5,7 +5,7 @@ steal(
 	'srchr/results',
 	'srchr/models',
 	'./srchr.less',
-	function( History, Search, Results, models, Tabs, templates){
+	function( History, Search, Results, models ){
 	
 	// don't run if rhino
 	if(steal.isRhino) return;
@@ -24,7 +24,7 @@ steal(
 	}
 	
 	// Create a new Search controller on the #searchArea element
-	new Search("#searchArea",{
+	new Search("#search",{
 		currentSearch: currentSearch,
 		modelNames: modelNames
 	});
