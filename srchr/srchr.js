@@ -3,9 +3,8 @@ steal(
 	'srchr/history',
 	'srchr/search',
 	'srchr/results',
-	'srchr/models',
 	'./srchr.less',
-	function( History, Search, Results, models ){
+	function( History, Search, Results ){
 	
 	// don't run if rhino
 	if(steal.isRhino) return;
@@ -18,15 +17,9 @@ steal(
 		currentSearch: currentSearch
 	});
 	
-	var modelNames = [];
-	for(var modelName in models){
-		modelNames.push(modelName)
-	}
-	
 	// Create a new Search controller on the #searchArea element
 	new Search("#search",{
-		currentSearch: currentSearch,
-		modelNames: modelNames
+		currentSearch: currentSearch
 	});
 	
 	new Results("#results",{
@@ -34,3 +27,9 @@ steal(
 	})
 	
 });
+
+
+
+
+
+

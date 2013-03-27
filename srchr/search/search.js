@@ -2,9 +2,10 @@ steal(
 	"can",
 	"./init.ejs",
 	'ui/placeholder',
+	'srchr/models',
 	'jquery/dom/form_params',
 	'./search.less',
-	function(can, initEJS, Placeholder){
+	function(can, initEJS, Placeholder, models){
 
 /**
  * @class srchr/search
@@ -32,8 +33,7 @@ steal(
  * 
  *     new SearchControl("#search",{
  *       currentSearch: currentSearch,
- *       defaultText: "Enter search text",
- *       modelNames: ["Google","Facebook"]
+ *       defaultText: "Enter search text"
  *     })
  * 
  * @demo srchr/search/search.html
@@ -46,10 +46,6 @@ steal(
  * 
  * The placeholder text.
  * 
- * #### modelNames `{Array.<String>}`
- * 
- * An array of model names to use as the checkbox values.
- * 
  * #### currentSearch `{can.compute}`
  * 
  * The current search that should be performed.
@@ -58,8 +54,7 @@ return can.Control(
 /* @static */
 {
 	defaults : {
-		defaultText : "Search for things here",
-		modelNames: ['Twitter','Upcoming','Flickr']
+		defaultText : "Search for things here"
 	},
 	pluginName: 'srchr-search'
 	
@@ -70,7 +65,11 @@ return can.Control(
 	 * Initialize a new instance of the Search controller.
 	 */
 	init : function(){
-		this.element.html(initEJS(this.options));
+		var modelNames = [];
+		for(var modelName in models){
+			modelNames.push(modelName)
+		}
+		this.element.html(initEJS({modelNames: modelNames}));
 		new Placeholder("#query",{
 			placeholder: this.options.defaultText
 		})
