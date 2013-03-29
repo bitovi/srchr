@@ -24,7 +24,7 @@ steal(
 	
 	new Results("#results",{
 		currentSearch: currentSearch
-	})
+	});
 	
 });
 

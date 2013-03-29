@@ -13,7 +13,7 @@ steal('srchr/results','funcunit', 'srchr/models',function( Results, S, Models ) 
 		 	new Results('#results', {currentSearch: this.currentSearch});
 		},
 		teardown: function(){
-			//$("#qunit-test-area").empty();
+			$("#qunit-test-area").empty();
 		}
 	});
 	

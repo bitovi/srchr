@@ -52,7 +52,7 @@ var tabsHTML ="<ul id='resultsTab'>\
 	});
 
 	
-	test('disabled without a search',function(){
+	test('disabled without any enabled content ids',function(){
 		var enabled  = can.compute([]);
 		new Tabs("#resultsTab",{
 			enabled: enabled
