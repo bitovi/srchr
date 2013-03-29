@@ -1,25 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-            "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>srchr.tabs</title>
-		<style>
-			.tab {
-				border: solid 1px black;
-			}
-			.disabled a{
-				color: gray;
-				text-decoration: none;
-			}
-			.active a {
-				color: orange;
-			}
-			ul.tabs {
-				margin-bottom: 20px;
-			}
-		</style>
-	</head>
-	<body>
+<head>
+<title>srchr.tabs</title>
+<style>
+	.tab { border: solid 1px black; }
+	ul.tabs { margin-bottom: 10px; }
+</style>
+</head>
+<body>
 <div id='demo-html'>
 <ul id='resultsTab'>
 	<li><a href='#flickr'>Flickr</a></li>
@@ -33,13 +21,13 @@
 
 <button id='enable'>Enable flickr and upcoming</button>
 </div>
-	<script>
-		DEMO_HTML = document.getElementById("demo-html").innerHTML
-	</script>
-		<script type='text/javascript' 
-                src='../../steal/steal.js'>
-        </script>
-		<script type='text/javascript' id='demo-source'>
+<script>
+DEMO_HTML = document.getElementById("demo-html").innerHTML
+</script>
+<script type='text/javascript' 
+        src='../../steal/steal.js'>
+</script>
+<script type='text/javascript' id='demo-source'>
 steal('ui/tabs', function(Tabs){
 
 	var enabled = can.compute(['flickr','yahoo'])
@@ -52,7 +40,6 @@ steal('ui/tabs', function(Tabs){
 		enabled(['flickr','upcoming'])
 	})
 })
-		</script>
-	
-	</body>
+</script>
+</body>
 </html>
