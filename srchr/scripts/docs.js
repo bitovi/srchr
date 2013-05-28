@@ -3,6 +3,8 @@
 load('steal/rhino/rhino.js');
 steal("documentjs", function(DocumentJS){
 	DocumentJS('srchr/srchr.html', {
-		markdown : ['srchr']
+		markdown: ['srchr'],
+		out: 'docs',
+		parent: 'srchr'
 	});
 });
