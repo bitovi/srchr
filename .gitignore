@@ -1,4 +1,4 @@
-srchr/docs*
+docs
 .project
 .pydevproject
 srchr/production.*
