@@ -1,4 +1,4 @@
-@page index Srchr
+@page srchr
 
 ## Srchr
 

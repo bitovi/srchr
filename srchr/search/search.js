@@ -8,8 +8,8 @@ steal(
 	function(can, initEJS, Placeholder, models){
 
 /**
- * @class srchr/search
- * @parent index
+ * @constructor srchr/search
+ * @parent srchr
  * @inherits can.Control
  * @test srchr/search/test.html
  *  

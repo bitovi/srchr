@@ -7,8 +7,8 @@ steal('can',
 
 
 	/**
-	 * @class srchr/history
-	 * @parent index
+	 * @constructor srchr/history
+	 * @parent srchr
 	 * @inherits can.Control
 	 * @test srchr/history/test.html
 	 * 

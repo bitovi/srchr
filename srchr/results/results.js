@@ -5,8 +5,8 @@ steal('can','./init.ejs',
 	'ui/tabs',
 	function(can, initView, models, templates, List, Tabs){
     /**
-     * @class srchr/results
-     * @parent index
+     * @constructor srchr/results
+     * @parent srchr
 	 * @alias Results  
 	 * @test srchr/results/test.html
 	 * @inherits can.Control

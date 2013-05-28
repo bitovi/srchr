@@ -4,8 +4,8 @@ steal('./flickr.js','./google.js',
 	function(Flickr, Google, Twitter, Wikipedia, Reddit){
 	
 	/**
-	 * @class srchr/models
-	 * @parent index
+	 * @constructor srchr/models
+	 * @parent srchr
 	 * 
 	 * Returns an object map of `ModelName : Model` pairs.
 	 * 

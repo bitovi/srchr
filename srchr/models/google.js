@@ -1,10 +1,10 @@
 steal('can', 'can/construct/super',function(can){
 	
 	/**
-	 * @class srchr/models/google
+	 * @constructor srchr/models/google
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent index
+	 * @parent srchr
 	 * 
 	 * Provides `Google.findAll(params, success(results))` to retrieve
 	 * Google images like:

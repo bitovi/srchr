@@ -1,10 +1,10 @@
 steal('can', 'can/construct/super',function(can){
 	
 	/**
-	 * @class srchr/models/reddit
+	 * @constructor srchr/models/reddit
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent index
+	 * @parent srchr
 	 * 
 	 * Provides `Reddit.findAll(params, success(results))` to retrieve
 	 * Reddit images like:

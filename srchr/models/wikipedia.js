@@ -1,10 +1,10 @@
 steal('can','can/construct/super',function(can){
 	
 	/**
-	 * @class srchr/models/wikipedia
+	 * @constructor srchr/models/wikipedia
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent index
+	 * @parent srchr
 	 * 
 	 * Provides `Wikipedia.findAll(params, success(results))` to retrieve
 	 * wikipedia results like:

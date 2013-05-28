@@ -1,9 +1,9 @@
 steal('can', 'can/construct/super',function(can){
 	/**
-	 * @class srchr/models/flickr
+	 * @constructor srchr/models/flickr
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent index
+	 * @parent srchr
 	 * 
 	 * Provides `Flickr.findAll(params, success(results))` to retrieve
 	 * Flickr images like:

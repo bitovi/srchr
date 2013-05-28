@@ -1,10 +1,10 @@
 steal('can','can/util/object', function( can, Object ) {
 	
 	/**
-	 * @class srchr/models/history
+	 * @constructor srchr/models/history
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent index
+	 * @parent srchr
 	 * 
 	 * Provides a History model that allows data to be saved and retrieved from
 	 * localStorage.  Example:
