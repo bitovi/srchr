@@ -15,6 +15,7 @@ steal('can','can/construct/super',function(can){
 	 * 
 	 */
 	return can.Model({
+		/* @static */
 		findAll: function(params){
 			return $.ajax({
 				url: "http://en.wikipedia.org/w/api.php",

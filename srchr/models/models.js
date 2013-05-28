@@ -15,6 +15,7 @@ steal('./flickr.js','./google.js',
 	 *     })
 	 */
 	return {
+		/* @static */
 		Flickr: Flickr,
 		Google: Google,
 		Twitter: Twitter,

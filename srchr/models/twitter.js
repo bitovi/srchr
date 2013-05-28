@@ -16,6 +16,7 @@ steal("can","can/construct/super",function(can){
 	 * 
 	 */
 	return can.Model({
+		/* @static */
 		findAll : function(params, success, error){
 			return $.ajax({
 				url : "http://search.twitter.com/search.json",
