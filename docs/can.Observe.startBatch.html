@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptMVC - startBatch </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading">
+	
+		
+
+		
+			<li class="search-container active parent">
+				<a href="index.html" data-search="srchr">
+					srchr
+				</a>
+			</li>
+			
+				<li class="search-container">
+					<a href="srchr|history.html" data-search="srchr/history">
+						srchr/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models.html" data-search="srchr/models">
+						srchr/models
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
+						srchr/models/flickr
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|google.html" data-search="srchr/models/google">
+						srchr/models/google
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|history.html" data-search="srchr/models/history">
+						srchr/models/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
+						srchr/models/reddit
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+						srchr/models/twitter
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
+						srchr/models/wikipedia
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|results.html" data-search="srchr/results">
+						srchr/results
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|search.html" data-search="srchr/search">
+						srchr/search
+					</a>
+				</li>
+			
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>function</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			
+		
+		
+	</ul>
+</div>
+
+<h1>
+startBatch
+
+	
+		<span class="module">can.Observe.startBatch</span>
+	
+
+
+</h1>
+
+<span class="inherits">&nbsp;</span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			<p>Begin an event batch. </p>
+		</section>
+
+		
+		<section class="signature">
+			<h2>startBatch([batchStopHandler])</h2>
+
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>batchStopHandler <code>{function()}</code><span class="pull-right optional">Optional</span></h4>
+			<div class="description">
+				<p><p>a callback that gets called after all batched events have been called</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<p><code>startBatch</code> causes can.Observe to begin an event batch. Until <code><a href="can.Observe.stopBatch.html">can.Observe.stopBatch</a></code> is called, any
+events that would result from calls to <code><a href="can.Observe.prototype.attr.html">attr</a></code> are held back from firing. If you have
+lots of changes to make to can.Observes, batching them together can help performance &emdash; especially if
+those can.Observes are live-bound to the DOM.</p>
+
+<p>In this example, you can see how the <em>first</em> and <em>change</em> events are not fired (and their handlers
+are not called) until <code>stopBatch</code> is called.</p>
+
+<pre><code class="lang-javascript">var person = new can.Observe({
+    first: 'Alexis',
+    last: 'Abril'
+});
+
+person.bind('first', function() {
+    console.log("First name changed."");
+}).bind('change', function() {
+    console.log("Something changed.");
+});
+
+can.Observe.startBatch();
+person.attr('first', 'Alex');
+console.log('Still in the batch.');
+can.Observe.stopBatch();
+
+// the log has:
+// Still in the batch.
+// First name changed.
+// Something changed.</code></pre>
+
+<p>You can also pass a callback to <code>startBatch</code> which will be called after all the events have
+been fired:</p>
+
+<pre><code class="lang-javascript">can.Observe.startBatch(function() {
+    console.log('The batch is over.');
+});
+person.attr('first', 'Izzy');
+console.log('Still in the batch.');
+can.Observe.stopBatch();
+
+// The console has:
+// Still in the batch.
+// First name changed.
+// Something changed.
+// The batch is over.</code></pre>
+
+<h2>Calling <code>startBatch</code> multiple times</h2>
+
+<p>If you call <code>startBatch</code> more than once, <code>stopBatch</code> needs to be called
+the same number of times before any batched events will fire. For ways
+to circumvent this process, see <a href="can.Observe.stopBatch.html">can.Observe.stopBatch</a>.</p>
+
+<p>Here is an example that demonstrates how events are affected by calling
+<code>startBatch</code> multiple times.</p>
+
+<pre><code class="lang-javascript">var addPeople = function(observable) {
+    can.Observe.startBatch();
+    observable.attr('a', 'Alice');
+    observable.attr('b', 'Bob');
+    observable.attr('e', 'Eve');
+    can.Observe.stopBatch();
+};
+
+// In a completely different place:
+var list = new can.Observe();
+list.bind('change', function() {
+    console.log('The list changed.');
+});
+
+can.Observe.startBatch();
+addPeople(list);
+console.log('Still in the batch.');
+
+// Here, the console has:
+// Still in the batch.
+
+can.Observe.stopBatch();
+
+// Here, the console has:
+// Still in the batch.
+// The list changed.
+// The list changed.
+// The list changed.</code></pre>     
+		</section>
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+	</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+		<script type="text/javascript" src="./resources/shared.min.js"></script>
+	
+	<script type="text/javascript" src="./resources/app.js"></script>
+	<!--[if lt IE 9]>
+   	<script type="text/javascript">
+   	$(function() {
+   		Bitovi.OSS.redrawFont();
+   	});
+   	</script>
+    <!--<![endif]-->
+</body>
+
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptMVC - attr </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading">
+	
+		
+
+		
+			<li class="search-container active parent">
+				<a href="index.html" data-search="srchr">
+					srchr
+				</a>
+			</li>
+			
+				<li class="search-container">
+					<a href="srchr|history.html" data-search="srchr/history">
+						srchr/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models.html" data-search="srchr/models">
+						srchr/models
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
+						srchr/models/flickr
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|google.html" data-search="srchr/models/google">
+						srchr/models/google
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|history.html" data-search="srchr/models/history">
+						srchr/models/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
+						srchr/models/reddit
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+						srchr/models/twitter
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
+						srchr/models/wikipedia
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|results.html" data-search="srchr/results">
+						srchr/results
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|search.html" data-search="srchr/search">
+						srchr/search
+					</a>
+				</li>
+			
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>function</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			
+		
+		
+	</ul>
+</div>
+
+<h1>
+attr
+
+	
+		<span class="module">can.Observe.prototype.attr</span>
+	
+
+
+</h1>
+
+<span class="inherits">&nbsp;</span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			<p>Get or set properties on an Observe. </p>
+		</section>
+
+		
+		<section class="signature">
+			<h2>attr()</h2>
+<p>Gets a collection of all the properties in this <code>can.Observe</code>.</p>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{Object}</code></h4>
+		<div class="description">
+			<p>an object with all the properties in this <code>can.Observe</code>.</p>
+		</div>
+	</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>attr(key)</h2>
+<p>Reads a property from this <code>can.Observe</code>.</p>
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>key <code>{String}</code></h4>
+			<div class="description">
+				<p><p>the property to read</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{*}</code></h4>
+		<div class="description">
+			<p>the value assigned to <em>key</em>.</p>
+		</div>
+	</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>attr(key, value)</h2>
+<p>Assigns <em>value</em> to a property on this <code>can.Observe</code> called <em>key</em>.</p>
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>key <code>{String}</code></h4>
+			<div class="description">
+				<p><p>the property to set</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>the <code>{*}</code></h4>
+			<div class="description">
+				<p><p>value to assign to <em>key</em>.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{can.Observe}</code></h4>
+		<div class="description">
+			<p>this Observe, for chaining</p>
+		</div>
+	</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>attr(obj[, removeOthers])</h2>
+<p>Assigns each value in <em>obj</em> to a property on this <code>can.Observe</code> named after the
+corresponding key in <em>obj</em>, effectively merging <em>obj</em> into the Observe.</p>
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>obj <code>{Object}</code></h4>
+			<div class="description">
+				<p><p>a collection of key-value pairs to set.
+If any properties already exist on the <code>can.Observe</code>, they will be overwritten.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>removeOthers <code>{bool}</code><span class="pull-right optional">Optional</span></h4>
+			<div class="description">
+				<p><p>whether to remove keys not present in <em>obj</em>.
+To remove keys without setting other keys, use <code><a href="can.Observe.prototype.removeAttr.html">removeAttr</a></code>.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{can.Observe}</code></h4>
+		<div class="description">
+			<p>this Observe, for chaining</p>
+		</div>
+	</div>
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<p><code>attr</code> gets or sets properties on the <code>can.Observe</code> it's called on. Here's a tour through
+how all of its forms work:</p>
+
+<pre><code class="lang-javascript">var people = new can.Observe({});
+
+// set a property:
+people.attr('a', 'Alex');
+
+// get a property:
+people.attr('a'); // 'Alex'
+
+// set and merge multiple properties:
+people.attr({
+    a: 'Alice',
+    b: 'Bob'
+});
+
+// get all properties:
+people.attr(); // {a: 'Alice', b: 'Bob'}
+
+// set properties while removing others:
+people.attr({
+    b: 'Bill',
+    e: 'Eve'
+}, true);
+
+people.attr(); // {b: 'Bill', e: 'Eve'}</code></pre>
+
+<h2>Deep properties</h2>
+
+<p><code>attr</code> can also set and read deep properties. All you have to do is specify
+the property name as you normally would if you weren't using <code>attr</code>.</p>
+
+<pre><code class="lang-javascript">var people = new can.Observe({names: {}});
+
+// set a property:
+people.attr('names.a', 'Alice');
+
+// get a property:
+people.attr('names.a'); // 'Alice'
+people.names.attr('a'); // 'Alice'
+
+// get all properties:
+people.attr(); // {names: {a: 'Alice'}}</code></pre>
+
+<p>Objects that are added to Observes become Observes themselves behind the scenes,
+so changes to deep properties fire events at each level, and you can bind at any
+level. As this example shows, all the same events are fired no matter what level
+you call <code>attr</code> at:</p>
+
+<pre><code class="lang-javascript">var people = new can.Observe({names: {}});
+
+people.bind('change', function(ev, attr, how, newVal, oldVal) {
+  console.log('people change: ' + attr + ', ' + how + ', ' + newVal + ', ' + oldVal);
+});
+
+people.names.bind('change', function(ev, attr, how, newVal, oldVal) {
+   console.log('people.names change' + attr + ', ' + how + ', ' + newVal + ', ' + oldVal);
+});
+
+people.bind('names', function(ev, newVal, oldVal) {
+    console.log('people names: ' + newVal + ', ' + oldVal);
+});
+
+people.names.bind('a', function(ev, newVal, oldVal) {
+    console.log('people.names a: ' + newVal + ', ' + oldVal);
+});
+
+people.bind('names.a', function(ev, newVal, oldVal) {
+    console.log('people names.a: ' + newVal + ', ' + oldVal);
+});
+
+people.attr('names.a', 'Alice'); // people change: names.a, add, Alice, undefined
+                                 // people.names change: a, add, Alice, undefined
+                                 // people.names a: Alice, undefined
+                                 // people names.a: Alice, undefined
+
+people.names.attr('b', 'Bob');   // people change: names.b, add, Bob, undefined
+                                 // people.names change: b, add, Bob, undefined
+                                 // people.names b: Bob, undefined
+                                 // people names.b: Bob, undefined</code></pre>
+
+<h2>See also</h2>
+
+<p>For information on the events that are fired on property changes and how
+to listen for those events, see <a href="can.Observe.prototype.bind.html">bind</a>.</p>
+		</section>
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+	</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+		<script type="text/javascript" src="./resources/shared.min.js"></script>
+	
+	<script type="text/javascript" src="./resources/app.js"></script>
+	<!--[if lt IE 9]>
+   	<script type="text/javascript">
+   	$(function() {
+   		Bitovi.OSS.redrawFont();
+   	});
+   	</script>
+    <!--<![endif]-->
+</body>
+
+</html>

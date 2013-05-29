@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptMVC  - can.compute</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading">
+	
+		
+
+		
+			<li class="search-container active parent">
+				<a href="index.html" data-search="srchr">
+					srchr
+				</a>
+			</li>
+			
+				<li class="search-container">
+					<a href="srchr|history.html" data-search="srchr/history">
+						srchr/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models.html" data-search="srchr/models">
+						srchr/models
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
+						srchr/models/flickr
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|google.html" data-search="srchr/models/google">
+						srchr/models/google
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|history.html" data-search="srchr/models/history">
+						srchr/models/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
+						srchr/models/reddit
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+						srchr/models/twitter
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
+						srchr/models/wikipedia
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|results.html" data-search="srchr/results">
+						srchr/results
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|search.html" data-search="srchr/search">
+						srchr/search
+					</a>
+				</li>
+			
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>constructor</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			
+		
+		
+	</ul>
+</div>
+
+<h1>
+can.compute
+
+
+</h1>
+
+<span class="inherits">&nbsp;</span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			
+		</section>
+
+		
+		<section class="signature">
+			<h2>can.compute(getterSetter[, context])</h2>
+
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>getterSetter <code>{function()}</code></h4>
+			<div class="description">
+				<p><p>A function that gets and optionally sets the value of the compute.
+When called with no parameters, <em>getterSetter</em> should return the current value of the compute. When
+called with a single parameter, <em>getterSetter</em> should arrange things so that the next read of the compute
+produces that value.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>context <code>{Object}</code><span class="pull-right optional">Optional</span></h4>
+			<div class="description">
+				<p><p>The context to use when evaluating the compute.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{can.compute}</code></h4>
+		<div class="description">
+			<p>A new compute.</p>
+		</div>
+	</div>
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<p><code>can.compute</code> lets you make observable values. A compute is actually a function that returns
+the computed value, but you can also use the compute to set the value and you can use
+<code>bind</code> to listen to changes in the compute's return value. In this way, computes are similar
+to <a href="can.Observe.html">Observes</a>, but they represent a single value rather than a collection of values.</p>
+
+<h2>Working with computes</h2>
+
+<p>The simplest way to use a compute is to have it store a single value, and to set it when
+that value needs to change:</p>
+
+<pre><code class="lang-javascript">var tally = can.compute(12);
+tally(); // 12
+
+tally(13);
+tally(); // 13</code></pre>
+
+<p>This is useful for making observable values, but the real power of <code>can.compute</code> reveals
+itself when you combine it with <code><a href="can.Observe.html">can.Observe</a></code>. If you use a compute that derives its
+value from properties of an Observe, the compute will listen for changes in those
+properties and automatically recalculate itself, emitting a <em>change</em> event if its value
+changes.</p>
+
+<p>As this example shows, this kind of compute rarely has need to be set directly:</p>
+
+<pre><code class="lang-javascript">var person = new can.Observe({
+    firstName: 'Alice',
+    lastName: 'Liddell'
+});
+
+var fullName = can.compute(function() {
+    return person.attr('firstName') + ' ' + person.attr('lastName');
+});
+fullName.bind('change', function(ev, newVal, oldVal) {
+    console.log("This person's full name is now " + newVal + '.');
+});
+
+person.attr('firstName', 'Allison'); // The log reads:
+                                     // "This person's full name is now Allison Liddell."</code></pre>
+
+<p>Take special notice of how the definition of the compute uses <code><a href="can.Observe.prototype.attr.html">attr</a></code>
+to read the values of the properties of <code>person</code>. This is how the compute knows to listen
+for changes. and is similar to the need to use <code>attr</code> when live-binding properties of Observes into
+<code><a href="can.EJS.html">EJS</a></code> templates.</p>
+
+<p>A specific use for bound computes like this is to provide a way to work with values of Observable
+properties in different units:</p>
+
+<pre><code class="lang-javascript">var wall = new can.Observe({
+    material: 'brick',
+    length: 10 // in feet
+});
+
+var wallLengthInMeters = can.compute(function(lengthInM) {
+    if(lengthInM !== undefined) {
+        wall.attr('length', lengthInM / 3.28084);
+    } else {
+        return wall.attr('length') * 3.28084;
+    }
+});
+
+wallLengthInMeters(); // 3.048
+
+// When you set the compute...
+wallLengthInMeters(5);
+wallLengthInMeters(); // 5
+// ...the original Observe changes too.
+wall.length;          // 16.4042</code></pre>
+
+<h2>Events</h2>
+
+<p>When a compute's value is changed, it emits a <em>change</em> event. You can listen for this change
+event by using <code><a href="can.compute.bind.html">bind</a></code> to bind an event handler to the compute:</p>
+
+<pre><code class="lang-javascript">var tally = can.compute(0);
+tally.bind('change', function(ev, newVal, oldVal) {
+    console.log('The tally is now at ' + newVal + '.');
+});
+
+tally(tally() + 5); // The log reads:
+                    // 'The tally is now at 5.'</code></pre>
+
+<h2>Using computes to build Controls</h2>
+
+<p>It's a piece of cake to build a <code><a href="can.Control.html">can.Control</a></code> off of the value of a compute. And since computes
+are observable, it means that the view of that Control will update itself whenever the value
+of the compute updates. Here's a simple slider that works off of a compute:</p>
+
+<pre><code class="lang-javascript">var project = new Observe({
+    name: 'A Very Important Project',
+    percentDone: .35
+});
+
+can.Control('SimpleSlider', { }, {
+    init: function() {
+        this.element.html(can.view(this.options.view, this.options));
+    },
+    '.handle dragend': function(el, ev) {
+        var percent = this.calculateSliderPercent();
+        // set the compute's value
+        this.options.percentDone(percent);
+    },
+    '{percentDone} change': function(ev, newVal, oldVal) {
+       // react to the percentage changing some other way
+        this.moveSliderTo(newVal);
+    }
+    // Implementing calculateSliderPercent and moveSliderTo
+    // has been left as an exercise for the reader.
+});
+
+new SimpleSlider('#slider', {percentDone: project.compute('percentDone')});</code></pre>
+
+<p>Now that's some delicious cake. More information on Controls can be found under <code><a href="can.Control.html">can.Control</a></code>.
+There is also a full explanation of can.Observe's <code><a href="can.Observe.prototype.compute.html">compute</a></code>,
+which is used in the last line of the example above.</p>
+		</section>
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+	</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+		<script type="text/javascript" src="./resources/shared.min.js"></script>
+	
+	<script type="text/javascript" src="./resources/app.js"></script>
+	<!--[if lt IE 9]>
+   	<script type="text/javascript">
+   	$(function() {
+   		Bitovi.OSS.redrawFont();
+   	});
+   	</script>
+    <!--<![endif]-->
+</body>
+
+</html>

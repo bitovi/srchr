@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptMVC - models </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading">
+	
+		
+
+		
+			<li class="search-container active parent">
+				<a href="index.html" data-search="srchr">
+					srchr
+				</a>
+			</li>
+			
+				<li class="search-container">
+					<a href="srchr|history.html" data-search="srchr/history">
+						srchr/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models.html" data-search="srchr/models">
+						srchr/models
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
+						srchr/models/flickr
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|google.html" data-search="srchr/models/google">
+						srchr/models/google
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|history.html" data-search="srchr/models/history">
+						srchr/models/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
+						srchr/models/reddit
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+						srchr/models/twitter
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
+						srchr/models/wikipedia
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|results.html" data-search="srchr/results">
+						srchr/results
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|search.html" data-search="srchr/search">
+						srchr/search
+					</a>
+				</li>
+			
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>function</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			
+		
+		
+	</ul>
+</div>
+
+<h1>
+models
+
+	
+		<span class="module">can.Model.models</span>
+	
+
+
+</h1>
+
+<span class="inherits">&nbsp;</span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			<p>Convert raw data into can.Model instances. </p>
+		</section>
+
+		
+		<section class="signature">
+			<h2>models(data[, oldList])</h2>
+
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>data <code>{Array}</code></h4>
+			<div class="description">
+				<p><p>The raw data from a <code><a href="can.Model.findAll.html">findAll()</a></code> request.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>oldList <code>{can.Model.List}</code><span class="pull-right optional">Optional</span></h4>
+			<div class="description">
+				<p><p>If supplied, this List will be updated with the data from
+<strong>data</strong>.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{can.Model.List}</code></h4>
+		<div class="description">
+			<p>A List of Models made from the raw data.</p>
+		</div>
+	</div>
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<p><code>can.Model.models(data, xhr)</code> is used to 
+convert the raw response of a <a href="can.Model.findAll.html">can.Model.findAll</a> request 
+into a <a href="can.Model.List.html">can.Model.List</a> of model instances.  </p>
+
+<p>This method is rarely called directly. Instead the deferred returned
+by findAll is piped into <code>models</code>.  This creates a new deferred that
+resolves to a <a href="can.Model.List.html">can.Model.List</a> of instances instead of an array of
+simple JS objects.</p>
+
+<p>If your server is returning data in non-standard way,
+overwriting <code>can.Model.models</code> is the best way to normalize it.</p>
+
+<h2>Quick Example</h2>
+
+<p>The following uses models to convert to a <a href="can.Model.List.html">can.Model.List</a> of model
+instances.</p>
+
+<pre><code>Task = can.Model({},{})
+var tasks = Task.models([
+  {id: 1, name : "dishes", complete : false},
+  {id: 2, name: "laundry", compelte: true}
+])
+
+tasks.attr("0.complete", true)
+</code></pre>
+
+<h2>Non-standard Services</h2>
+
+<p><code>can.Model.models</code> expects data to be an array of name-value pair 
+objects like:</p>
+
+<pre><code>[{id: 1, name : "dishes"},{id:2, name: "laundry"}, ...]
+</code></pre>
+
+<p>It can also take an object with additional data about the array like:</p>
+
+<pre><code>{
+  count: 15000 //how many total items there might be
+  data: [{id: 1, name : "justin"},{id:2, name: "brian"}, ...]
+}
+</code></pre>
+
+<p>In this case, models will return a <a href="can.Model.List.html">can.Model.List</a> of instances found in 
+data, but with additional properties as expandos on the list:</p>
+
+<pre><code>var tasks = Task.models({
+  count : 1500,
+  data : [{id: 1, name: 'dishes'}, ...]
+})
+tasks.attr("name") // -&gt; 'dishes'
+tasks.count // -&gt; 1500
+</code></pre>
+
+<h3>Overwriting Models</h3>
+
+<p>If your service returns data like:</p>
+
+<pre><code>{thingsToDo: [{name: "dishes", id: 5}]}
+</code></pre>
+
+<p>You will want to overwrite models to pass the base models what it expects like:</p>
+
+<pre><code>Task = can.Model({
+  models : function(data){
+    return can.Model.models.call(this,data.thingsToDo);
+  }
+},{})
+</code></pre>
+
+<p><code>can.Model.models</code> passes each intstance's data to <code>can.Model.model</code> to
+create the individual instances.</p>
+		</section>
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+	</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+		<script type="text/javascript" src="./resources/shared.min.js"></script>
+	
+	<script type="text/javascript" src="./resources/app.js"></script>
+	<!--[if lt IE 9]>
+   	<script type="text/javascript">
+   	$(function() {
+   		Bitovi.OSS.redrawFont();
+   	});
+   	</script>
+    <!--<![endif]-->
+</body>
+
+</html>

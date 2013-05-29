@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptMVC  - can.Observe.List</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading">
+	
+		
+
+		
+			<li class="search-container active parent">
+				<a href="index.html" data-search="srchr">
+					srchr
+				</a>
+			</li>
+			
+				<li class="search-container">
+					<a href="srchr|history.html" data-search="srchr/history">
+						srchr/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models.html" data-search="srchr/models">
+						srchr/models
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
+						srchr/models/flickr
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|google.html" data-search="srchr/models/google">
+						srchr/models/google
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|history.html" data-search="srchr/models/history">
+						srchr/models/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
+						srchr/models/reddit
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+						srchr/models/twitter
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
+						srchr/models/wikipedia
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|results.html" data-search="srchr/results">
+						srchr/results
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|search.html" data-search="srchr/search">
+						srchr/search
+					</a>
+				</li>
+			
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>constructor</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			<li><a href="">download</a></li>
+		
+		
+			<li><a href="">tests</a></li>
+		
+	</ul>
+</div>
+
+<h1>
+can.Observe.List
+
+
+</h1>
+
+<span class="inherits">inherits: <a href="can.Observe.html">can.Observe</a></span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			
+		</section>
+
+		
+		<section class="signature">
+			<h2>can.Observe.List([elements])</h2>
+
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>elements <code>{Array}</code><span class="pull-right optional">Optional</span></h4>
+			<div class="description">
+				<p><p>elements to seed the List with</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{can.Observe.List}</code></h4>
+		<div class="description">
+			<p>an instance of <code>can.Observe.List</code> with the elements from <em>elements</em></p>
+		</div>
+	</div>
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<p><code>can.Observe.List</code> provides a way for you to use <code>can.Observe</code>s with arrays. Much like <code>can.Observe</code>,
+when you use the getters and setters on <code>can.Observe.List</code>, events are fired that you can listen for
+and react to.</p>
+
+<h2>Working with Lists</h2>
+
+<p><code>can.Observe.List</code> extends <code><a href="can.Observe.html">can.Observe</a></code>, so all the ways that you're used to working with
+Observes also work here, including <a href="can.Observe.prototype.bind.html">bind</a>, <a href="can.Observe.prototype.unbind.html">unbind</a>,
+and <a href="can.Observe.prototype.each.html">each</a>. And just as you can directly read properties normally
+off of an Observe, you can use array accessors ([]) to read elements directly off of a List.</p>
+
+<p>The one function of <code>can.Observe</code> that works slightly differently is <code>attr</code>. As expected when working with
+arrays, top-level keys passed into <code>attr</code> are required to be numeric. (Strings may still be used when getting
+or modifying deep properties). Any top-level keys that are non-numeric are ignored. In addition, as might be
+expected, a call to argument-less <code>attr</code> returns an array instead of an object.</p>
+
+<p>Just as you shouldn't set properties of an Observe directly, you shouldn't change elements
+of a List directly. Always use <code>attr</code> to set the elements of a List, or use [can.Observe.List.push push],
+[can.Observe.List.pop pop], [can.Observe.List.shift shift], [can.Observe.List.unshift unshift], or [can.Observe.List.splice splice].</p>
+
+<p>Here is a tour through the forms of <code>can.Observe.List</code>'s <code>attr</code> that parallels the one found under <a href="can.Observe.prototype.attr.html">attr</a>:</p>
+
+<pre><code class="lang-javascript">var people = new can.Observe.List(['Alex', 'Bill']);
+
+// set an element:
+people.attr(0, 'Adam');
+people[0] = 'Adam'; // don't do this!
+
+// get an element:
+people.attr(0); // 'Adam'
+people[0]; // 'Adam'
+
+// get all elements:
+people.attr(); // ['Adam', 'Bill']
+
+// extend the array:
+people.attr(4, 'Charlie');
+people.attr(); // ['Adam', 'Bill', undefined, undefined, 'Charlie']
+
+// merge the elements:
+people.attr(['Alice', 'Bob', 'Eve']);
+people.attr(); // ['Alice', 'Bob', 'Eve', undefined, 'Charlie']</code></pre>
+
+<h2>Listening to changes</h2>
+
+<p>As with <code>can.Observe</code>s, the real power of observable arrays comes from being able to
+react to changes in the member elements of the array. Lists emit five types of events:
+- the <em>change</em> event fires on every change to a List.
+- the <em>set</em> event is fired when an element is set.
+- the <em>add</em> event is fired when an element is added to the List.
+- the <em>remove</em> event is fired when an element is removed from the List.
+- the <em>length</em> event is fired when the length of the List changes.</p>
+
+<p>This example presents a brief concrete survey of the times these events are fired:</p>
+
+<pre><code class="lang-javascript">var list = new can.Observe.List(['Alice', 'Bob', 'Eve']);
+
+list.bind('change', function() { console.log('An element changed.'); });
+list.bind('set', function() { console.log('An element was set.'); });
+list.bind('add', function() { console.log('An element was added.'); });
+list.bind('remove', function() { console.log('An element was removed.'); });
+list.bind('length', function() { console.log('The length of the list changed.'); });
+
+list.attr(0, 'Alexis'); // 'An element changed.'
+                        // 'An element was set.'
+
+list.attr(3, 'Xerxes'); // 'An element changed.'
+                        // 'An element was added.'
+                        // 'The length of the list was changed.'
+
+list.attr(['Adam', 'Bill']); // 'An element changed.'
+                             // 'An element was set.'
+                             // 'An element was changed.'
+                             // 'An element was set.'
+
+list.pop(); // 'An element changed.'
+            // 'An element was removed.'
+            // 'The length of the list was changed.'</code></pre>
+
+<p>More information about binding to these events can be found under [can.Observe.List.attr attr].</p>
+		</section>
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+	</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+		<script type="text/javascript" src="./resources/shared.min.js"></script>
+	
+	<script type="text/javascript" src="./resources/app.js"></script>
+	<!--[if lt IE 9]>
+   	<script type="text/javascript">
+   	$(function() {
+   		Bitovi.OSS.redrawFont();
+   	});
+   	</script>
+    <!--<![endif]-->
+</body>
+
+</html>

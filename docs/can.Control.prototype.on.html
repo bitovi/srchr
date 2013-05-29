@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptMVC - on </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading">
+	
+		
+
+		
+			<li class="search-container active parent">
+				<a href="index.html" data-search="srchr">
+					srchr
+				</a>
+			</li>
+			
+				<li class="search-container">
+					<a href="srchr|history.html" data-search="srchr/history">
+						srchr/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models.html" data-search="srchr/models">
+						srchr/models
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
+						srchr/models/flickr
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|google.html" data-search="srchr/models/google">
+						srchr/models/google
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|history.html" data-search="srchr/models/history">
+						srchr/models/history
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
+						srchr/models/reddit
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+						srchr/models/twitter
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
+						srchr/models/wikipedia
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|results.html" data-search="srchr/results">
+						srchr/results
+					</a>
+				</li>
+			
+				<li class="search-container">
+					<a href="srchr|search.html" data-search="srchr/search">
+						srchr/search
+					</a>
+				</li>
+			
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>function</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			
+		
+		
+	</ul>
+</div>
+
+<h1>
+on
+
+	
+		<span class="module">can.Control.prototype.on</span>
+	
+
+
+</h1>
+
+<span class="inherits">&nbsp;</span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			<p>Bind an event handler to a Control, or rebind all event handlers on a Control. </p>
+		</section>
+
+		
+		<section class="signature">
+			<h2>on([el,] selector, eventName, func)</h2>
+
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>el <code>{HTMLElement | jQuery | collection | Object}</code><span class="pull-right optional">Optional</span></h4>
+			<div class="description">
+				<p><p>The element to be bound.  If no element is provided, the control's element is used instead.</p></p>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>selector <code>{String}</code></h4>
+			<div class="description">
+				<p><p>A css selector for event delegation.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>eventName <code>{String}</code></h4>
+			<div class="description">
+				<p><p>The event to listen for.</p></p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>func <code>{function() | String}</code></h4>
+			<div class="description">
+				<p><p>A callback function or the String name of a control function.  If a control
+function name is given, the control function is called back with the bound element and event as the first
+and second parameter.  Otherwise the function is called back like a normal bind.</p></p>
+			</div>
+			
+			
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{Number}</code></h4>
+		<div class="description">
+			<p>The id of the binding in this._bindings</p>
+		</div>
+	</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>on()</h2>
+
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{Number}</code></h4>
+		<div class="description">
+			<p>The number of handlers bound to this Control.</p>
+		</div>
+	</div>
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<p><code>on(el, selector, eventName, func)</code> binds an event handler for an event to a selector under the scope of the given element.</p>
+
+<p><code>this.on()</code> is used to rebind 
+all event handlers when <a href="can.Control.prototype.options.html">this.options</a> has changed.  It
+can also be used to bind or delegate from other elements or objects.</p>
+
+<h2>Rebinding</h2>
+
+<p>By using templated event handlers, a control can listen to objects outside
+<code>this.element</code>.  This is extremely common in MVC programming.  For example,
+the following control might listen to a task model's <code>completed</code> property and
+toggle a strike className like:</p>
+
+<pre><code>TaskStriker = can.Control({
+  "{task} completed": function(){
+       this.update();
+  },
+  update: function(){
+    if ( this.options.task.completed ) {
+         this.element.addClass( 'strike' );
+       } else {
+      this.element.removeClass( 'strike' );
+    }
+  }
+});
+
+var taskstriker = new TaskStriker({ 
+  task: new Task({ completed: 'true' }) 
+});
+</code></pre>
+
+<p>To update the taskstriker's task, add a task method that updates
+this.options and calls rebind like:</p>
+
+<pre><code>TaskStriker = can.Control({
+  "{task} completed": function(){
+       this.update();
+  },
+  update: function() {
+    if ( this.options.task.completed ) {
+         this.element.addClass( 'strike' );
+       } else {
+      this.element.removeClass( 'strike' );
+    }
+  },
+  task: function( newTask ) {
+    this.options.task = newTask;
+    this.on();
+    this.update();
+  }
+});
+
+var taskstriker = new TaskStriker({ 
+  task: new Task({ completed: true }) 
+});
+taskstriker.task( new TaskStriker({ 
+  task: new Task({ completed: false }) 
+}));
+</code></pre>
+
+<h2>Adding new events</h2>
+
+<p>If events need to be bound to outside of the control and templated event handlers
+are not sufficent, you can call this.on to bind or delegate programatically:</p>
+
+<pre><code>init: function() {
+   // calls somethingClicked( el, ev )
+   this.on( 'click', 'somethingClicked' ); 
+
+   // calls function when the window is clicked
+   this.on( window, 'click', function( ev ) {
+     //do something
+   });
+},
+somethingClicked: function( el, ev ) {
+
+}
+</code></pre>
+		</section>
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+	</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+		<script type="text/javascript" src="./resources/shared.min.js"></script>
+	
+	<script type="text/javascript" src="./resources/app.js"></script>
+	<!--[if lt IE 9]>
+   	<script type="text/javascript">
+   	$(function() {
+   		Bitovi.OSS.redrawFont();
+   	});
+   	</script>
+    <!--<![endif]-->
+</body>
+
+</html>
