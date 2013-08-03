@@ -16,11 +16,11 @@ Clone srchr and install its submodules:
 
 ## Running
 
-Open [srchr/srchr.html](srchr/srchr.html).
+Open [http://bitovi.github.com/srchr/srchr/srchr.html](srchr/srchr.html).
 
 ## Testing
 
-In your browser, open [//srchr/test.html]. To run it automated, open an console to 
+In your browser, open [http://bitovi.github.com/srchr/srchr/test.html]. To run it automated, open an console to 
 the `srchr` folder and run:
 
     ./js funcunit/open/selenium http://localhost/srchr/srchr/test.html
@@ -41,4 +41,4 @@ to
 
     <script src='../steal/steal.production.js?srchr'>  
     
-Open [srchr/srchr.html](srchr/srchr.html) in your browser.
+Open [http://bitovi.github.com/srchr/srchr/srchr.html](srchr/srchr.html) in your browser.

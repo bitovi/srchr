@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - setup </title>
+	<title>CanJS - setup </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,183 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Construct.html" data-search="can.Construct">
+				can.Construct
+			</a>
 			
+	<ul>
+		
+			
+				
+					
+					<li class="heading search-container">
+						<span>prototype</span>
+						
+	<ul>
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
+					<a class="property" href="can.Construct.prototype.constructor.html" data-search="constructor">
+						constructor
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
+					<a class="function" href="can.Construct.prototype.init.html" data-search="init">
+						init
 					</a>
 				</li>
+				
 			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
+			
+		
+			
+				
+				
+				<li class="search-container active">
+					<a class="function" href="can.Construct.prototype.setup.html" data-search="setup">
+						setup
 					</a>
 				</li>
+				
 			
+			
+		
+	</ul>
+
+
+					</li>
+					
+				
+				
+			
+			
+		
+			
+				
+					
+					<li class="heading search-container">
+						<span>static</span>
+						
+	<ul>
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
+					<a class="property" href="can.Construct.constructorExtends.html" data-search="constructorExtends">
+						constructorExtends
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
+					<a class="function" href="can.Construct.extend.html" data-search="extend">
+						extend
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
+					<a class="property" href="can.Construct.fullName.html" data-search="fullName">
+						fullName
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
+					<a class="property" href="can.Construct.namespace.html" data-search="namespace">
+						namespace
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
+					<a class="function" href="can.Construct.newInstance.html" data-search="newInstance">
+						newInstance
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
+					<a class="function" href="can.Construct.setup.html" data-search="setup">
+						setup
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
+					<a class="property" href="can.Construct.shortName.html" data-search="shortName">
+						shortName
 					</a>
 				</li>
+				
 			
+			
+		
+	</ul>
+
+
+					</li>
+					
+				
+				
+			
+			
+		
+	</ul>
+
+
+		</li>
 		
 	
 </ul>
@@ -177,17 +286,19 @@ setup
 
 		
 		<section class="signature">
-			<h2>setup(...args)</h2>
-
+			<h2>construct.setup(...args)</h2>
+<div class="signature-wrapper">
+<p>A setup function for the instantiation of a constructor function.</p>
 
 	<h3>Parameters</h3>
 
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>args <code>{*}</code></h4>
+			<h4>args
+				<code>{*}</code></h4>
 			<div class="description">
-				<p><p>the arguments passed to the constructor.</p></p>
+				<p>The arguments passed to the constructor.</p>
 			</div>
 			
 			
@@ -201,11 +312,30 @@ setup
 	<div class="returns">
 		<h4><code>{Array | undefined}</code></h4>
 		<div class="description">
-			<p>if an array is returned, the elements of that array are passed as
-arguments to [can.Construct::init]. Otherwise, the arguments to the
-constructor are passed to [can.Construct::init] and the return value of <code>setup</code> is discarded.</p>
+			<p>If an array is returned, the array's items are passed as
+arguments to <a href="can.Construct.prototype.init.html">init</a>. The following example always makes 
+sure that init is called with a jQuery wrapped element:</p>
+
+<pre><code>WidgetFactory = can.Construct.extend({
+    setup: function(element){
+        return [$(element)]
+    }
+})
+
+MyWidget = WidgetFactory.extend({
+    init: function($el){
+        $el.html("My Widget!!")
+    }
+})
+</code></pre>
+
+<p>Otherwise, the arguments to the
+constructor are passed to <a href="can.Construct.prototype.init.html">can.Construct.prototype.init</a> and the return value of <code>setup</code> is discarded.</p>
 		</div>
 	</div>
+
+
+</div>
 
 		</section>
 		
@@ -214,22 +344,9 @@ constructor are passed to [can.Construct::init] and the return value of <code>se
 
 		
 		<section class="comment">
-			<p>If a prototype <code>setup</code> method is provided, it is called when a new 
-instance is created. It is passed the same arguments that were passed
-to the constructor.</p>
+			<h2>Deciding between <code>setup</code> and <code>init</code></h2>
 
-<p>Because <code>setup</code> is not defined on <code>can.Construct</code> itself, calling super from
-directly-inheriting classes will break. In other words, don't do this:</p>
-
-<pre><code class="lang-javascript">can.Construct('Snowflake', {
-    setup: function() {
-        this._super(); // this will break!
-    }
-});</code></pre>
-
-<h2><code>setup</code> vs. <code>init</code></h2>
-
-<p>Usually, you should use [can.Construct::init] to do your class's initialization.
+<p>Usually, you should use <a href="can.Construct.prototype.init.html">init</a> to do your constructor function's initialization.
 Use <code>setup</code> instead for:</p>
 
 <ul>
@@ -246,22 +363,25 @@ call their base's <code>init</code> methods.</li>
 method. It converts the first argument to a jQuery collection and
 extends the controller's defaults with the options that were passed.</p>
 
-<pre><code class="lang-javascript">can.Construct("can.Control", {
+<pre><code>can.Control = can.Construct.extend({
     setup: function(domElement, rawOptions) {
         // set up this.element
         this.element = $(domElement);
 
         // set up this.options
         this.options = can.extend({},
-                                  this.constructor.defaults,
-                                  rawOptions
-                                 );
+                              this.constructor.defaults,
+                              rawOptions
+                             );
 
         // pass this.element and this.options to init.
         return [this.element, this.options];        
     }
-});</code></pre>         
+});
+</code></pre>
 		</section>
+		
+
 		
 	</article>
 </div>
@@ -282,19 +402,16 @@ extends the controller's defaults with the options that were passed.</p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

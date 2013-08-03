@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - on </title>
+	<title>CanJS - on </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,23 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Control.prototype.on.html" data-search="on">
+				on
+			</a>
 			
-				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
-					</a>
-				</li>
-			
+
+		</li>
 		
 	
 </ul>
@@ -177,7 +126,8 @@ on
 
 		
 		<section class="signature">
-			<h2>on([el,] selector, eventName, func)</h2>
+			<h2>control.on([el,] selector, eventName, func)</h2>
+<div class="signature-wrapper">
 
 
 	<h3>Parameters</h3>
@@ -185,9 +135,10 @@ on
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>el <code>{HTMLElement | jQuery | collection | Object}</code><span class="pull-right optional">Optional</span></h4>
+			<h4>el<code>=this.element</code>
+				<code>{HTMLElement | jQuery | collection | Object}</code><span class="pull-right optional">Optional</span></h4>
 			<div class="description">
-				<p><p>The element to be bound.  If no element is provided, the control's element is used instead.</p></p>
+				<p>The element to be bound.  If no element is provided, the control's element is used instead.</p>
 			</div>
 			
 			
@@ -201,9 +152,10 @@ on
 		</li>
 		
 		<li class="parameter">
-			<h4>selector <code>{String}</code></h4>
+			<h4>selector
+				<code>{CSSSelectorString}</code></h4>
 			<div class="description">
-				<p><p>A css selector for event delegation.</p></p>
+				<p>A css selector for event delegation.</p>
 			</div>
 			
 			
@@ -211,9 +163,10 @@ on
 		</li>
 		
 		<li class="parameter">
-			<h4>eventName <code>{String}</code></h4>
+			<h4>eventName
+				<code>{String}</code></h4>
 			<div class="description">
-				<p><p>The event to listen for.</p></p>
+				<p>The event to listen for.</p>
 			</div>
 			
 			
@@ -221,11 +174,12 @@ on
 		</li>
 		
 		<li class="parameter">
-			<h4>func <code>{function() | String}</code></h4>
+			<h4>func
+				<code>{function() | String}</code></h4>
 			<div class="description">
-				<p><p>A callback function or the String name of a control function.  If a control
+				<p>A callback function or the String name of a control function.  If a control
 function name is given, the control function is called back with the bound element and event as the first
-and second parameter.  Otherwise the function is called back like a normal bind.</p></p>
+and second parameter.  Otherwise the function is called back like a normal bind.</p>
 			</div>
 			
 			
@@ -245,11 +199,15 @@ and second parameter.  Otherwise the function is called back like a normal bind.
 		</div>
 	</div>
 
+
+</div>
+
 		</section>
 		
 		<section class="signature">
-			<h2>on()</h2>
-
+			<h2>control.on()</h2>
+<div class="signature-wrapper">
+<p>Rebind all of a control's event handlers.</p>
 
 
 	<h3>Returns</h3>
@@ -259,6 +217,9 @@ and second parameter.  Otherwise the function is called back like a normal bind.
 			<p>The number of handlers bound to this Control.</p>
 		</div>
 	</div>
+
+
+</div>
 
 		</section>
 		
@@ -298,8 +259,8 @@ var taskstriker = new TaskStriker({
 });
 </code></pre>
 
-<p>To update the taskstriker's task, add a task method that updates
-this.options and calls rebind like:</p>
+<p>To update the <code>taskstriker</code>'s task, add a task method that updates
+this.options and rebinds the event handlers for the new task like:</p>
 
 <pre><code>TaskStriker = can.Control({
   "{task} completed": function(){
@@ -330,7 +291,7 @@ taskstriker.task( new TaskStriker({
 <h2>Adding new events</h2>
 
 <p>If events need to be bound to outside of the control and templated event handlers
-are not sufficent, you can call this.on to bind or delegate programatically:</p>
+are not sufficient, you can call this.on to bind or delegate programmatically:</p>
 
 <pre><code>init: function() {
    // calls somethingClicked( el, ev )
@@ -346,6 +307,8 @@ somethingClicked: function( el, ev ) {
 }
 </code></pre>
 		</section>
+		
+
 		
 	</article>
 </div>
@@ -366,19 +329,16 @@ somethingClicked: function( el, ev ) {
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

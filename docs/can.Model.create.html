@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - create </title>
+	<title>CanJS - create </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,23 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Model.create.html" data-search="create">
+				create
+			</a>
 			
-				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
-					</a>
-				</li>
-			
+
+		</li>
 		
 	
 </ul>
@@ -172,40 +121,27 @@ create
 		</section>
 
 		<section class="description">
-			<p>Create a new resource on the server. </p>
+			<p>Specifies how to create a new resource on the server. <code>create(serialized)</code> is called  by <a href="can.Model.prototype.save.html">save</a> if the model instance <a href="can.Model.prototype.isNew.html">is new</a>.</p>
 		</section>
 
 		
 		<section class="signature">
-			<h2>[METHOD] /path/to/resource</h2>
-<p>If you provide a URL, the Model will send a request to that URL using
-the method specified (or POST if none is specified) when saving a
-new instance on the server. (See below for more details.)</p>
-
-
-	<h3>Returns</h3>
-	<div class="returns">
-		<h4><code>{can.Deferred}</code></h4>
-		<div class="description">
-			<p>A Deferred that resolves to the created model.</p>
-		</div>
-	</div>
-
-		</section>
-		
-		<section class="signature">
-			<h2>function(serialized)</h2>
-<p>If you provide a function, the Model will expect you to do your own AJAX requests.</p>
+			<h2>can.Model.create: function(serialized) -&gt; seferred</h2>
+<div class="signature-wrapper">
+<p>Specify a function to create persistent instances. The function will
+typically perform an AJAX request to a service that results in
+creating a record in a database.</p>
 
 	<h3>Parameters</h3>
 
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>serialized <code>{Object}</code></h4>
+			<h4>serialized
+				<code>{Object}</code></h4>
 			<div class="description">
-				<p><p>The [can.Observe::serialize serialized] properties of
-the model to create.</p></p>
+				<p>The <a href="can.Observe.prototype.serialize.html">serialized</a> properties of
+the model to create.</p>
 			</div>
 			
 			
@@ -219,9 +155,88 @@ the model to create.</p></p>
 	<div class="returns">
 		<h4><code>{can.Deferred}</code></h4>
 		<div class="description">
-			<p>A Deferred that resolves to the created model.</p>
+			<p>A Deferred that resolves to an object of attributes
+that will be added to the created model isntance.  The object <strong>MUST</strong> contain
+an <a href="can.Model.id.html">id</a> property so that future calls to <a href="can.Model.prototype.save.html">save</a>
+will call <a href="can.Model.update.html">can.Model.update</a>.</p>
 		</div>
 	</div>
+
+
+</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>can.Model.create: &quot;[METHOD] /path/to/resource&quot;</h2>
+<div class="signature-wrapper">
+<p>Specify a HTTP method and url to create persistent instances.</p>
+
+<p>If you provide a URL, the Model will send a request to that URL using
+the method specified (or POST if none is specified) when saving a
+new instance on the server. (See below for more details.)</p>
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>METHOD
+				<code>{HttpMethod}</code></h4>
+			<div class="description">
+				<p>An HTTP method. Defaults to <code>"POST"</code>.</p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>url
+				<code>{STRING}</code></h4>
+			<div class="description">
+				<p>The URL of the service to retrieve JSON data.</p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+
+</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>can.Model.create: {ajaxSettings}</h2>
+<div class="signature-wrapper">
+<p>Specify an options object that is used to make a HTTP request to create
+persistent instances.</p>
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>ajaxSettings
+				<code>{can.AjaxSettings}</code></h4>
+			<div class="description">
+				<p>A settings object that
+specifies the options available to pass to [can.ajax].</p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+
+</div>
 
 		</section>
 		
@@ -238,7 +253,7 @@ model instance on the server. </p>
 <p>The easiest way to implement create is to give it the url 
 to post data to:</p>
 
-<pre><code>var Recipe = can.Model({
+<pre><code>var Recipe = can.Model.extend({
   create: "/recipes"
 },{})
 </code></pre>
@@ -251,7 +266,7 @@ to post data to:</p>
 <h2>Implement with a Function</h2>
 
 <p>You can also implement create by yourself. Create gets called 
-with <code>attrs</code>, which are the [can.Observe::serialize serialized] model 
+with <code>attrs</code>, which are the <a href="can.Observe.prototype.serialize.html">serialized</a> model 
 attributes.  Create returns a <code>Deferred</code> 
 that contains the id of the new instance and any other 
 properties that should be set on the instance.</p>
@@ -268,13 +283,15 @@ something that looks like:</p>
 
 <p>The code looks like:</p>
 
-<pre><code>can.Model("Recipe", {
+<pre><code>can.Model.extend("Recipe", {
   create : function( attrs ){
     return $.post("/recipes.json",attrs, undefined ,"json");
   }
 },{})
 </code></pre>
 		</section>
+		
+
 		
 	</article>
 </div>
@@ -295,19 +312,16 @@ something that looks like:</p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

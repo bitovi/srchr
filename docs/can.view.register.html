@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - register </title>
+	<title>CanJS - register </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,23 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.view.register.html" data-search="register">
+				register
+			</a>
 			
-				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
-					</a>
-				</li>
-			
+
+		</li>
 		
 	
 </ul>
@@ -178,6 +127,7 @@ register
 		
 		<section class="signature">
 			<h2>can.view.register(info)</h2>
+<div class="signature-wrapper">
 
 
 	<h3>Parameters</h3>
@@ -185,41 +135,49 @@ register
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>info <code>{Object}</code></h4>
+			<h4>info
+				<code>{Object}</code></h4>
 			<div class="description">
-				<p><p>Information about the templating language.</p></p>
+				<p>Information about the templating language.</p>
 			</div>
 			
 			
 			<ul class="options">
 				
 				<li class="option">
-					<h5>plugin <code>{String}</code></h5>
+					<h5>plugin 
+						<code>{String}</code>
+					</h5>
 					<div class="description">
-						The location of the templating language's plugin.
+						<p>The location of the templating language's plugin.</p>
 					</div>
 				</li>
 				
 				<li class="option">
-					<h5>suffix <code>{String}</code></h5>
+					<h5>suffix 
+						<code>{String}</code>
+					</h5>
 					<div class="description">
-						Files with this suffix will use this templating language's plugin by default.
+						<p>Files with this suffix will use this templating language's plugin by default.</p>
 					</div>
 				</li>
 				
 				<li class="option">
-					<h5>renderer <code>{function()}</code></h5>
+					<h5>renderer 
+						<code>{function()}</code>
+					</h5>
 					<div class="description">
-						A function that returns a function that, given data, will render the template with that data.
-The __renderer__ function receives the id of the template and the text of the template.
+						<p>A function that returns a function that, given data, will render the template with that data.
+The <strong>renderer</strong> function receives the id of the template and the text of the template.</p>
 					</div>
 				</li>
 				
 				<li class="option">
-					<h5>script <code>{function()}</code></h5>
+					<h5>script 
+						<code>{function()}</code>
+					</h5>
 					<div class="description">
-						A function that returns the string form of the processed template.
-
+						<p>A function that returns the string form of the processed template.</p>
 					</div>
 				</li>
 				
@@ -230,6 +188,9 @@ The __renderer__ function receives the id of the template and the text of the te
 		
 	</ol>
 
+
+
+</div>
 
 		</section>
 		
@@ -260,6 +221,8 @@ view helpers and compression.  </p>
 })</code></pre>     
 		</section>
 		
+
+		
 	</article>
 </div>
 
@@ -279,19 +242,16 @@ view helpers and compression.  </p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

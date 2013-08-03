@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - update </title>
+	<title>CanJS - update </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,23 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Model.update.html" data-search="update">
+				update
+			</a>
 			
-				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
-					</a>
-				</li>
-			
+
+		</li>
 		
 	
 </ul>
@@ -177,7 +126,8 @@ update
 
 		
 		<section class="signature">
-			<h2>[METHOD] /path/to/resource</h2>
+			<h2>can.Model.update: &quot;[METHOD] /path/to/resource&quot;</h2>
+<div class="signature-wrapper">
 <p>If you provide a URL, the Model will send a request to that URL using
 the method specified (or PUT if none is specified) when updating an
 instance on the server. (See below for more details.)</p>
@@ -191,10 +141,14 @@ instance on the server. (See below for more details.)</p>
 		</div>
 	</div>
 
+
+</div>
+
 		</section>
 		
 		<section class="signature">
-			<h2>function(id, serialized)</h2>
+			<h2>can.Model.update: function(id, serialized) -&gt; can.Deffered</h2>
+<div class="signature-wrapper">
 <p>If you provide a function, the Model will expect you to do your own AJAX requests.</p>
 
 	<h3>Parameters</h3>
@@ -202,9 +156,10 @@ instance on the server. (See below for more details.)</p>
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>id <code>{*}</code></h4>
+			<h4>id
+				<code>{*}</code></h4>
 			<div class="description">
-				<p><p>The ID of the model to update.</p></p>
+				<p>The ID of the model to update.</p>
 			</div>
 			
 			
@@ -212,10 +167,11 @@ instance on the server. (See below for more details.)</p>
 		</li>
 		
 		<li class="parameter">
-			<h4>serialized <code>{Object}</code></h4>
+			<h4>serialized
+				<code>{Object}</code></h4>
 			<div class="description">
-				<p><p>The [can.Observe::serialize serialized] properties of
-the model to update.</p></p>
+				<p>The <a href="can.Observe.prototype.serialize.html">serialized</a> properties of
+the model to update.</p>
 			</div>
 			
 			
@@ -233,6 +189,9 @@ the model to update.</p></p>
 		</div>
 	</div>
 
+
+</div>
+
 		</section>
 		
 
@@ -247,7 +206,7 @@ update a model instance on the server. </p>
 
 <p>The easist way to implement update is to just give it the url to <code>PUT</code> data to:</p>
 
-<pre><code>Recipe = can.Model({
+<pre><code>Recipe = can.Model.extend({
   update: "/recipes/{id}"
 },{});
 </code></pre>
@@ -268,7 +227,7 @@ name=salad
 
 <p>If your server doesn't use PUT, you can change it to post like:</p>
 
-<pre><code>$.Model("Recipe",{
+<pre><code>Recipe = can.Model.extend({
   update: "POST /recipes/{id}"
 },{});
 </code></pre>
@@ -301,13 +260,15 @@ something that looks like:</p>
 
 <p>The code looks like:</p>
 
-<pre><code>Recipe = can.Model({
+<pre><code>Recipe = can.Model.extend({
   update : function(id, attrs ) {
     return $.post("/recipes/"+id+".json",attrs, null,"json");
   }
 },{});
 </code></pre>
 		</section>
+		
+
 		
 	</article>
 </div>
@@ -328,19 +289,16 @@ something that looks like:</p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

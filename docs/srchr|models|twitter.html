@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC  - srchr/models/twitter</title>
+	<title>CanJS  - srchr/models/twitter</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,25 +64,21 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-			
-				
-				<li class="search-container active parent">
-					<a href="index.html" data-search="srchr">
-						srchr
-					</a>
-				</li>
-				
-			
-
-			
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
+		
+		
 			<li class="search-container active">
-				<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-					srchr/models/twitter
-				</a>
-				
+			<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
+				srchr/models/twitter
+			</a>
+			
 	<ul>
 		
 			
@@ -99,10 +98,7 @@
 	</ul>
 
 
-			</li>
-			
-		
-
+		</li>
 		
 	
 </ul>
@@ -122,7 +118,7 @@
 			
 		
 		
-			<li><a href="">tests</a></li>
+			<li><a href="../srchr/models/test.html">tests</a></li>
 		
 	</ul>
 </div>
@@ -159,6 +155,8 @@ twitter results like:</p>
 </code></pre>
 		</section>
 		
+
+		
 	</article>
 </div>
 
@@ -178,19 +176,16 @@ twitter results like:</p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

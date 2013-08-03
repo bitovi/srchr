@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - setup </title>
+	<title>CanJS - setup </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,183 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Construct.html" data-search="can.Construct">
+				can.Construct
+			</a>
 			
+	<ul>
+		
+			
+				
+					
+					<li class="heading search-container">
+						<span>prototype</span>
+						
+	<ul>
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
+					<a class="property" href="can.Construct.prototype.constructor.html" data-search="constructor">
+						constructor
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
+					<a class="function" href="can.Construct.prototype.init.html" data-search="init">
+						init
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
+					<a class="function" href="can.Construct.prototype.setup.html" data-search="setup">
+						setup
 					</a>
 				</li>
+				
 			
+			
+		
+	</ul>
+
+
+					</li>
+					
+				
+				
+			
+			
+		
+			
+				
+					
+					<li class="heading search-container">
+						<span>static</span>
+						
+	<ul>
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
+					<a class="property" href="can.Construct.constructorExtends.html" data-search="constructorExtends">
+						constructorExtends
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
+					<a class="function" href="can.Construct.extend.html" data-search="extend">
+						extend
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
+					<a class="property" href="can.Construct.fullName.html" data-search="fullName">
+						fullName
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
+					<a class="property" href="can.Construct.namespace.html" data-search="namespace">
+						namespace
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
+					<a class="function" href="can.Construct.newInstance.html" data-search="newInstance">
+						newInstance
 					</a>
 				</li>
+				
 			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
+			
+		
+			
+				
+				
+				<li class="search-container active">
+					<a class="function" href="can.Construct.setup.html" data-search="setup">
+						setup
 					</a>
 				</li>
+				
 			
+			
+		
+			
+				
+				
 				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
+					<a class="property" href="can.Construct.shortName.html" data-search="shortName">
+						shortName
 					</a>
 				</li>
+				
 			
+			
+		
+	</ul>
+
+
+					</li>
+					
+				
+				
+			
+			
+		
+	</ul>
+
+
+		</li>
 		
 	
 </ul>
@@ -177,17 +286,36 @@ setup
 
 		
 		<section class="signature">
-			<h2>setup(base, fullName, staticProps, protoProps)</h2>
+			<h2>can.Construct.setup(base, fullName, staticProps, protoProps)</h2>
+<div class="signature-wrapper">
+<p>A static <code>setup</code> method provides inheritable setup functionality
+for a Constructor function. The following example
+creates a Group constructor function.  Any constructor
+functions that inherit from Group will be added to 
+<code>Group.childGroups</code>.</p>
 
+<pre><code>Group = can.Construct.extend({
+  setup: function(Construct, fullName, staticProps, protoProps){
+    this.childGroups = [];
+    if(Construct !== can.Construct){
+      this.childGroups(Construct)
+    }
+    Construct.setup.apply(this, arguments)
+  }   
+},{})
+var Flock = Group.extend(...)
+Group.childGroups[0] //-&gt; Flock
+</code></pre>
 
 	<h3>Parameters</h3>
 
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>base <code>{constructor}</code></h4>
+			<h4>base
+				<code>{<a href="constructor.html" >constructor</a>}</code></h4>
 			<div class="description">
-				<p><p>The base constructor that is being inherited from.</p></p>
+				<p>The base constructor that is being inherited from.</p>
 			</div>
 			
 			
@@ -195,9 +323,10 @@ setup
 		</li>
 		
 		<li class="parameter">
-			<h4>fullName <code>{String}</code></h4>
+			<h4>fullName
+				<code>{String}</code></h4>
 			<div class="description">
-				<p><p>The name of the new constructor.</p></p>
+				<p>The name of the new constructor.</p>
 			</div>
 			
 			
@@ -205,9 +334,10 @@ setup
 		</li>
 		
 		<li class="parameter">
-			<h4>staticProps <code>{Object}</code></h4>
+			<h4>staticProps
+				<code>{Object}</code></h4>
 			<div class="description">
-				<p><p>The static properties of the new constructor.</p></p>
+				<p>The static properties of the new constructor.</p>
 			</div>
 			
 			
@@ -215,9 +345,10 @@ setup
 		</li>
 		
 		<li class="parameter">
-			<h4>protoProps <code>{Object}</code></h4>
+			<h4>protoProps
+				<code>{Object}</code></h4>
 			<div class="description">
-				<p><p>The prototype properties of the new constructor.</p></p>
+				<p>The prototype properties of the new constructor.</p>
 			</div>
 			
 			
@@ -227,6 +358,9 @@ setup
 	</ol>
 
 
+
+</div>
+
 		</section>
 		
 
@@ -234,9 +368,11 @@ setup
 
 		
 		<section class="comment">
-			<p>The static <code>setup</code> method is called immediately after a constructor function is created and 
-set to inherit from its base constructor. It is useful for setting up additional inheritance work.
-Do not confuse this with the prototype <code>[can.Construct::setup]</code> method.</p>
+			<p>The static <code>setup</code> method is called immediately after a constructor 
+function is created and 
+set to inherit from its base constructor. It is useful for setting up 
+additional inheritance work.
+Do not confuse this with the prototype <code><a href="can.Construct.prototype.setup.html">can.Construct.prototype.setup</a></code> method.</p>
 
 <h2>Setup Extends Defaults</h2>
 
@@ -278,6 +414,8 @@ Child = Parent({});
 Child.base; // Parent</code></pre>     
 		</section>
 		
+
+		
 	</article>
 </div>
 
@@ -297,19 +435,16 @@ Child.base; // Parent</code></pre>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - element </title>
+	<title>CanJS - element </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,23 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Control.prototype.element.html" data-search="element">
+				element
+			</a>
 			
-				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
-					</a>
-				</li>
-			
+
+		</li>
 		
 	
 </ul>
@@ -172,12 +121,35 @@ element
 		</section>
 
 		<section class="description">
-			<p>The element the Control is associated with. 
-The control instance's HTMLElement (or window) wrapped by the 
+			<p>The element the Control is associated with. </p>
+		</section>
+
+		
+
+		
+		<section class='primary-options'>
+			<h2>
+	
+	   Property Type:
+	
+	
+	<code>{can.NodeList}</code>
+</h2>
+
+
+
+
+
+
+		</section>
+		
+
+		
+		<section class="comment">
+			<p>The control instance's HTMLElement (or window) wrapped by the 
 util library for ease of use. It is set by the first
 parameter to <code>new can.Construct( element, options )</code> 
-in [can.Control::setup].  Control listens on <code>this.element</code>
-for events.</p>
+in <a href="can.Control.prototype.setup.html">can.Control.prototype.setup</a>.  By default, a control listens to events on <code>this.element</code>.</p>
 
 <h3>Quick Example</h3>
 
@@ -196,14 +168,14 @@ new HelloWorld( document.getElementById( '#helloworld' ) );
 <h2>Wrapped NodeList</h2>
 
 <p><code>this.element</code> is a wrapped NodeList of one HTMLELement (or window).  This
-is for convience in libraries like jQuery where all methods operate only on a
+is for convenience in libraries like jQuery where all methods operate only on a
 NodeList.  To get the raw HTMLElement, write:</p>
 
 <pre><code>this.element[0] //-&gt; HTMLElement
 </code></pre>
 
 <p>The following details the NodeList used by each library with 
-an example of updating it's text:</p>
+an example of updating its text:</p>
 
 <p><strong>jQuery</strong> <code>jQuery( HTMLElement )</code></p>
 
@@ -217,16 +189,18 @@ an example of updating it's text:</p>
 
 <p><strong>Dojo</strong> <code>new dojo.NodeList( HTMLElement )</code></p>
 
-<pre><code>// TODO
+<pre><code>this.element.text("Hello World")
 </code></pre>
 
 <p><strong>Mootools</strong> <code>$$( HTMLElement )</code></p>
 
-<p>this.element.empty().appendText("Hello World")</p>
+<pre><code>this.element.empty().appendText("Hello World")
+</code></pre>
 
 <p><strong>YUI</strong> </p>
 
-<p>// TODO</p>
+<pre><code>this.element.set("text", "Hello World")
+</code></pre>
 
 <h2>Changing <code>this.element</code></h2>
 
@@ -246,7 +220,7 @@ original element.</p>
      this.oldElement = $( el );
      var newEl = $( '&lt;div/&gt;' );
      this.oldElement.wrap( newEl );
-     can.Controll.prototype.setup.call( this, newEl, options );
+     can.Control.prototype.setup.call( this, newEl, options );
   },
   init: function() {
      this.element //-&gt; the div
@@ -266,7 +240,7 @@ original element.</p>
 
 <p>You could also change this.element by calling
 [can.Control::off], setting this.element, and 
-then calling [can.Control::on] like:</p>
+then calling <a href="can.Control.prototype.on.html">can.Control.prototype.on</a> like:</p>
 
 <pre><code>move: function( newElement ) {
    this.off();
@@ -275,9 +249,6 @@ then calling [can.Control::on] like:</p>
 }
 </code></pre>
 		</section>
-
-		
-
 		
 
 		
@@ -300,19 +271,16 @@ then calling [can.Control::on] like:</p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>CanJS  - can.Model.makeFindAll</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
+			</div>
+
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container api">
+	<nav class="sidebar">
+		
+		<div class="search-wrapper">
+			<div class="search">
+				<input type="text"/>
+			</div>
+		</div>
+		
+		<ul class="api cascading primary-grouping"> 
+	
+		
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
+		
+		
+			<li class="search-container active">
+			<a href="can.Model.makeFindAll.html" data-search="can.Model.makeFindAll">
+				can.Model.makeFindAll
+			</a>
+			
+
+		</li>
+		
+	
+</ul>
+
+	</nav>
+	<article class="content docs">
+		<section class="title">
+			<div class="pull-right">
+	<ul class="tags">
+		<li>function</li>
+	</ul>
+	<ul class="links">
+		
+			<li><a href="">source</a></li>
+		
+		
+			
+		
+		
+	</ul>
+</div>
+
+<h1>
+can.Model.makeFindAll
+
+
+</h1>
+
+<span class="inherits">&nbsp;</span>
+
+		</section>
+
+		<section class="contents">
+		</section>
+
+		<section class="description">
+			
+		</section>
+
+		
+		<section class="signature">
+			<h2>can.Model.makeFindAll: function(findAllData) -&gt; findAll</h2>
+<div class="signature-wrapper">
+<p>Returns the external <code>findAll</code> method given the implemented [can.Model.findAllData findAllData] function.</p>
+
+<p><a href="can.Model.findAll.html">can.Model.findAll</a> is implemented with a <code>String</code>, [can.AjaxSettings ajax settings object], or 
+[can.Model.findAllData findAllData] function. If it is implemented as
+a <code>String</code> or [can.AjaxSettings ajax settings object], those values are used
+to create a [can.Model.findAllData findAllData] function.</p>
+
+<p>The [can.Model.findAllData findAllData] function is passed to <code>makeFindAll</code>. <code>makeFindAll</code>
+should use <code>findAllData</code> internally to get the raw data for the request.</p>
+
+
+	<h3>Returns</h3>
+	<div class="returns">
+		<h4><code>{function(params, success, error)}</code></h4>
+		<div class="description">
+			<p>Returns function that implements the external API of <code>findAll</code>.</p>
+		</div>
+	</div>
+
+
+</div>
+
+		</section>
+		
+
+		
+
+		
+		<section class="comment">
+			<h2>Use</h2>
+
+<p><code>makeFindAll</code> can be used to implement base models that perform special 
+behavior. <code>makeFindAll</code> is passed a [can.Model.findAllData findAllData] function that retrieves raw
+data. It should return a function that when called, uses
+the findAllData function to get the raw data, convert them to model instances with
+<a href="can.Model.models.html">models</a>.</p>
+
+<h2>Caching</h2>
+
+<p>The following uses <code>makeFindAll</code> to create a base <code>CachedModel</code>:</p>
+
+<pre><code>CachedModel = can.Model.extend({
+  makeFindAll: function(findAllData){
+    // A place to store requests
+    var cachedRequests = {};
+
+    return function(params, success, error){
+      // is this not cached?
+      if(! cachedRequests[JSON.stringify(params)] ) {
+        var self = this;
+        // make the request for data, save deferred
+        cachedRequests[JSON.stringify(params)] = 
+          findAllData(params).then(function(data){
+            // convert the raw data into instances
+            return self.models(data)
+          })
+      }
+      // get the saved request
+      var def = cachedRequests[JSON.stringify(params)]
+      // hookup success and error
+      def.then(success,error)
+      return def;
+    }  
+  }
+},{})
+</code></pre>
+
+<p>The following Todo model will never request the same list of todo's twice:</p>
+
+<pre><code>Todo = CachedModel({
+  findAll: "/todos"
+},{})
+
+// widget 1
+Todo.findAll({})
+
+// widget 2
+Todo.findAll({})
+</code></pre>
+		</section>
+		
+
+		
+	</article>
+</div>
+
+
+
+	<footer>
+		<nav class="container">
+			<a class="brand javascriptmvc" href="index.html"></a>
+		</nav>
+	</footer>
+	<script type="text/javascript">
+		window.Bitovi = {
+			URL: {
+				BUILDER: '',
+				BUILDER_DATA: '',
+				BITHUB: '',
+				CDN: ''
+			}
+		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
+	</script>
+	<script type='text/javascript' 
+	
+		src="./static/steal.production.js"
+	
+		></script>
+</body>
+
+</html>

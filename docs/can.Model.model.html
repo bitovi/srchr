@@ -17,13 +17,16 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>JavaScriptMVC - model </title>
+	<title>CanJS - model </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="./resources/styles.css" />
+	<link rel="stylesheet" type="text/css" 
+		
+			href="./static/production.css"
+		 />
 	<!--[if lt IE 9]>
-   <script type="text/javascript" src="./resources/html5shiv.js"></script>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
     <!--<![endif]-->
 </head>
 
@@ -32,7 +35,7 @@
 		<nav class="container">
 
 			<div class="logo-menu">
-				<a class="brand canjs" href="./index.html">JavaScriptMVC</a>
+				<a class="brand" href="./index.html">JavaScriptMVC</a>
 			</div>
 
 			<div class="pull-right">
@@ -61,77 +64,23 @@
 			</div>
 		</div>
 		
-		<ul class="api cascading">
+		<ul class="api cascading primary-grouping"> 
 	
 		
-
+		<li class="search-container active parent">
+			<a href="index.html" data-search="srchr">
+				srchr
+			</a>
+		</li>
 		
-			<li class="search-container active parent">
-				<a href="index.html" data-search="srchr">
-					srchr
-				</a>
-			</li>
+		
+			<li class="search-container active">
+			<a href="can.Model.model.html" data-search="model">
+				model
+			</a>
 			
-				<li class="search-container">
-					<a href="srchr|history.html" data-search="srchr/history">
-						srchr/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models.html" data-search="srchr/models">
-						srchr/models
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|flickr.html" data-search="srchr/models/flickr">
-						srchr/models/flickr
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|google.html" data-search="srchr/models/google">
-						srchr/models/google
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|history.html" data-search="srchr/models/history">
-						srchr/models/history
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|reddit.html" data-search="srchr/models/reddit">
-						srchr/models/reddit
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|twitter.html" data-search="srchr/models/twitter">
-						srchr/models/twitter
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|models|wikipedia.html" data-search="srchr/models/wikipedia">
-						srchr/models/wikipedia
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|results.html" data-search="srchr/results">
-						srchr/results
-					</a>
-				</li>
-			
-				<li class="search-container">
-					<a href="srchr|search.html" data-search="srchr/search">
-						srchr/search
-					</a>
-				</li>
-			
+
+		</li>
 		
 	
 </ul>
@@ -177,7 +126,8 @@ model
 
 		
 		<section class="signature">
-			<h2>model(data)</h2>
+			<h2>can.Model.model(data)</h2>
+<div class="signature-wrapper">
 
 
 	<h3>Parameters</h3>
@@ -185,9 +135,10 @@ model
 	<ol class="parameters">
 		
 		<li class="parameter">
-			<h4>data <code>{Object}</code></h4>
+			<h4>data
+				<code>{Object}</code></h4>
 			<div class="description">
-				<p><p>The data to convert to a can.Model instance.</p></p>
+				<p>The data to convert to a can.Model instance.</p>
 			</div>
 			
 			
@@ -199,11 +150,14 @@ model
 
 	<h3>Returns</h3>
 	<div class="returns">
-		<h4><code>{can.Model}</code></h4>
+		<h4><code>{<a href="can.Model.html" >can.Model</a>}</code></h4>
 		<div class="description">
 			<p>An instance of can.Model made with the given data.</p>
 		</div>
 	</div>
+
+
+</div>
 
 		</section>
 		
@@ -224,7 +178,7 @@ overwriting <code>can.Model.model</code> is a good way to normalize it.</p>
 <p>The following uses <code>model</code> to convert to a model
 instance.</p>
 
-<pre><code>Task = can.Model({},{})
+<pre><code>Task = can.Model.extend({},{})
 var task = Task.model({id: 1, name : "dishes", complete : false})
 
 tasks.attr("complete", true)
@@ -264,13 +218,15 @@ instance like:</p>
 
 <p>Overwrite <code>model</code> like:</p>
 
-<pre><code>Task = can.Model({
+<pre><code>Task = can.Model.extend({
   model : function(data){
     return can.Model.model.call(this,data.todo);
   }
 },{});
 </code></pre>
 		</section>
+		
+
 		
 	</article>
 </div>
@@ -291,19 +247,16 @@ instance like:</p>
 				CDN: ''
 			}
 		}
+		steal = {
+			productionId: "production.js",
+			executed: ["documentjs/site/static/build/production.css"]
+		}
 	</script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type='text/javascript' 
 	
-		<script type="text/javascript" src="./resources/shared.min.js"></script>
+		src="./static/steal.production.js"
 	
-	<script type="text/javascript" src="./resources/app.js"></script>
-	<!--[if lt IE 9]>
-   	<script type="text/javascript">
-   	$(function() {
-   		Bitovi.OSS.redrawFont();
-   	});
-   	</script>
-    <!--<![endif]-->
+		></script>
 </body>
 
 </html>
