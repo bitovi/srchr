@@ -69,7 +69,18 @@ return can.Control(
 		for(var modelName in models){
 			modelNames.push(modelName)
 		}
-		this.element.html(initEJS({modelNames: modelNames}));
+		var self = this;
+		this.element.html(initEJS({modelNames: modelNames},{
+			checked: function(modelName){
+				var current =  self.options.currentSearch();
+				var types = (current && current.types || []);
+				if( $.inArray(modelName, types) >=0 ){
+					return "checked"
+				} else {
+					return ""
+				};
+			}
+		}));
 		new Placeholder("#query",{
 			placeholder: this.options.defaultText
 		})

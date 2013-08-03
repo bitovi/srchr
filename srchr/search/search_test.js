@@ -7,7 +7,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 		 	new Search('#content', {currentSearch: this.currentSearch});
 		},
 		teardown: function () {
-			//$("#content").remove();
+			$("#content").remove();
 		}
 	});
 	
@@ -51,13 +51,26 @@ steal("funcunit", 'srchr/search', function(S, Search){
 		var self = this;
 		S('input[name=query]').click()
 		S('input[name=query]').type('testing...')
-		S('input#cb_twitter[type=checkbox]').click();
+		S('input#cb_Google[type=checkbox]').click();
 				
-		S('input[type=submit]').click({}, function(){
+		S('input[type=submit]').click(function(){
 			var srch = self.currentSearch();
 		
 			equal(srch.query, 'testing...', 'Current search contains valid query');
-			equal(srch.types[0], 'Twitter', 'Current search contains a valid type');
+			equal(srch.types[0], 'Google', 'Current search contains a valid type');
 		}, 'A search was submitted');	
 	});
+	
+	test("Changing the current search types and the form updates its checkboxes",function(){
+		this.currentSearch({
+			query: "Cat",
+			types: ["Google"]
+		});
+		
+		ok( $('input#cb_Google[type=checkbox]').is(":checked") , "Google is checked" );
+		
+		
+	})
+	
+	
 });
