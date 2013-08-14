@@ -5,8 +5,8 @@ steal('can',
 	function(can, resultsEJS, object){
 	
 /**
- * @class ui/list
- * @parent index
+ * @constructor ui/list
+ * @parent srchr
  * @test ui/list/test.html
  * @inherits can.Control
  * 

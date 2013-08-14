@@ -4,8 +4,8 @@ var placeholderSupported = false// "placeholder" in document.createElement("inpu
 
 // Adds a placeholder for browsers that don't support it
 /**
- * @class ui/placeholder
- * @parent index
+ * @constructor ui/placeholder
+ * @parent srchr
  * @test ui/placeholder/test.html
  * @inherits can.Control
  * 

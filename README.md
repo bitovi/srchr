@@ -42,3 +42,24 @@ to
     <script src='../steal/steal.production.js?srchr'>  
     
 Open [http://bitovi.github.com/srchr/srchr/srchr.html](srchr/srchr.html) in your browser.
+
+## Documenting
+
+Open a console to the `srchr` folder and run:
+
+    ./js srchr/scripts/docs.js
+    
+Open `docs/index.html`.
+
+
+## Deploying
+
+Check out the gh-pages branch in a folder next to your local srchr  master repository like:
+
+    > git clone -b gh-pages git@github.com:bitovi/srchr srchr-pages
+
+In the master repo, run the build, and the documentation scripts.  Then copy everything to srchr-pages with:
+
+    > node copy_to_srchr_pages.js
+    
+Then cd into srchr-pages, commit any changes, and push them back to the gh-pages branch.

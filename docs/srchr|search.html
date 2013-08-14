@@ -215,21 +215,72 @@ srchr/search
 		</section>
 
 		<section class="description">
-			
+			<p><code>new SearchControl(element, options)</code> 
+listens to a search form being submitted and 
+updates <code>currentSearch</code> with a new
+[srchr/models/search Search] instance.</p>
 		</section>
 
 		
 
 		
-
 		
-		<section class="comment">
-			<p><code>new SearchControl(element, options)</code> 
+		
+			<section class="signature">
+				<h2>new srchr/search(element, options)</h2>
+<div class="signature-wrapper">
+<p><code>new SearchControl(element, options)</code> 
 listens to a search form being submitted and 
 updates <code>currentSearch</code> with a new
 [srchr/models/search Search] instance.</p>
 
-<p>If another module (ex: <a href="srchr|history.html">srchr/history</a>) changes
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>element
+				<code>{HTMLElement}</code></h4>
+			<div class="description">
+				<p>the element to show results within.</p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>options
+				<code>{Object}</code></h4>
+			<div class="description">
+				<p>An object of the following options:</p>
+
+<h4>defaultText <code>{String}</code></h4>
+
+<p>The placeholder text.</p>
+
+<h4>currentSearch <code>{can.compute}</code></h4>
+
+<p>The current search that should be performed.</p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+
+</div>
+
+			</section>
+		
+		
+
+		
+		<section class="comment">
+			<p>If another module (ex: <a href="srchr|history.html">srchr/history</a>) changes
 <code>currentSearch</code>, <code>SearchControl</code> will update
 the search form accordingly.</p>
 

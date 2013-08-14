@@ -151,20 +151,66 @@ srchr/results
 		</section>
 
 		<section class="description">
-			
+			<p><code>new Results(element, options)</code> shows the currentSearch's
+search results in a tabbed interface. It
+combines <a href="ui|list.html">ui/list</a> and <a href="ui|tabs.html">ui/tabs</a>.</p>
 		</section>
 
 		
 
 		
+		
+		
+			<section class="signature">
+				<h2>new srchr/results(element, an)</h2>
+<div class="signature-wrapper">
+<p><code>new Results(element, options)</code> shows the currentSearch's
+search results in a tabbed interface. It
+combines <a href="ui|list.html">ui/list</a> and <a href="ui|tabs.html">ui/tabs</a>.</p>
+
+	<h3>Parameters</h3>
+
+	<ol class="parameters">
+		
+		<li class="parameter">
+			<h4>element
+				<code>{HTMLElement}</code></h4>
+			<div class="description">
+				<p>the elements to put the results in.</p>
+			</div>
+			
+			
+			
+		</li>
+		
+		<li class="parameter">
+			<h4>an
+				<code>{Object}</code></h4>
+			<div class="description">
+				<p>options object with the following properties:</p>
+
+<h3>currentSearch <code>can.compute</code></h3>
+
+<p>The current search.</p>
+			</div>
+			
+			
+			
+		</li>
+		
+	</ol>
+
+
+
+</div>
+
+			</section>
+		
+		
 
 		
 		<section class="comment">
-			<p><code>new Results(element, options)</code> shows the currentSearch's
-search results in a tabbed interface. It
-combines [ui/list] and [ui/tabs].</p>
-
-<pre><code>var currentSearch = can.compute({
+			<pre><code>var currentSearch = can.compute({
   query: "cats",
   types: ["Google","Twitter"]
 });

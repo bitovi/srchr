@@ -1,12 +1,32 @@
 steal('can','./tabs.less', function(can) {
 
 	/**
-	 * @class ui/tabs
-	 * @parent index
+	 * @constructor ui/tabs
+	 * @parent srchr
 	 * @inherits can.Control
 	 * @test ui/tabs/test.html
+	 * @alias Tabs
+	 * @description 
 	 * 
-	 * A Tabs widget for showing and hiding content. Given
+	 * A Tabs widget for showing and hiding content. 
+	 * 
+	 * @signature `new Tabs(element, options)`
+	 * 
+	 * @param {jQuery|HTMLElement|String} element An element the 
+	 * tabs will be created on.
+	 * 
+	 * @param {{enabled:can.compute}} options A object of option name-value pairs.
+	 * 
+	 * @option {can.compute} enabled 
+	 * 
+	 * Enabled is a can.compute that specifies which tabs should be enabled. The 
+	 * compute should return an array of tab content ids.
+	 * 
+	 * @body
+	 * 
+	 * ## Use
+	 * 
+	 * Given
 	 * content like:
 	 * 
 	 *     <ul id='resultsTab'>
@@ -30,14 +50,6 @@ steal('can','./tabs.less', function(can) {
 	 * 
 	 * @demo ui/tabs/tabs.html
 	 * 
-	 * @param {HTMLElement} element The element to create the tab on.
-	 * @param {Object} options A object of option name-value pairs. The
-	 * supported options are:
-	 * 
-	 * __enabled__ `can.compute`
-	 * 
-	 * Enabled is a [can.compute] that specifies which tabs should be enabled. The 
-	 * compute should return an array of tab content ids.
 	 * 
 	 */
 	return can.Control(
@@ -89,7 +101,7 @@ steal('can','./tabs.less', function(can) {
 		// helper function finds the tab for a given li
 		/**
 		 * Retrieves a tab contents for a given tab
-		 * @param {Object} li The LI to retrieve the tab for.
+		 * @param {jQuery} li The LI to retrieve the tab for.
 		 */
 		tab: function( li ) {
 			return $(li.find("a").attr("href"));
@@ -109,7 +121,7 @@ steal('can','./tabs.less', function(can) {
 		},
 		/**
 		 * Hide all tabs, show the new one.
-		 * @param {Object} The element to show.
+		 * @param {jQuery} el The element to show.
 		 */
 		activate: function( el ) {
 			this.tab(this.element.find('.active').removeClass('active')).hide();
