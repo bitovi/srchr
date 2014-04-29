@@ -1,6 +1,0 @@
-[submodule "documentjs"]
-	path = documentjs
-	url = git://github.com/bitovi/documentjs.git
-[submodule "jquerypp"]
-	path = jquerypp
-	url = git://github.com/bitovi/jquerypp
