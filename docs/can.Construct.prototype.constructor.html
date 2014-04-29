@@ -248,37 +248,45 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>constructor</h1>
 	<ul class="tags">
 		<li>property</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-constructor
-
+	
+	
 	
 		<span class="module">can.Construct.prototype.constructor</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<h2><code>{Object}</code></h2>
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>A reference to the constructor function that created the instance. This allows you to access
@@ -289,35 +297,21 @@ the constructor's static properties from an instance.</p>
 
 		
 		<section class='primary-options'>
-			<h2>
-	
-	   Property Type:
-	
-	
-	<code>{function()}</code>
+			
+
+  <h2>Object
 </h2>
-
-
-
-  <h2>()</h2>
 <div class="signature-wrapper">
 
 
 
-	<h3>Returns</h3>
-	<div class="returns">
-		<h4><code>{undefined}</code></h4>
-		<div class="description">
-			
-		</div>
-	</div>
+
+
 
 
 </div>
 
-
-
-
+  
 
 		</section>
 		
@@ -329,9 +323,9 @@ the constructor's static properties from an instance.</p>
 		<section class="comment">
 			<h2>Example</h2>
 
-<p>This class has a static counter that counts how mane instances have been created:</p>
+<p>This can.Construct has a static counter that counts how many instances have been created:</p>
 
-<pre><code class="lang-javascript">can.Construct("Counter", {
+<pre><code class="lang-javascript">can.Construct.extend("Counter", {
     count: 0
 }, {
     init: function() {
@@ -347,6 +341,12 @@ Counter.count; // 1</code></pre>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"description":"<p>A reference to the constructor function that created the instance. This allows you to access\nthe constructor's static properties from an instance.</p>","types":[{"type":"Object","options":[]}],"title":"constructor","name":"can.Construct.prototype.constructor","type":"property","parent":"can.Construct.prototype","src":"can/construct/construct.js","line":397,"id":150};
+
+	console.log(docData);
+</script>
 
 
 

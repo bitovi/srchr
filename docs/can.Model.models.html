@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>models</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-models
-
+	
+	
 	
 		<span class="module">can.Model.models</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Convert raw data into can.Model instances. </p>
@@ -126,7 +132,8 @@ models
 
 		
 		<section class="signature">
-			<h2>can.Model.models(data[, oldList])</h2>
+			<h2>can.Model.models(data[, oldList])
+</h2>
 <div class="signature-wrapper">
 
 
@@ -147,7 +154,7 @@ models
 		
 		<li class="parameter">
 			<h4>oldList
-				<code>{<a href="can.Model.List.html" >can.Model.List</a>}</code><span class="pull-right optional">Optional</span></h4>
+				<code>{can.Model.List}</code><span class="pull-right optional">Optional</span></h4>
 			<div class="description">
 				<p>If supplied, this List will be updated with the data from
 <strong>data</strong>.</p>
@@ -162,11 +169,33 @@ models
 
 	<h3>Returns</h3>
 	<div class="returns">
-		<h4><code>{<a href="can.Model.List.html" >can.Model.List</a>}</code></h4>
+		<h4><code>{can.Model.List}</code></h4>
 		<div class="description">
 			<p>A List of Models made from the raw data.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
+
+
+</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>models: &#34;PROPERTY&#34;
+</h2>
+<div class="signature-wrapper">
+<p>Creates a <code>models</code> function that looks for the array of instance data in the PROPERTY
+property of the raw response data of <a href="can.Model.findAll.html">can.Model.findAll</a>.</p>
+
+
+
+
 
 
 </div>
@@ -181,13 +210,13 @@ models
 
 		
 		<section class="comment">
-			<p><code>can.Model.models(data, xhr)</code> is used to 
-convert the raw response of a <a href="can.Model.findAll.html">can.Model.findAll</a> request 
-into a <a href="can.Model.List.html">can.Model.List</a> of model instances.  </p>
+			<p><code>can.Model.models(data, xhr)</code> is used to
+convert the raw response of a <a href="can.Model.findAll.html">can.Model.findAll</a> request
+into a [can.Model.List] of model instances.</p>
 
 <p>This method is rarely called directly. Instead the deferred returned
 by findAll is piped into <code>models</code>.  This creates a new deferred that
-resolves to a <a href="can.Model.List.html">can.Model.List</a> of instances instead of an array of
+resolves to a [can.Model.List] of instances instead of an array of
 simple JS objects.</p>
 
 <p>If your server is returning data in non-standard way,
@@ -195,10 +224,10 @@ overwriting <code>can.Model.models</code> is the best way to normalize it.</p>
 
 <h2>Quick Example</h2>
 
-<p>The following uses models to convert to a <a href="can.Model.List.html">can.Model.List</a> of model
+<p>The following uses models to convert to a [can.Model.List] of model
 instances.</p>
 
-<pre><code>Task = can.Model.extend({},{})
+<pre><code>Task = can.Model.extend()
 var tasks = Task.models([
   {id: 1, name : "dishes", complete : false},
   {id: 2, name: "laundry", compelte: true}
@@ -209,7 +238,7 @@ tasks.attr("0.complete", true)
 
 <h2>Non-standard Services</h2>
 
-<p><code>can.Model.models</code> expects data to be an array of name-value pair 
+<p><code>can.Model.models</code> expects data to be an array of name-value pair
 objects like:</p>
 
 <pre><code>[{id: 1, name : "dishes"},{id:2, name: "laundry"}, ...]
@@ -223,7 +252,7 @@ objects like:</p>
 }
 </code></pre>
 
-<p>In this case, models will return a <a href="can.Model.List.html">can.Model.List</a> of instances found in 
+<p>In this case, models will return a [can.Model.List] of instances found in
 data, but with additional properties as expandos on the list:</p>
 
 <pre><code>var tasks = Task.models({
@@ -250,7 +279,7 @@ tasks.count // -&gt; 1500
 },{})
 </code></pre>
 
-<p><code>can.Model.models</code> passes each intstance's data to <code>can.Model.model</code> to
+<p><code>can.Model.models</code> passes each instance's data to <code>can.Model.model</code> to
 create the individual instances.</p>
 		</section>
 		
@@ -258,6 +287,12 @@ create the individual instances.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Model.models","type":"function","parent":"can.Model.static","description":"<p>Convert raw data into can.Model instances. </p>","title":"models","signatures":[{"code":"can.Model.models(data[, oldList])","description":"","params":[{"types":[{"type":"Array","template":[{"types":[{"type":"Object","options":[]}]}]}],"name":"data","description":"<p>The raw data from a <code>[can.Model.findAll findAll()]</code> request.</p>"},{"types":[{"type":"can.Model.List"}],"optional":true,"name":"oldList","description":"<p>If supplied, this List will be updated with the data from\n<strong>data</strong>.</p>"}],"returns":{"types":[{"type":"can.Model.List"}],"description":"<p>A List of Models made from the raw data.</p>"}},{"code":"models: \"PROPERTY\"","description":"<p>Creates a <code>models</code> function that looks for the array of instance data in the PROPERTY\nproperty of the raw response data of [can.Model.findAll].</p>","params":[]}],"comment":" ","src":"can/model/model.js","line":964,"id":38};
+
+	console.log(docData);
+</script>
 
 
 

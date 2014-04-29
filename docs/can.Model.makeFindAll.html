@@ -88,33 +88,39 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>can.Model.makeFindAll</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
+	
+	
+	
+	
 </div>
 
-<h1>
-can.Model.makeFindAll
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -122,11 +128,12 @@ can.Model.makeFindAll
 
 		
 		<section class="signature">
-			<h2>can.Model.makeFindAll: function(findAllData) -&gt; findAll</h2>
+			<h2>can.Model.makeFindAll: function(findAllData) -&gt; findAll
+</h2>
 <div class="signature-wrapper">
 <p>Returns the external <code>findAll</code> method given the implemented [can.Model.findAllData findAllData] function.</p>
 
-<p><a href="can.Model.findAll.html">can.Model.findAll</a> is implemented with a <code>String</code>, [can.AjaxSettings ajax settings object], or 
+<p><a href="can.Model.findAll.html">can.Model.findAll</a> is implemented with a <code>String</code>, [can.AjaxSettings ajax settings object], or
 [can.Model.findAllData findAllData] function. If it is implemented as
 a <code>String</code> or [can.AjaxSettings ajax settings object], those values are used
 to create a [can.Model.findAllData findAllData] function.</p>
@@ -141,7 +148,13 @@ should use <code>findAllData</code> internally to get the raw data for the reque
 		<div class="description">
 			<p>Returns function that implements the external API of <code>findAll</code>.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -158,7 +171,7 @@ should use <code>findAllData</code> internally to get the raw data for the reque
 		<section class="comment">
 			<h2>Use</h2>
 
-<p><code>makeFindAll</code> can be used to implement base models that perform special 
+<p><code>makeFindAll</code> can be used to implement base models that perform special
 behavior. <code>makeFindAll</code> is passed a [can.Model.findAllData findAllData] function that retrieves raw
 data. It should return a function that when called, uses
 the findAllData function to get the raw data, convert them to model instances with
@@ -178,7 +191,7 @@ the findAllData function to get the raw data, convert them to model instances wi
       if(! cachedRequests[JSON.stringify(params)] ) {
         var self = this;
         // make the request for data, save deferred
-        cachedRequests[JSON.stringify(params)] = 
+        cachedRequests[JSON.stringify(params)] =
           findAllData(params).then(function(data){
             // convert the raw data into instances
             return self.models(data)
@@ -189,7 +202,7 @@ the findAllData function to get the raw data, convert them to model instances wi
       // hookup success and error
       def.then(success,error)
       return def;
-    }  
+    }
   }
 },{})
 </code></pre>
@@ -212,6 +225,12 @@ Todo.findAll({})
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Model.makeFindAll","type":"function","parent":"can.Model.static","description":"","title":"","signatures":[{"code":"can.Model.makeFindAll: function(findAllData) -> findAll","description":"<p>Returns the external <code>findAll</code> method given the implemented [can.Model.findAllData findAllData] function.</p>\n\n<p>[can.Model.findAll] is implemented with a <code>String</code>, [can.AjaxSettings ajax settings object], or\n[can.Model.findAllData findAllData] function. If it is implemented as\na <code>String</code> or [can.AjaxSettings ajax settings object], those values are used\nto create a [can.Model.findAllData findAllData] function.</p>\n\n<p>The [can.Model.findAllData findAllData] function is passed to <code>makeFindAll</code>. <code>makeFindAll</code>\nshould use <code>findAllData</code> internally to get the raw data for the request.</p>","params":[],"returns":{"types":[{"type":"function","returns":{"types":[{"type":"can.Deferred"}]},"params":[{"types":[{"type":"params"}]},{"types":[{"type":"success"}]},{"types":[{"type":"error"}]}]}],"description":"<p>Returns function that implements the external API of <code>findAll</code>.</p>"}}],"comment":" ","src":"can/model/model.js","line":1375,"id":46};
+
+	console.log(docData);
+</script>
 
 
 

@@ -248,37 +248,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>init</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-init
-
+	
+	
 	
 		<span class="module">can.Construct.prototype.init</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Called when a new instance of a can.Construct is created. </p>
@@ -286,7 +292,8 @@ init
 
 		
 		<section class="signature">
-			<h2>construct.init(...args)</h2>
+			<h2>construct.init(...args)
+</h2>
 <div class="signature-wrapper">
 
 
@@ -298,7 +305,7 @@ init
 			<h4>args
 				<code>{*}</code></h4>
 			<div class="description">
-				<p>the arguments passed to the constructor (or the elements of the array returned from <a href="can.Construct.prototype.setup.html">can.Construct.prototype.setup</a>)</p>
+				<p>the arguments passed to the constructor (or the items of the array returned from <a href="can.Construct.prototype.setup.html">can.Construct.prototype.setup</a>)</p>
 			</div>
 			
 			
@@ -306,6 +313,9 @@ init
 		</li>
 		
 	</ol>
+
+
+
 
 
 
@@ -329,7 +339,7 @@ should go, and a common thing to do in <code>init</code> is to save the argument
 
 <p>First, we'll make a Person constructor that has a first and last name:</p>
 
-<pre><code class="lang-javascript">can.Construct("Person", {
+<pre><code class="lang-javascript">var Person = can.Construct.extend({
     init: function(first, last) {
         this.first = first;
         this.last  = last;
@@ -342,7 +352,7 @@ justin.last; // "Meyer"</code></pre>
 
 <p>Then we'll extend Person into Programmer and add a favorite language:</p>
 
-<pre><code class="lang-javascript">Person("Programmer", {
+<pre><code class="lang-javascript">var Programmer = Person.extend({
     init: function(first, last, language) {
         // call base's init
         Person.prototype.init.apply(this, arguments);
@@ -351,25 +361,32 @@ justin.last; // "Meyer"</code></pre>
         this.language = language;
     },
     bio: function() {
-        return 'Hi! I'm ' + this.first + ' ' + this.last +
-            ' and I write ' + this.language + '.';
+        return "Hi! I'm "" + this.first + " " + this.last +
+            " and I write " + this.language + ".";
     }
 });
 
 var brian = new Programmer("Brian", "Moschel", 'ECMAScript');
 brian.bio(); // "Hi! I'm Brian Moschel and I write ECMAScript.";</code></pre>
 
-<h2>Be Aware</h2>
+<h2>Modified Arguments</h2>
 
 <p><a href="can.Construct.prototype.setup.html">can.Construct.prototype.setup</a> is able to modify the arguments passed to <code>init</code>.
-If you aren't receiving the right arguments to <code>init</code>, check to make sure
-that they aren't being changed by <code>setup</code> somewhere along the inheritance chain.</p>
+If you aren't receiving the exact arguments as those passed to <code>new Construct(args)</code>,
+check to make sure that they aren't being changed by <code>setup</code> somewhere along
+the inheritance chain.</p>
 		</section>
 		
 
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Construct.prototype.init","parent":"can.Construct.prototype","description":"<p>Called when a new instance of a can.Construct is created. </p>","title":"init","signatures":[{"code":"construct.init(...args)","description":"","params":[{"types":[{"type":"*"}],"name":"args","description":"<p>the arguments passed to the constructor (or the items of the array returned from [can.Construct::setup])</p>"}]}],"comment":" ","src":"can/construct/construct.js","line":491,"id":152};
+
+	console.log(docData);
+</script>
 
 
 

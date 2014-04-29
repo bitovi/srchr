@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>findOne</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-findOne
-
+	
+	
 	
 		<span class="module">can.Model.findOne</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Retrieve a resource from a server. </p>
@@ -126,7 +132,8 @@ findOne
 
 		
 		<section class="signature">
-			<h2>can.Model.findOne( params[, success[, error]] )</h2>
+			<h2>can.Model.findOne( params[, success[, error]] )
+</h2>
 <div class="signature-wrapper">
 <p>Retrieve a single instance from the server.</p>
 
@@ -176,9 +183,15 @@ XmlHttpRequest object.</p>
 	<div class="returns">
 		<h4><code>{can.Deferred}</code></h4>
 		<div class="description">
-			<p>A deferred that resolves to a <a href="can.Model.List.html">can.Model.List</a> of retrieved models.</p>
+			<p>A deferred that resolves to a [can.Model.List] of retrieved models.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -186,14 +199,15 @@ XmlHttpRequest object.</p>
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.findOne: findOneData( params ) -&gt; deferred</h2>
+			<h2>can.Model.findOne: findOneData( params ) -&gt; deferred
+</h2>
 <div class="signature-wrapper">
 <p>Implements <code>findOne</code> with a [can.Model.findOneData function]. This function
-is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to create the external 
+is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to create the external
 <code>findOne</code> method.</p>
 
 <pre><code>findOne: function(params){
-  return $.get("/task/"+params.id)  
+  return $.get("/task/"+params.id)
 }
 </code></pre>
 
@@ -218,21 +232,25 @@ that resolves to that instance.</p>
 
 
 
+
+
+
 </div>
 
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.findOne: &quot;[METHOD] /path/to/resource&quot;</h2>
+			<h2>can.Model.findOne: &#34;[METHOD] /path/to/resource&#34;
+</h2>
 <div class="signature-wrapper">
-<p>Implements <code>findOne</code> with a HTTP method and url to retrieve an instance's data. </p>
+<p>Implements <code>findOne</code> with a HTTP method and url to retrieve an instance's data.</p>
 
 <pre><code>findOne: "GET /tasks/{id}"
 </code></pre>
 
-<p>If <code>findOne</code> is implemented with a string, this gets converted to 
+<p>If <code>findOne</code> is implemented with a string, this gets converted to
 a <a href="can.Model.makeFindOne.html">makeFindOne function</a>
-which is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to create the external 
+which is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to create the external
 <code>findOne</code> method.</p>
 
 	<h3>Parameters</h3>
@@ -265,21 +283,25 @@ which is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to creat
 
 
 
+
+
+
 </div>
 
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.findOne: {ajaxSettings}</h2>
+			<h2>can.Model.findOne: {ajaxSettings}
+</h2>
 <div class="signature-wrapper">
 <p>Implements <code>findOne</code> with a [can.AjaxSettings ajax settings object].</p>
 
 <pre><code>findOne: {url: "/tasks/{id}", dataType: "json"}
 </code></pre>
 
-<p>If <code>findOne</code> is implemented with an object, it gets converted to 
+<p>If <code>findOne</code> is implemented with an object, it gets converted to
 a <a href="can.Model.makeFindOne.html">makeFindOne function</a>
-which is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to create the external 
+which is passed to <a href="can.Model.makeFindOne.html">makeFindOne</a> to create the external
 <code>findOne</code> method.</p>
 
 	<h3>Parameters</h3>
@@ -302,6 +324,9 @@ specifies the options available to pass to [can.ajax].</p>
 
 
 
+
+
+
 </div>
 
 		</section>
@@ -316,15 +341,15 @@ specifies the options available to pass to [can.ajax].</p>
 		<section class="comment">
 			<h2>Use</h2>
 
-<p><code>findOne( params, success(instance), error(xhr) ) -&gt; Deferred</code> is used to retrieve a model 
-instance from the server. </p>
+<p><code>findOne( params, success(instance), error(xhr) ) -&gt; Deferred</code> is used to retrieve a model
+instance from the server.</p>
 
 <p>Use <code>findOne</code> like:</p>
 
 <pre><code>Recipe.findOne({id: 57}, function(recipe){
-     recipe.attr('name') //-&gt; "Ice Water"
+ recipe.attr('name') //-&gt; "Ice Water"
 }, function( xhr ){
-     // called if an error
+ // called if an error
 }) //-&gt; Deferred
 </code></pre>
 
@@ -384,6 +409,12 @@ build the URL manually. For example:</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Model.findOne","type":"function","parent":"can.Model.static","description":"<p>Retrieve a resource from a server. </p>","title":"findOne","signatures":[{"code":"can.Model.findOne( params[, success[, error]] )","description":"<p>Retrieve a single instance from the server.</p>","params":[{"types":[{"type":"Object","options":[]}],"name":"params","description":"<p>Values to filter the request or results with.</p>"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"can.Model"}],"name":"model"}]}],"optional":true,"name":"success","description":"<p>A callback to call on successful retrieval. The callback recieves\nthe retrieved resource as a can.Model.</p>"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"can.AjaxSettings"}],"name":"xhr"}]}],"optional":true,"name":"error","description":"<p>A callback to call when an error occurs. The callback receives the\nXmlHttpRequest object.</p>"}],"returns":{"types":[{"type":"can.Deferred"}],"description":"<p>A deferred that resolves to a [can.Model.List] of retrieved models.</p>"}},{"code":"can.Model.findOne: findOneData( params ) -> deferred","description":"<p>Implements <code>findOne</code> with a [can.Model.findOneData function]. This function\nis passed to [can.Model.makeFindOne makeFindOne] to create the external\n<code>findOne</code> method.</p>\n\n<pre><code>findOne: function(params){\n  return $.get(\"/task/\"+params.id)\n}\n</code></pre>","params":[{"types":[{"type":"can.Model.findOneData"}],"name":"findOneData","description":"<p>A function that accepts parameters\nspecifying an instance to retreive and returns a [can.Deferred]\nthat resolves to that instance.</p>"}]},{"code":"can.Model.findOne: \"[METHOD] /path/to/resource\"","description":"<p>Implements <code>findOne</code> with a HTTP method and url to retrieve an instance's data.</p>\n\n<pre><code>findOne: \"GET /tasks/{id}\"\n</code></pre>\n\n<p>If <code>findOne</code> is implemented with a string, this gets converted to\na [can.Model.makeFindOne makeFindOne function]\nwhich is passed to [can.Model.makeFindOne makeFindOne] to create the external\n<code>findOne</code> method.</p>","params":[{"types":[{"type":"HttpMethod"}],"name":"METHOD","description":"<p>An HTTP method. Defaults to <code>\"GET\"</code>.</p>"},{"types":[{"type":"STRING"}],"name":"url","description":"<p>The URL of the service to retrieve JSON data.</p>"}]},{"code":"can.Model.findOne: {ajaxSettings}","description":"<p>Implements <code>findOne</code> with a [can.AjaxSettings ajax settings object].</p>\n\n<pre><code>findOne: {url: \"/tasks/{id}\", dataType: \"json\"}\n</code></pre>\n\n<p>If <code>findOne</code> is implemented with an object, it gets converted to\na [can.Model.makeFindOne makeFindOne function]\nwhich is passed to [can.Model.makeFindOne makeFindOne] to create the external\n<code>findOne</code> method.</p>","params":[{"types":[{"type":"can.AjaxSettings"}],"name":"ajaxSettings","description":"<p>A settings object that\nspecifies the options available to pass to [can.ajax].</p>"}]}],"comment":" ","src":"can/model/model.js","line":694,"id":35};
+
+	console.log(docData);
+</script>
 
 
 

@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>setup</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-setup
-
+	
+	
 	
 		<span class="module">can.Control.prototype.setup</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Perform pre-initialization logic. </p>
@@ -126,7 +132,8 @@ setup
 
 		
 		<section class="signature">
-			<h2>control.setup(element, options)</h2>
+			<h2>control.setup(element, options)
+</h2>
 <div class="signature-wrapper">
 
 
@@ -171,7 +178,13 @@ this.options and merged with [can.Control.static.defaults defaults].</p>
 			<p>return an array if you want to change what init is called with. By
 default it is called with the element and options passed to the control.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -190,20 +203,20 @@ default it is called with the element and options passed to the control.</p>
 
 <h3>Sets this.element</h3>
 
-<p>The first parameter passed to new Control( el, options ) is expected to be 
+<p>The first parameter passed to new Control( el, options ) is expected to be
 an element.  This gets converted to a Wrapped NodeList element and set as
 <a href="can.Control.prototype.element.html">this.element</a>.</p>
 
 <h3>Adds the control's name to the element's className</h3>
 
-<p>Control adds it's plugin name to the element's className for easier 
+<p>Control adds it's plugin name to the element's className for easier
 debugging.  For example, if your Control is named "Foo.Bar", it adds
 "foo_bar" to the className.</p>
 
 <h3>Saves the control in $.data</h3>
 
-<p>A reference to the control instance is saved in $.data.  You can find 
-instances of "Foo.Bar" like: </p>
+<p>A reference to the control instance is saved in $.data.  You can find
+instances of "Foo.Bar" like:</p>
 
 <pre><code>$( '#el' ).data( 'controls' )[ 'foo_bar' ]
 </code></pre>
@@ -211,7 +224,7 @@ instances of "Foo.Bar" like: </p>
 <h3>Merges Options</h3>
 
 <p>Merges the default options with optional user-supplied ones.
-Additionally, default values are exposed in the static [can.Control.static.defaults defaults] 
+Additionally, default values are exposed in the static [can.Control.static.defaults defaults]
 so that users can change them.</p>
 
 <h3>Binds event handlers</h3>
@@ -223,6 +236,12 @@ so that users can change them.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Control.prototype.setup","parent":"can.Control.prototype","description":"<p>Perform pre-initialization logic. </p>","title":"setup","signatures":[{"code":"control.setup(element, options)","description":"","params":[{"types":[{"type":"HTMLElement"},{"type":"NodeList"},{"type":"String"}],"name":"element","description":"<p>The element as passed to the constructor.</p>"},{"types":[{"type":"Object","options":[]}],"optional":true,"name":"options","description":"<p>option values for the control.  These get added to\nthis.options and merged with [can.Control.static.defaults defaults].</p>"}],"returns":{"types":[{"type":"undefined"},{"type":"Array","options":[]}],"description":"<p>return an array if you want to change what init is called with. By\ndefault it is called with the element and options passed to the control.</p>"}}],"comment":" ","src":"can/control/control.js","line":334,"id":102};
+
+	console.log(docData);
+</script>
 
 
 

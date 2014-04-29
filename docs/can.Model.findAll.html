@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>findAll</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-findAll
-
+	
+	
 	
 		<span class="module">can.Model.findAll</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Retrieve multiple resources from a server. </p>
@@ -126,7 +132,8 @@ findAll
 
 		
 		<section class="signature">
-			<h2>can.Model.findAll( params[, success[, error]] )</h2>
+			<h2>can.Model.findAll( params[, success[, error]] )
+</h2>
 <div class="signature-wrapper">
 <p>Retrieve multiple resources from a server.</p>
 
@@ -147,7 +154,7 @@ findAll
 		
 		<li class="parameter">
 			<h4>success
-				<code>{function(<a href="can.Model.List.html" >list</a>)}</code><span class="pull-right optional">Optional</span></h4>
+				<code>{function(list)}</code><span class="pull-right optional">Optional</span></h4>
 			<div class="description">
 				<p>A callback to call on successful retrieval. The callback recieves
 a can.Model.List of the retrieved resources.</p>
@@ -176,9 +183,15 @@ XmlHttpRequest object.</p>
 	<div class="returns">
 		<h4><code>{can.Deferred}</code></h4>
 		<div class="description">
-			<p>A deferred that resolves to a <a href="can.Model.List.html">can.Model.List</a> of retrieved models.</p>
+			<p>A deferred that resolves to a [can.Model.List] of retrieved models.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -186,14 +199,15 @@ XmlHttpRequest object.</p>
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.findAll: findAllData( params ) -&gt; deferred</h2>
+			<h2>can.Model.findAll: findAllData( params ) -&gt; deferred
+</h2>
 <div class="signature-wrapper">
 <p>Implements <code>findAll</code> with a [can.Model.findAllData function]. This function
-is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the external 
+is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the external
 <code>findAll</code> method.</p>
 
 <pre><code>findAll: function(params){
-  return $.get("/tasks",params)  
+  return $.get("/tasks",params)
 }
 </code></pre>
 
@@ -206,7 +220,7 @@ is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the 
 				<code>{can.Model.findAllData}</code></h4>
 			<div class="description">
 				<p>A function that accepts parameters
-specifying a list of instance data to retreive and returns a [can.Deferred]
+specifying a list of instance data to retrieve and returns a [can.Deferred]
 that resolves to an array of those instances.</p>
 			</div>
 			
@@ -218,21 +232,25 @@ that resolves to an array of those instances.</p>
 
 
 
+
+
+
 </div>
 
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.findAll: &quot;[METHOD] /path/to/resource&quot;</h2>
+			<h2>can.Model.findAll: &#34;[METHOD] /path/to/resource&#34;
+</h2>
 <div class="signature-wrapper">
-<p>Implements <code>findAll</code> with a HTTP method and url to retrieve instance data. </p>
+<p>Implements <code>findAll</code> with a HTTP method and url to retrieve instance data.</p>
 
 <pre><code>findAll: "GET /tasks"
 </code></pre>
 
-<p>If <code>findAll</code> is implemented with a string, this gets converted to 
+<p>If <code>findAll</code> is implemented with a string, this gets converted to
 a [can.Model.findAllData findAllData function]
-which is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the external 
+which is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the external
 <code>findAll</code> method.</p>
 
 	<h3>Parameters</h3>
@@ -281,10 +299,16 @@ which is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to creat
 
 <p>This object is passed to <a href="can.Model.models.html">can.Model.models</a> to turn it into instances.</p>
 
-<p><em>Note: .findAll can also accept an array, but you 
+<p><em>Note: .findAll can also accept an array, but you
 probably <a href="http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-json-vulnerability.aspx">should not be doing that</a>.</em></p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -292,16 +316,17 @@ probably <a href="http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-json
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.findAll: {ajaxSettings}</h2>
+			<h2>can.Model.findAll: {ajaxSettings}
+</h2>
 <div class="signature-wrapper">
 <p>Implements <code>findAll</code> with a [can.AjaxSettings ajax settings object].</p>
 
 <pre><code>findAll: {url: "/tasks", dataType: "json"}
 </code></pre>
 
-<p>If <code>findAll</code> is implemented with an object, it gets converted to 
+<p>If <code>findAll</code> is implemented with an object, it gets converted to
 a [can.Model.findAllData findAllData function]
-which is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the external 
+which is passed to <a href="can.Model.makeFindAll.html">makeFindAll</a> to create the external
 <code>findAll</code> method.</p>
 
 	<h3>Parameters</h3>
@@ -324,6 +349,9 @@ specifies the options available to pass to [can.ajax].</p>
 
 
 
+
+
+
 </div>
 
 		</section>
@@ -338,7 +366,7 @@ specifies the options available to pass to [can.ajax].</p>
 		<section class="comment">
 			<h2>Use</h2>
 
-<p><code>findAll( params, success(instances), error(xhr) ) -&gt; Deferred</code> is used to retrieve model 
+<p><code>findAll( params, success(instances), error(xhr) ) -&gt; Deferred</code> is used to retrieve model
 instances from the server. After implementing <code>findAll</code>, use it to retrieve instances of the model
 like:</p>
 
@@ -402,6 +430,12 @@ deferred that resolves to an array of model data. For example:</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Model.findAll","type":"function","parent":"can.Model.static","description":"<p>Retrieve multiple resources from a server. </p>","title":"findAll","signatures":[{"code":"can.Model.findAll( params[, success[, error]] )","description":"<p>Retrieve multiple resources from a server.</p>","params":[{"types":[{"type":"Object","options":[]}],"name":"params","description":"<p>Values to filter the request or results with.</p>"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"can.Model.List"}],"name":"list"}]}],"optional":true,"name":"success","description":"<p>A callback to call on successful retrieval. The callback recieves\na can.Model.List of the retrieved resources.</p>"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"can.AjaxSettings"}],"name":"xhr"}]}],"optional":true,"name":"error","description":"<p>A callback to call when an error occurs. The callback receives the\nXmlHttpRequest object.</p>"}],"returns":{"types":[{"type":"can.Deferred"}],"description":"<p>A deferred that resolves to a [can.Model.List] of retrieved models.</p>"}},{"code":"can.Model.findAll: findAllData( params ) -> deferred","description":"<p>Implements <code>findAll</code> with a [can.Model.findAllData function]. This function\nis passed to [can.Model.makeFindAll makeFindAll] to create the external\n<code>findAll</code> method.</p>\n\n<pre><code>findAll: function(params){\n  return $.get(\"/tasks\",params)\n}\n</code></pre>","params":[{"types":[{"type":"can.Model.findAllData"}],"name":"findAllData","description":"<p>A function that accepts parameters\nspecifying a list of instance data to retrieve and returns a [can.Deferred]\nthat resolves to an array of those instances.</p>"}]},{"code":"can.Model.findAll: \"[METHOD] /path/to/resource\"","description":"<p>Implements <code>findAll</code> with a HTTP method and url to retrieve instance data.</p>\n\n<pre><code>findAll: \"GET /tasks\"\n</code></pre>\n\n<p>If <code>findAll</code> is implemented with a string, this gets converted to\na [can.Model.findAllData findAllData function]\nwhich is passed to [can.Model.makeFindAll makeFindAll] to create the external\n<code>findAll</code> method.</p>","params":[{"types":[{"type":"HttpMethod"}],"name":"METHOD","description":"<p>An HTTP method. Defaults to <code>\"GET\"</code>.</p>"},{"types":[{"type":"STRING"}],"name":"url","description":"<p>The URL of the service to retrieve JSON data.</p>"}],"returns":{"types":[{"type":"JSON"}],"description":"<p>The service should return a JSON object like:</p>\n\n<pre><code>{\n  \"data\": [\n    { \"id\" : 1, \"name\" : \"do the dishes\" },\n    { \"id\" : 2, \"name\" : \"mow the lawn\" },\n    { \"id\" : 3, \"name\" : \"iron my shirts\" }\n  ]\n}\n</code></pre>\n\n<p>This object is passed to [can.Model.models] to turn it into instances.</p>\n\n<p><em>Note: .findAll can also accept an array, but you\nprobably <a href=\"http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-json-vulnerability.aspx\">should not be doing that</a>.</em></p>"}},{"code":"can.Model.findAll: {ajaxSettings}","description":"<p>Implements <code>findAll</code> with a [can.AjaxSettings ajax settings object].</p>\n\n<pre><code>findAll: {url: \"/tasks\", dataType: \"json\"}\n</code></pre>\n\n<p>If <code>findAll</code> is implemented with an object, it gets converted to\na [can.Model.findAllData findAllData function]\nwhich is passed to [can.Model.makeFindAll makeFindAll] to create the external\n<code>findAll</code> method.</p>","params":[{"types":[{"type":"can.AjaxSettings"}],"name":"ajaxSettings","description":"<p>A settings object that\nspecifies the options available to pass to [can.ajax].</p>"}]}],"comment":" ","src":"can/model/model.js","line":555,"id":34};
+
+	console.log(docData);
+</script>
 
 
 

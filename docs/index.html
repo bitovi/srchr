@@ -242,33 +242,39 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>srchr</h1>
 	<ul class="tags">
 		<li>page</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
+	
+	
+	
+	
 </div>
 
-<h1>
-srchr
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<h2>Srchr</h2>
@@ -284,33 +290,24 @@ srchr
 		
 		<section class="comment">
 			<p>Srchr is a crowdsourced exercise in collecting JavaScript 
-wisdom. For more information about the project, visit 
-http://blog.rebeccamurphey.com/2010/03/15/srchr-crowdsourcing-javascript-wisdom/.</p>
+wisdom. For more information about the project, visit <a href="https://github.com/rmurphey/srchr">https://github.com/rmurphey/srchr</a>.</p>
 
-<p>This is a JavaScriptMVC version created by <a href="http://bitovi.com">Bitovi</a>.  </p>
+<p>This is a JavaScriptMVC version created by <a href="http://bitovi.com">Bitovi</a>.</p>
 
 <h2>Installing</h2>
 
-<p>Clone srchr and install its submodules:</p>
+<p>Clone srchr:</p>
 
 <pre><code>git clone git://github.com/bitovi/srchr srchr
-cd srchr
-git submodule update --init --recursive
 </code></pre>
 
 <h2>Running</h2>
 
-<p>Open <a href="srchr/srchr.html">srchr/srchr.html</a>.</p>
+<p>Open <code>srchr/srchr.html</code>.</p>
 
 <h2>Testing</h2>
 
-<p>In your browser, open [//srchr/test.html]. To run it automated, open an console to 
-the <code>srchr</code> folder and run:</p>
-
-<pre><code>./js funcunit/open/selenium http://localhost/srchr/srchr/test.html
-</code></pre>
-
-<p><em>Note: Replace http://localhost/srchr with the path to srchr.</em></p>
+<p>In your browser, open <code>srchr/test.html</code>.</p>
 
 <h2>Building</h2>
 
@@ -321,21 +318,27 @@ the <code>srchr</code> folder and run:</p>
 
 <p>Open <code>srchr/srchr.html</code> in a text editor and change:</p>
 
-<pre><code>&lt;script src='../steal/steal.js?srchr'&gt;  
+<pre><code>&lt;script src="../steal/steal.js?srchr"&gt;
 </code></pre>
 
 <p>to</p>
 
-<pre><code>&lt;script src='../steal/steal.production.js?srchr'&gt;  
+<pre><code>&lt;script src="../steal/steal.production.js?srchr"&gt;
 </code></pre>
 
-<p>Open <a href="srchr/srchr.html">srchr/srchr.html</a> in your browser.</p>
+<p>Open <code>srchr/srchr.html</code> in your browser.</p>
 		</section>
 		
 
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"page","name":"srchr","description":"<h2>Srchr</h2>","src":"srchr/srchr.md","id":0,"children":[{"type":"constructor","description":"<p>Saves a list of [srchr/models/search] instances \nin local storage and allows you to remove these\ninstances and set them as the new <code>currentSearch</code>.</p>","name":"srchr/history","title":"","parent":"srchr","inherits":"can.Control","test":"srchr/history/test.html","src":"srchr/history/history.js","line":8,"id":4,"children":[{"type":"prototype","description":"","name":"srchr/history.prototype","parent":"srchr/history","src":"srchr/history/history.js","line":35,"id":5,"children":[{"type":"function","name":"srchr/history.prototype.init","params":[],"parent":"srchr/history.prototype","description":"<p>Waits for the page to be loaded</p>","src":"srchr/history/history.js","line":37,"id":6},{"type":"function","name":"srchr/history.prototype.\".remove click\"","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The history event to remove.</p>"},{"types":[{"type":"Object","options":[]}],"name":"ev","description":"<p>The event that was fired.</p>"}],"parent":"srchr/history.prototype","description":"<p>Binds the \"remove\" class on click.  Removes a history entry.</p>","src":"srchr/history/history.js","line":85,"id":7},{"type":"function","name":"srchr/history.prototype.\"li click\"","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The history entry that was clicked</p>"},{"types":[{"type":"Object","options":[]}],"name":"ev","description":"<p>The event that was fired.</p>"}],"parent":"srchr/history.prototype","description":"<p>Fires \"selected\" and passes el.model().</p>","src":"srchr/history/history.js","line":102,"id":8}]}]},{"type":"constructor","description":"<p><code>new SearchControl(element, options)</code> \nlistens to a search form being submitted and \nupdates <code>currentSearch</code> with a new\n[srchr/models/search Search] instance.</p>","name":"srchr/search","title":"","parent":"srchr","inherits":"can.Control","test":"srchr/search/test.html","params":[{"types":[{"type":"HTMLElement"}],"name":"element","description":"<p>the element to show results within.</p>"},{"types":[{"type":"Object","options":[]}],"name":"options","description":"<p>An object of the following options:</p>\n\n<h4>defaultText <code>{String}</code></h4>\n\n<p>The placeholder text.</p>\n\n<h4>currentSearch <code>{can.compute}</code></h4>\n\n<p>The current search that should be performed.</p>"}],"src":"srchr/search/search.js","line":9,"id":9,"children":[{"type":"static","description":"","name":"srchr/search.static","parent":"srchr/search","src":"srchr/search/search.js","line":53,"id":10},{"type":"prototype","description":"","name":"srchr/search.prototype","parent":"srchr/search","src":"srchr/search/search.js","line":61,"id":11,"children":[{"type":"function","name":"srchr/search.prototype.init","params":[],"parent":"srchr/search.prototype","description":"<p>Initialize a new instance of the Search controller.</p>","src":"srchr/search/search.js","line":63,"id":12},{"type":"function","name":"srchr/search.prototype.flash","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The element to highlight.</p>"},{"types":[{"type":"Object"},{"type":"null"}],"name":"time","description":"<p>The amount of time to highlight for.  Default is 1000 milliseconds</p>"}],"parent":"srchr/search.prototype","description":"<p>Highlights 'el' for 'time' milliseconds.</p>","src":"srchr/search/search.js","line":88,"id":13},{"type":"function","name":"srchr/search.prototype.\"form submit\"","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The event target element.</p>"},{"types":[{"type":"Object","options":[]}],"name":"ev","description":"<p>The event being fired.</p>"}],"parent":"srchr/search.prototype","description":"<p>Binds to the search form submission.  Prevents the default action and fires the \"search.created\" event. </p>","src":"srchr/search/search.js","line":102,"id":14},{"type":"function","name":"srchr/search.prototype.\"{document} load\"","params":[],"parent":"srchr/search.prototype","description":"<p>Focuses on the search query box on page load.</p>","src":"srchr/search/search.js","line":131,"id":15},{"type":"function","name":"srchr/search.prototype.\"{currentSearch} change\"","params":[{"name":"currentSearch","types":[{"type":"*"}]},{"name":"ev","types":[{"type":"*"}]},{"name":"newVal","types":[{"type":"*"}]},{"name":"oldVal","types":[{"type":"*"}]}],"parent":"srchr/search.prototype","description":"<p>Updates the checkboxes to reflect the user's desired search engine preferences.  Also fires search. </p>","src":"srchr/search/search.js","line":139,"id":16}]}]},{"type":"constructor","description":"<p><code>new Results(element, options)</code> shows the currentSearch's\nsearch results in a tabbed interface. It\ncombines [ui/list] and [ui/tabs].</p>","name":"srchr/results","title":"","parent":"srchr","alias":"Results","test":"srchr/results/test.html","inherits":"can.Control","params":[{"types":[{"type":"HTMLElement"}],"name":"element","description":"<p>the elements to put the results in.</p>"},{"types":[{"type":"Object","options":[]}],"name":"an","description":"<p>options object with the following properties:</p>\n\n<h3>currentSearch <code>can.compute</code></h3>\n\n<p>The current search.</p>"}],"src":"srchr/results/results.js","line":6,"id":17,"children":[{"type":"static","description":"","name":"srchr/results.static","parent":"srchr/results","src":"srchr/results/results.js","line":38,"id":18},{"type":"prototype","description":"","name":"srchr/results.prototype","parent":"srchr/results","src":"srchr/results/results.js","line":43,"id":19}]},{"type":"constructor","description":"<p>Provides a History model that allows data to be saved and retrieved from\nlocalStorage.  Example:</p>","name":"srchr/models/history","title":"","inherits":"can.Model","test":"srchr/models/test.html","parent":"srchr","src":"srchr/models/history.js","line":2,"id":20,"children":[{"name":"srchr/models/history.localStoreName","type":"property","parent":"srchr/models/history","description":"<p>The name of the localStorage property used to store instances of this model.</p>","src":"srchr/models/history.js","line":33,"id":21}]},{"type":"constructor","description":"<p><code>new Placeholder(element, options)</code> creates\na placeholder effect for browsers that do not\nsupport it.</p>","name":"ui/placeholder","title":"","parent":"srchr","test":"ui/placeholder/test.html","inherits":"can.Control","params":[{"types":[{"type":"HTMLInputElement"}],"name":"element","description":"<p>the element to show results within.</p>"},{"types":[{"type":"Object","options":[]}],"name":"options","description":"<p>An object of the following options:</p>\n\n<h4>placeholder <code>can.Compute</code> or <code>String</code></h4>\n\n<p>The placeholder text of the element.</p>"}],"src":"ui/placeholder/placeholder.js","line":5,"id":214},{"type":"constructor","description":"<p>Returns an object map of <code>ModelName : Model</code> pairs.</p>","name":"srchr/models","title":"","parent":"srchr","src":"srchr/models/models.js","line":5,"id":215,"children":[{"name":"srchr/models.static","type":"static","parent":"srchr/models","description":"","src":"srchr/models/models.js","line":17,"id":216}]},{"type":"constructor","description":"<p>Provides <code>Flickr.findAll(params, success(results))</code> to retrieve\nFlickr images like:</p>","name":"srchr/models/flickr","title":"","inherits":"can.Model","test":"srchr/models/test.html","parent":"srchr","src":"srchr/models/flickr.js","line":1,"id":219,"children":[{"name":"srchr/models/flickr.apiKey","type":"property","parent":"srchr/models/flickr","description":"<p>Specifies the flickr API key</p>","comment":"undefined@attribute\n","src":"srchr/models/flickr.js","line":18,"id":220},{"type":"function","name":"srchr/models/flickr.findAll","params":[{"name":"params","types":[{"type":"*"}]}],"parent":"srchr/models/flickr","description":"<p>Gets flickr images</p>","src":"srchr/models/flickr.js","line":24,"id":221}]},{"type":"constructor","description":"<p>Provides <code>Google.findAll(params, success(results))</code> to retrieve\nGoogle images like:</p>","name":"srchr/models/google","title":"","inherits":"can.Model","test":"srchr/models/test.html","parent":"srchr","src":"srchr/models/google.js","line":2,"id":222,"children":[{"name":"srchr/models/google.apiKey","type":"property","parent":"srchr/models/google","description":"<p>Specifies the Google custom search API key. Get yours \n<a href=\"http://www.google.com/cse/\">here</a>.</p>","comment":"undefined@attribute\n","src":"srchr/models/google.js","line":20,"id":223},{"name":"srchr/models/google.cx","type":"property","parent":"srchr/models/google","description":"<p>Specifies the Google custom search context key. Get yours \n<a href=\"http://www.google.com/cse/\">here</a>.</p>","src":"srchr/models/google.js","line":27,"id":224}]},{"type":"constructor","description":"<p>Provides <code>Twitter.findAll(params, success(results))</code> to retrieve\ntwitter results like:</p>","name":"srchr/models/twitter","title":"","inherits":"can.Model","test":"srchr/models/test.html","parent":"srchr","src":"srchr/models/twitter.js","line":3,"id":225,"children":[{"type":"static","name":"srchr/models/twitter.static","params":[{"name":"params","types":[{"type":"*"}]},{"name":"success","types":[{"type":"*"}]},{"name":"error","types":[{"type":"*"}]}],"parent":"srchr/models/twitter","description":"","src":"srchr/models/twitter.js","line":18,"id":226}]},{"type":"constructor","description":"<p>Provides <code>Wikipedia.findAll(params, success(results))</code> to retrieve\nwikipedia results like:</p>","name":"srchr/models/wikipedia","title":"","inherits":"can.Model","test":"srchr/models/test.html","parent":"srchr","src":"srchr/models/wikipedia.js","line":2,"id":227,"children":[{"type":"static","name":"srchr/models/wikipedia.static","params":[{"name":"params","types":[{"type":"*"}]}],"parent":"srchr/models/wikipedia","description":"","src":"srchr/models/wikipedia.js","line":17,"id":228}]},{"type":"constructor","description":"<p>Provides <code>Reddit.findAll(params, success(results))</code> to retrieve\nReddit images like:</p>","name":"srchr/models/reddit","title":"","inherits":"can.Model","test":"srchr/models/test.html","parent":"srchr","src":"srchr/models/reddit.js","line":2,"id":229,"children":[{"type":"static","name":"srchr/models/reddit.static","params":[{"name":"params","types":[{"type":"*"}]}],"parent":"srchr/models/reddit","description":"","src":"srchr/models/reddit.js","line":17,"id":230}]},{"type":"constructor","description":"<p><code>new List(element, options)</code> lists search results\nfor a given model, but only when the current \nelement is visible.</p>","name":"ui/list","title":"","parent":"srchr","test":"ui/list/test.html","inherits":"can.Control","params":[{"types":[{"type":"HTMLElement"}],"name":"element","description":"<p>the element to show results within.</p>"},{"types":[{"type":"Object","options":[]}],"name":"options","description":"<p>An object of the following options:</p>\n\n<h4>modelType <code>can.Model</code></h4>\n\n<p>A [can.Model] with a <code>.findAll</code> method that can be used to retrieve \nthe search results.</p>\n\n<h4>resultTemplate <code>can.view</code></h4>\n\n<p>A template that is passed an individual instance of the search \nresults.  The template should provide the html for that single instance.</p>\n\n<h3>params <code>can.compute</code></h3>\n\n<p>The params that should be passed to <code>Model.findAll</code>.</p>"}],"src":"ui/list/list.js","line":6,"id":231,"children":[{"type":"static","description":"","name":"ui/list.static","parent":"ui/list","src":"ui/list/list.js","line":52,"id":232},{"type":"prototype","description":"","name":"ui/list.prototype","parent":"ui/list","src":"ui/list/list.js","line":59,"id":233,"children":[{"type":"function","name":"ui/list.prototype.\"{params} change\"","params":[{"name":"curSearch","types":[{"type":"*"}]},{"types":[{"type":"Object","options":[]}],"name":"ev","description":"<p>The event that was called.</p>"},{"name":"newValue","types":[{"type":"*"}]},{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The element that the event was called on.</p>"},{"types":[{"type":"Object","options":[]}],"name":"searchInst","description":"<p>The search instance to get results for.</p>"}],"parent":"ui/list.prototype","description":"<p>If the results panel is visible, then get the results.</p>","src":"ui/list/list.js","line":68,"id":234},{"type":"function","name":"ui/list.prototype.getResults","params":[],"parent":"ui/list.prototype","description":"<p>Get the appropriate search results that this Search Results container is supposed to show.</p>","src":"ui/list/list.js","line":84,"id":235}]}]},{"type":"constructor","description":"<p>A Tabs widget for showing and hiding content. </p>","name":"ui/tabs","title":"","parent":"srchr","inherits":"can.Control","test":"ui/tabs/test.html","alias":"Tabs","signatures":[{"code":"new Tabs(element, options)","description":"","params":[{"types":[{"type":"jQuery"},{"type":"HTMLElement"},{"type":"String"}],"name":"element","description":"<p>An element the \ntabs will be created on.</p>"},{"types":[{"type":"Object","options":[{"name":"enabled","types":[{"type":"can.compute"}],"description":"<p>Enabled is a can.compute that specifies which tabs should be enabled. The \ncompute should return an array of tab content ids.</p>"}]}],"name":"options","description":"<p>A object of option name-value pairs.</p>"}]}],"types":[],"comment":" ","src":"ui/tabs/tabs.js","line":2,"id":236,"children":[{"type":"prototype","description":"","name":"ui/tabs.prototype","parent":"ui/tabs","src":"ui/tabs/tabs.js","line":55,"id":237,"children":[{"type":"function","name":"ui/tabs.prototype.init","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The UL element to create the tabs controller on</p>"}],"parent":"ui/tabs.prototype","description":"<p>Initialize a new Tabs controller.</p>","src":"ui/tabs/tabs.js","line":58,"id":238},{"type":"function","name":"ui/tabs.prototype.tab","params":[{"types":[{"type":"jQuery"}],"name":"li","description":"<p>The LI to retrieve the tab for.</p>"}],"parent":"ui/tabs.prototype","description":"<p>Retrieves a tab contents for a given tab</p>","src":"ui/tabs/tabs.js","line":101,"id":239},{"type":"function","name":"ui/tabs.prototype.\"li click\"","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The element to trigger \"activate\" on.</p>"},{"types":[{"type":"Object","options":[]}],"name":"ev","description":"<p>The event to prevent the default action for.</p>"}],"parent":"ui/tabs.prototype","description":"<p>Binds on an LI to trigger \"activate\" on a new tab.</p>","src":"ui/tabs/tabs.js","line":110,"id":240},{"type":"function","name":"ui/tabs.prototype.activate","params":[{"types":[{"type":"jQuery"}],"name":"el","description":"<p>The element to show.</p>"}],"parent":"ui/tabs.prototype","description":"<p>Hide all tabs, show the new one.</p>","src":"ui/tabs/tabs.js","line":121,"id":241}]}]}]};
+
+	console.log(docData);
+</script>
 
 
 

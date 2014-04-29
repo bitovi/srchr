@@ -248,37 +248,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>newInstance</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-newInstance
-
+	
+	
 	
 		<span class="module">can.Construct.newInstance</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Returns an instance of <code>can.Construct</code>. This method can be overridden to return a cached instance.</p>
@@ -286,7 +292,8 @@ newInstance
 
 		
 		<section class="signature">
-			<h2>can.Construct.newInstance([...args])</h2>
+			<h2>can.Construct.newInstance([...args])
+</h2>
 <div class="signature-wrapper">
 
 
@@ -316,7 +323,13 @@ instead.</p>
 		<div class="description">
 			<p>instance of the class</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -340,7 +353,7 @@ with arbitrary parameters. Typically, however, you will simply want to call the 
 <p>The following creates a <code>Person</code> Construct and then creates a new instance of Person,
 using <code>apply</code> on newInstance to pass arbitrary parameters.</p>
 
-<pre><code class="lang-javascript">var Person = can.Construct({
+<pre><code class="lang-javascript">var Person = can.Construct.extend({
   init : function(first, middle, last) {
     this.first = first;
     this.middle = middle;
@@ -356,6 +369,12 @@ var args = ["Justin","Barry","Meyer"],
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Construct.newInstance","parent":"can.Construct.static","description":"<p>Returns an instance of <code>can.Construct</code>. This method can be overridden to return a cached instance.</p>","title":"newInstance","signatures":[{"code":"can.Construct.newInstance([...args])","description":"","params":[{"types":[{"type":"*"}],"optional":true,"name":"args","description":"<p>arguments that get passed to [can.Construct::setup] and [can.Construct::init]. Note\nthat if [can.Construct::setup] returns an array, those arguments will be passed to [can.Construct::init]\ninstead.</p>"}],"returns":{"types":[{"type":"class"}],"description":"<p>instance of the class</p>"}}],"comment":" ","src":"can/construct/construct.js","line":43,"id":143};
+
+	console.log(docData);
+</script>
 
 
 

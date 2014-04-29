@@ -88,33 +88,39 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>can.Object.same</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
+	
+	
+	
+	
 </div>
 
-<h1>
-can.Object.same
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Checks if two objects are the same. </p>
@@ -122,7 +128,8 @@ can.Object.same
 
 		
 		<section class="signature">
-			<h2>can.Object.same(a, b, compares, aParent, bParent, deep)</h2>
+			<h2>can.Object.same(a, b, compares, aParent, bParent, deep)
+</h2>
 <div class="signature-wrapper">
 
 
@@ -176,7 +183,26 @@ at all.</p>
 		<div class="description">
 			<p>Whether the two objects have the same properties and values.</p>
 		</div>
+		
+		
+		<ul class="options">
+			
+			<li class="option">
+				<h5>boolean 
+					
+				</h5>
+				<div class="description">
+					
+				</div>
+			</li>
+			
+		</ul>
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -212,20 +238,26 @@ can.Object.same({ person : { name: "Justin" } },
 can.Object.same({age: "Thirty"},
     {age: 30},
     {age: function( a, b ){
-    if( a == "Thirty" ) { 
+    if( a == "Thirty" ) {
         a = 30
     }
     if( b == "Thirty" ) {
         b = 30
     }
     return a === b;
-}})      //-> true</code></pre>
+}})      //-> true</code></pre> 
 		</section>
 		
 
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Object.same","parent":"can.util","description":"<p>Checks if two objects are the same. </p>","title":"","signatures":[{"code":"can.Object.same(a, b, compares, aParent, bParent, deep)","description":"","params":[{"types":[{"type":"Object","options":[]}],"name":"a","description":"<p>An object to compare against <code>b</code>.</p>"},{"types":[{"type":"Object","options":[]}],"name":"b","description":"<p>An object to compare against <code>a</code>.</p>"},{"types":[{"type":"Object","options":[]}],"optional":true,"name":"compares","description":"<p>An object that specifies how to compare properties.\nThe keys of the <code>compares</code> object are names of properties in the objects to compare,\nand the values are functions that compare those properties. You can also pass <code>'i'</code>\nto compare values as case-insensitive strings, or <code>null</code> not to compare the properties\nat all.</p>"}],"returns":{"types":[{"type":"Object","options":[{"name":"boolean"}]}],"description":"<p>Whether the two objects have the same properties and values.</p>"}}],"comment":" ","src":"can/util/object/object.js","line":36,"id":211};
+
+	console.log(docData);
+</script>
 
 
 

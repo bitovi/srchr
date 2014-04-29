@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>mustache</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-mustache
-
+	
+	
 	
 		<span class="module">can.view.mustache</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -126,7 +132,8 @@ mustache
 
 		
 		<section class="signature">
-			<h2>can.view.mustache( [id,] template )</h2>
+			<h2>can.view.mustache( [id,] template )
+</h2>
 <div class="signature-wrapper">
 <p>Register a Mustache template string and create a renderer function.</p>
 
@@ -173,7 +180,13 @@ can.view("greet",{message: "Hello"}) //-&gt; docFrag[&lt;h1&gt;Hello&lt;/h1&gt;]
 		<div class="description">
 			<p>A renderer function that takes data and helpers.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -188,7 +201,7 @@ can.view("greet",{message: "Hello"}) //-&gt; docFrag[&lt;h1&gt;Hello&lt;/h1&gt;]
 
 		
 		<section class="comment">
-			<p><code>can.view.mustache([id,] template)</code> registers an Mustache template string 
+			<p><code>can.view.mustache([id,] template)</code> registers an Mustache template string
 for a given id programatically. The following
 registers <code>myStache</code> and renders it into a documentFragment.</p>
 
@@ -201,9 +214,9 @@ registers <code>myStache</code> and renders it into a documentFragment.</p>
  frag // -&gt; &lt;h2&gt;Hello there!&lt;/h2&gt;
 </code></pre>
 
-<p>To convert the template into a render function, just pass 
+<p>To convert the template into a render function, just pass
 the template. Call the render function with the data
-you want to pass to the template and it returns the 
+you want to pass to the template and it returns the
 documentFragment.</p>
 
 <pre><code> var renderer = can.view.mustache('&lt;div&gt;{{message}}&lt;/div&gt;');
@@ -217,6 +230,12 @@ documentFragment.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","description":"","title":"mustache","name":"can.view.mustache","parent":"can.view.static","signatures":[{"code":"can.view.mustache( [id,] template )","description":"<p>Register a Mustache template string and create a renderer function.</p>\n\n<pre><code>var renderer = can.view.mustache(\"&lt;h1&gt;{{message}}&lt;/h1&gt;\");\nrenderer({message: \"Hello\"}) //-&gt; docFrag[ &lt;h1&gt;Hello&lt;/h1&gt; ]\n</code></pre>","params":[{"types":[{"type":"String"}],"optional":true,"name":"id","description":"<p>An optional ID for the template.</p>\n\n<pre><code>can.view.ejs(\"greet\",\"&lt;h1&gt;{{message}}&lt;/h1&gt;\");\ncan.view(\"greet\",{message: \"Hello\"}) //-&gt; docFrag[&lt;h1&gt;Hello&lt;/h1&gt;]\n</code></pre>"},{"types":[{"type":"String"}],"name":"template","description":"<p>A Mustache template in string form.</p>"}],"returns":{"types":[{"type":"can.view.renderer"}],"description":"<p>A renderer function that takes data and helpers.</p>"}}],"comment":" ","src":"can/view/view.js","line":152,"id":167};
+
+	console.log(docData);
+</script>
 
 
 

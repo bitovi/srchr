@@ -88,37 +88,45 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>options</h1>
 	<ul class="tags">
 		<li>property</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-options
-
+	
+	
 	
 		<span class="module">can.Control.prototype.options</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<h2><code>{Object}</code></h2>
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Options used to configure a control.</p>
@@ -128,18 +136,21 @@ options
 
 		
 		<section class='primary-options'>
-			<h2>
-	
-	   Property Type:
-	
-	
-	<code>{Object}</code>
+			
+
+  <h2>Object
 </h2>
+<div class="signature-wrapper">
 
 
 
 
 
+
+
+</div>
+
+  
 
 		</section>
 		
@@ -151,17 +162,17 @@ options
 		<section class="comment">
 			<p>The <code>this.options</code> property is an Object that contains
 configuration data passed to a control when it is
-created (<code>new can.Control(element, options)</code>). </p>
+created (<code>new can.Control(element, options)</code>).</p>
 
 <p>In the following example, an options object with
-a message is passed to a <code>Greeting</code> control. The 
-<code>Greeting</code> control changes the text of its <a href="can.Control.prototype.element.html">element</a> 
+a message is passed to a <code>Greeting</code> control. The
+<code>Greeting</code> control changes the text of its <a href="can.Control.prototype.element.html">element</a>
 to the options' message value.</p>
 
 <pre><code>var Greeting = can.Control.extend({
   init: function(){
-    this.element.text( this.options.message )  
-  }  
+    this.element.text( this.options.message )
+  }
 })
 
 new Greeting("#greeting",{message: "I understand this.options"})
@@ -180,8 +191,8 @@ the defaults' message property is used.</p>
   }
 },{
   init: function(){
-    this.element.text( this.options.message )  
-  }  
+    this.element.text( this.options.message )
+  }
 })
 
 new Greeting("#greeting")
@@ -192,6 +203,12 @@ new Greeting("#greeting")
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Control.prototype.options","type":"property","parent":"can.Control.prototype","description":"<p>Options used to configure a control.</p>","types":[{"type":"Object","options":[]}],"title":"options","comment":" ","src":"can/control/control.js","line":397,"id":103};
+
+	console.log(docData);
+</script>
 
 
 

@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>ejs</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-ejs
-
+	
+	
 	
 		<span class="module">can.view.ejs</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -126,7 +132,8 @@ ejs
 
 		
 		<section class="signature">
-			<h2>can.view.ejs( [id,] template )</h2>
+			<h2>can.view.ejs( [id,] template )
+</h2>
 <div class="signature-wrapper">
 <p>Register an EJS template string and create a renderer function.</p>
 
@@ -173,7 +180,13 @@ can.view("greet",{message: "Hello"}) //-&gt; docFrag[&lt;h1&gt;Hello&lt;/h1&gt;]
 		<div class="description">
 			<p>A renderer function that takes data and helpers.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -217,6 +230,12 @@ documentFragment.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","description":"","title":"ejs","name":"can.view.ejs","parent":"can.view.static","signatures":[{"code":"can.view.ejs( [id,] template )","description":"<p>Register an EJS template string and create a renderer function.</p>\n\n<pre><code>var renderer = can.view.ejs(\"&lt;h1&gt;&lt;%= message %&gt;&lt;/h1&gt;\");\nrenderer({message: \"Hello\"}) //-&gt; docFrag[ &lt;h1&gt;Hello&lt;/h1&gt; ]\n</code></pre>","params":[{"types":[{"type":"String"}],"optional":true,"name":"id","description":"<p>An optional ID to register the template.</p>\n\n<pre><code>can.view.ejs(\"greet\",\"&lt;h1&gt;&lt;%= message %&gt;&lt;/h1&gt;\");\ncan.view(\"greet\",{message: \"Hello\"}) //-&gt; docFrag[&lt;h1&gt;Hello&lt;/h1&gt;]\n</code></pre>"},{"types":[{"type":"String"}],"name":"template","description":"<p>An EJS template in string form.</p>"}],"returns":{"types":[{"type":"can.view.renderer"}],"description":"<p>A renderer function that takes data and helpers.</p>"}}],"comment":" ","src":"can/view/view.js","line":108,"id":166};
+
+	console.log(docData);
+</script>
 
 
 

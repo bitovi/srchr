@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>url</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-url
-
+	
+	
 	
 		<span class="module">can.route.url</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -126,7 +132,8 @@ url
 
 		
 		<section class="signature">
-			<h2>can.route.url( data [, merge] )</h2>
+			<h2>can.route.url( data [, merge] )
+</h2>
 <div class="signature-wrapper">
 <p>Make a URL fragment that when set to window.location.hash will update can.route's properties
 to match those in <code>data</code>.</p>
@@ -166,7 +173,13 @@ to match those in <code>data</code>.</p>
 		<div class="description">
 			<p>The route URL and query string.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -181,10 +194,10 @@ to match those in <code>data</code>.</p>
 
 		
 		<section class="comment">
-			<p>Similar to <a href="can.route.link.html">can.route.link</a>, but instead of creating an anchor tag, <code>can.route.url</code> creates 
+			<p>Similar to <a href="can.route.link.html">can.route.link</a>, but instead of creating an anchor tag, <code>can.route.url</code> creates
 only the URL based on the route options passed into it.</p>
 
-<pre><code>can.route.url( { type: "videos", id: 5 } ) 
+<pre><code>can.route.url( { type: "videos", id: 5 } )
      // -&gt; "#!type=videos&amp;id=5"
 </code></pre>
 
@@ -194,7 +207,7 @@ data is added at the end of the URL as &amp; separated key/value parameters.</p>
 <pre><code>can.route(":type/:id")
 
 can.route.url( { type: "videos", id: 5 } ) // -&gt; "#!videos/5"
-can.route.url( { type: "video", id: 5, isNew: false } ) 
+can.route.url( { type: "video", id: 5, isNew: false } )
      // -&gt; "#!video/5&amp;isNew=false"
 </code></pre>
 		</section>
@@ -203,6 +216,12 @@ can.route.url( { type: "video", id: 5, isNew: false } )
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.route.url","parent":"can.route.static","description":"","title":"url","signatures":[{"code":"can.route.url( data [, merge] )","description":"<p>Make a URL fragment that when set to window.location.hash will update can.route's properties\nto match those in <code>data</code>.</p>","params":[{"types":[{"type":"Object","options":[]}],"name":"data","description":"<p>The data to populate the route with.</p>"},{"types":[{"type":"Boolean"}],"optional":true,"name":"merge","description":"<p>Whether the given options should be merged into the current state of the route.</p>"}],"returns":{"types":[{"type":"String"}],"description":"<p>The route URL and query string.</p>"}}],"comment":" ","src":"can/route/route.js","line":398,"id":92};
+
+	console.log(docData);
+</script>
 
 
 

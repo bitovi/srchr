@@ -88,37 +88,45 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>processors</h1>
 	<ul class="tags">
 		<li>property</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-processors
-
+	
+	
 	
 		<span class="module">can.Control.processors</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<h2><code>{Object&lt;can.Control.processor&gt;}</code></h2>
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>A collection of hookups for custom events on Controls. </p>
@@ -128,18 +136,21 @@ processors
 
 		
 		<section class='primary-options'>
-			<h2>
-	
-	   Property Type:
-	
-	
-	<code>{Object&lt;can.Control.processor&gt;}</code>
+			
+
+  <h2>Object&lt;can.Control.processor&gt;
 </h2>
+<div class="signature-wrapper">
 
 
 
 
 
+
+
+</div>
+
+  
 
 		</section>
 		
@@ -179,7 +190,7 @@ to that event:</p>
     return function() { myFramework.undelegate(ev, el, selector, callback); };
   } else {
     myFramework.bind(ev, el, callback);
-    return function() { myFramework.unbind(ev, el, callback); };  
+    return function() { myFramework.unbind(ev, el, callback); };
   }
 };
 
@@ -221,27 +232,27 @@ definition.</li>
 <p>can.Control already has processors for these events:</p>
 
 <ul>
-<li>change </li>
-<li>click </li>
-<li>contextmenu </li>
-<li>dblclick </li>
+<li>change</li>
+<li>click</li>
+<li>contextmenu</li>
+<li>dblclick</li>
 <li>focusin</li>
 <li>focusout</li>
-<li>keydown </li>
-<li>keyup </li>
-<li>keypress </li>
-<li>mousedown </li>
+<li>keydown</li>
+<li>keyup</li>
+<li>keypress</li>
+<li>mousedown</li>
 <li>mouseenter</li>
 <li>mouseleave</li>
-<li>mousemove </li>
-<li>mouseout </li>
-<li>mouseover </li>
-<li>mouseup </li>
-<li>reset </li>
-<li>resize </li>
-<li>scroll </li>
-<li>select </li>
-<li>submit  </li>
+<li>mousemove</li>
+<li>mouseout</li>
+<li>mouseover</li>
+<li>mouseup</li>
+<li>reset</li>
+<li>resize</li>
+<li>scroll</li>
+<li>select</li>
+<li>submit</li>
 </ul>
 		</section>
 		
@@ -249,6 +260,12 @@ definition.</li>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Control.processors","type":"property","parent":"can.Control.static","description":"<p>A collection of hookups for custom events on Controls. </p>","types":[{"type":"Object","template":[{"types":[{"type":"can.Control.processor"}]}]}],"title":"processors","comment":" ","src":"can/control/control.js","line":170,"id":99};
+
+	console.log(docData);
+</script>
 
 
 

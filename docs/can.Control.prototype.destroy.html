@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>destroy</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-destroy
-
+	
+	
 	
 		<span class="module">can.Control.prototype.destroy</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Remove a Control from an element and clean up the Control. </p>
@@ -126,10 +132,14 @@ destroy
 
 		
 		<section class="signature">
-			<h2>control.destroy()</h2>
+			<h2>control.destroy()
+</h2>
 <div class="signature-wrapper">
 <p>Prepares a control for garbage collection and is a place to
 reset any changes the control has made.</p>
+
+
+
 
 
 
@@ -147,10 +157,10 @@ reset any changes the control has made.</p>
 		<section class="comment">
 			<h2>Allowing Garbage Collection</h2>
 
-<p>Destroy is called whenever a control's element is removed from the page using 
+<p>Destroy is called whenever a control's element is removed from the page using
 the library's standard HTML modifier methods.  This means that you
-don't have to call destroy yourself and it 
-will be called automatically when appropriate.  </p>
+don't have to call destroy yourself and it
+will be called automatically when appropriate.</p>
 
 <p>The following <code>Clicker</code> widget listens on the window for clicks and updates
 its element's innerHTML.  If we remove the element, the window's event handler
@@ -158,9 +168,9 @@ is removed auto-magically:</p>
 
 <pre><code> Clickr = can.Control({
   "{window} click": function() {
-       this.element.html( this.count ? 
-                          this.count++ : this.count = 0 );
-  }  
+    this.element.html( this.count ?
+    this.count++ : this.count = 0 );
+  }
 });
 
 // create a clicker on an element
@@ -246,6 +256,12 @@ changer.destroy();
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Control.prototype.destroy","parent":"can.Control.prototype","description":"<p>Remove a Control from an element and clean up the Control. </p>","signatures":[{"code":"control.destroy()","description":"<p>Prepares a control for garbage collection and is a place to\nreset any changes the control has made.</p>","params":[]}],"title":"destroy","comment":" ","src":"can/control/control.js","line":725,"id":106};
+
+	console.log(docData);
+</script>
 
 
 

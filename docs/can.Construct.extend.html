@@ -248,37 +248,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>extend</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-extend
-
+	
+	
 	
 		<span class="module">can.Construct.extend</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -286,9 +292,10 @@ extend
 
 		
 		<section class="signature">
-			<h2>can.Construct.extend([name,] [staticProperties,] instanceProperties)</h2>
+			<h2>can.Construct.extend([name,] [staticProperties,] instanceProperties)
+</h2>
 <div class="signature-wrapper">
-<p>Extends <code>can.Construct</code>, or constructor functions derived from <code>can.Construct</code>, 
+<p>Extends <code>can.Construct</code>, or constructor functions derived from <code>can.Construct</code>,
 to create a new constructor function. Example:</p>
 
 <pre><code>Animal = can.Construct.extend({
@@ -308,13 +315,13 @@ animal.sayHi();
 			<h4>name
 				<code>{String}</code><span class="pull-right optional">Optional</span></h4>
 			<div class="description">
-				<p>Creates the necessary properties and 
+				<p>Creates the necessary properties and
 objects that point from the <code>window</code> to the created constructor function. The following:</p>
 
 <pre><code>can.Construct.extend("company.project.Constructor",{})
 </code></pre>
 
-<p>creates a <code>company</code> object on window if it does not find one, a 
+<p>creates a <code>company</code> object on window if it does not find one, a
 <code>project</code> object on <code>company</code> if it does not find one, and it will set the
 <code>Constructor</code> property on the <code>project</code> object to point to the constructor function.</p>
 
@@ -330,7 +337,7 @@ and "Constructor" as <a href="can.Construct.shortName.html">shortName</a>.</p>
 			<h4>staticProperties
 				<code>{Object}</code><span class="pull-right optional">Optional</span></h4>
 			<div class="description">
-				<p>Properties that are added the constructor 
+				<p>Properties that are added the constructor
 function directly. For example:</p>
 
 <pre><code>Animal = can.Construct.extend({
@@ -342,7 +349,7 @@ function directly. For example:</p>
 Animal.findAll().then(function(json){ ... })
 </code></pre>
 
-<p>The <a href="can.Construct.setup.html">static setup</a> method can be used to 
+<p>The <a href="can.Construct.setup.html">static setup</a> method can be used to
 specify inheritable behavior when a Constructor function is created.</p>
 			</div>
 			
@@ -354,7 +361,7 @@ specify inheritable behavior when a Constructor function is created.</p>
 			<h4>instanceProperties
 				<code>{Object}</code></h4>
 			<div class="description">
-				<p>Properties that belong to 
+				<p>Properties that belong to
 instances made with the constructor. These properties are added to the
 constructor's <code>prototype</code> object. Example:</p>
 
@@ -387,7 +394,13 @@ are used for initialization.</p>
 		<div class="description">
 			<p>The constructor function.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -405,6 +418,12 @@ are used for initialization.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Construct.extend","parent":"can.Construct.static","description":"","title":"extend","signatures":[{"code":"can.Construct.extend([name,] [staticProperties,] instanceProperties)","description":"<p>Extends <code>can.Construct</code>, or constructor functions derived from <code>can.Construct</code>,\nto create a new constructor function. Example:</p>\n\n<pre><code>Animal = can.Construct.extend({\n  sayHi: function(){\n    console.log(\"hi\")\n  }\n})\nvar animal = new Animal()\nanimal.sayHi();\n</code></pre>","params":[{"types":[{"type":"String"}],"optional":true,"name":"name","description":"<p>Creates the necessary properties and\nobjects that point from the <code>window</code> to the created constructor function. The following:</p>\n\n<pre><code>can.Construct.extend(\"company.project.Constructor\",{})\n</code></pre>\n\n<p>creates a <code>company</code> object on window if it does not find one, a\n<code>project</code> object on <code>company</code> if it does not find one, and it will set the\n<code>Constructor</code> property on the <code>project</code> object to point to the constructor function.</p>\n\n<p>Finally, it sets \"company.project.Constructor\" as [can.Construct.fullName fullName]\nand \"Constructor\" as [can.Construct.shortName shortName].</p>"},{"types":[{"type":"Object","options":[]}],"optional":true,"name":"staticProperties","description":"<p>Properties that are added the constructor\nfunction directly. For example:</p>\n\n<pre><code>Animal = can.Construct.extend({\n  findAll: function(){\n    return can.ajax({url: \"/animals\"})\n  }\n},{});\n\nAnimal.findAll().then(function(json){ ... })\n</code></pre>\n\n<p>The [can.Construct.setup static setup] method can be used to\nspecify inheritable behavior when a Constructor function is created.</p>"},{"types":[{"type":"Object","options":[]}],"name":"instanceProperties","description":"<p>Properties that belong to\ninstances made with the constructor. These properties are added to the\nconstructor's <code>prototype</code> object. Example:</p>\n\n<pre><code>Animal = can.Construct.extend({\n  init: function(name){\n    this.name = name;\n  },\n  sayHi: function(){\n    console.log(this.name,\"says hi\")\n  }\n})\nvar animal = new Animal()\nanimal.sayHi();\n</code></pre>\n\n<p>The [can.Construct::init init] and [can.Construct::setup setup] properties\nare used for initialization.</p>"}],"returns":{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"description":"<p>The constructor function.</p>"}}],"src":"can/construct/construct.js","line":207,"id":145};
+
+	console.log(docData);
+</script>
 
 
 

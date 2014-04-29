@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>current</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-current
-
+	
+	
 	
 		<span class="module">can.route.current</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -126,7 +132,8 @@ current
 
 		
 		<section class="signature">
-			<h2>can.route.current( data )</h2>
+			<h2>can.route.current( data )
+</h2>
 <div class="signature-wrapper">
 <p>Check if data represents the current route.</p>
 
@@ -154,7 +161,13 @@ current
 		<div class="description">
 			<p>Whether the data matches the current URL.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -169,7 +182,7 @@ current
 
 		
 		<section class="comment">
-			<p>Checks the page's current URL to see if the route represents the options passed 
+			<p>Checks the page's current URL to see if the route represents the options passed
 into the function.</p>
 
 <p>Returns true if the options respresent the current URL.</p>
@@ -178,7 +191,7 @@ into the function.</p>
 can.route.current({ id: 5 }) // -&gt; true
 can.route.current({ id: 5, type: 'videos' }) // -&gt; false
 
-can.route.attr('type', 'videos') 
+can.route.attr('type', 'videos')
        // location.hash -&gt; #!id=5&amp;type=videos
 can.route.current({ id: 5, type: 'videos' }) // -&gt; true
 </code></pre>
@@ -188,6 +201,12 @@ can.route.current({ id: 5, type: 'videos' }) // -&gt; true
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.route.current","parent":"can.route.static","description":"","title":"current","signatures":[{"code":"can.route.current( data )","description":"<p>Check if data represents the current route.</p>","params":[{"types":[{"type":"Object","options":[]}],"name":"data","description":"<p>Data to check agains the current route.</p>"}],"returns":{"types":[{"type":"Boolean"}],"description":"<p>Whether the data matches the current URL.</p>"}}],"comment":" ","src":"can/route/route.js","line":483,"id":94};
+
+	console.log(docData);
+</script>
 
 
 

@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>model</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-model
-
+	
+	
 	
 		<span class="module">can.Model.model</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Convert raw data into a can.Model instance. </p>
@@ -126,7 +132,8 @@ model
 
 		
 		<section class="signature">
-			<h2>can.Model.model(data)</h2>
+			<h2>can.Model.model(data)
+</h2>
 <div class="signature-wrapper">
 
 
@@ -154,7 +161,29 @@ model
 		<div class="description">
 			<p>An instance of can.Model made with the given data.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
+
+
+</div>
+
+		</section>
+		
+		<section class="signature">
+			<h2>model: &#34;PROPERTY&#34;
+</h2>
+<div class="signature-wrapper">
+<p>Creates a <code>model</code> function that looks for the attributes object in the PROPERTY
+property of raw instance data.</p>
+
+
+
+
 
 
 </div>
@@ -170,8 +199,8 @@ model
 		
 		<section class="comment">
 			<p><code>can.Model.model(attributes)</code> is used to convert data from the server into
-a model instance.  It is rarely called directly.  Instead it is invoked as 
-a result of <a href="can.Model.findOne.html">can.Model.findOne</a> or <a href="can.Model.findAll.html">can.Model.findAll</a>.  </p>
+a model instance.  It is rarely called directly.  Instead it is invoked as
+a result of <a href="can.Model.findOne.html">can.Model.findOne</a> or <a href="can.Model.findAll.html">can.Model.findAll</a>.</p>
 
 <p>If your server is returning data in non-standard way,
 overwriting <code>can.Model.model</code> is a good way to normalize it.</p>
@@ -188,8 +217,8 @@ tasks.attr("complete", true)
 </code></pre>
 
 <p><code>Task.model(attrs)</code> is very similar to simply calling <code>new Model(attrs)</code> except
-that it checks the model's store if the instance has already been created.  The model's 
-store is a collection of instances that have event handlers.  </p>
+that it checks the model's store if the instance has already been created.  The model's
+store is a collection of instances that have event handlers.</p>
 
 <p>This means that if the model's store already has an instance, you'll get the same instance
 back.  Example:</p>
@@ -198,7 +227,7 @@ back.  Example:</p>
 var taskA = new Task({id: 5, complete: true});
 
 // bind to it, which puts it in the store
-   taskA.bind("complete", function(){});
+ taskA.bind("complete", function(){});
 
 // use model to create / retrieve a task
 var taskB = Task.model({id: 5, complete: true});
@@ -208,7 +237,7 @@ taskA === taskB //-&gt; true
 
 <h2>Non-standard Services</h2>
 
-<p><code>can.Model.model</code> expects to retreive attributes of the model 
+<p><code>can.Model.model</code> expects to retreive attributes of the model
 instance like:</p>
 
 <pre><code>{id: 5, name : "dishes"}
@@ -233,6 +262,12 @@ instance like:</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Model.model","type":"function","parent":"can.Model.static","description":"<p>Convert raw data into a can.Model instance. </p>","title":"model","signatures":[{"code":"can.Model.model(data)","description":"","params":[{"types":[{"type":"Object","options":[]}],"name":"data","description":"<p>The data to convert to a can.Model instance.</p>"}],"returns":{"types":[{"type":"can.Model"}],"description":"<p>An instance of can.Model made with the given data.</p>"}},{"code":"model: \"PROPERTY\"","description":"<p>Creates a <code>model</code> function that looks for the attributes object in the PROPERTY\nproperty of raw instance data.</p>","params":[]}],"comment":" ","src":"can/model/model.js","line":1048,"id":39};
+
+	console.log(docData);
+</script>
 
 
 

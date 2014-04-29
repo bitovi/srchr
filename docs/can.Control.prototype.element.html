@@ -88,37 +88,45 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>element</h1>
 	<ul class="tags">
 		<li>property</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-element
-
+	
+	
 	
 		<span class="module">can.Control.prototype.element</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<h2><code>{can.NodeList}</code></h2>
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>The element the Control is associated with. </p>
@@ -128,18 +136,21 @@ element
 
 		
 		<section class='primary-options'>
-			<h2>
-	
-	   Property Type:
-	
-	
-	<code>{can.NodeList}</code>
+			
+
+  <h2>can.NodeList
 </h2>
+<div class="signature-wrapper">
 
 
 
 
 
+
+
+</div>
+
+  
 
 		</section>
 		
@@ -149,9 +160,9 @@ element
 
 		
 		<section class="comment">
-			<p>The control instance's HTMLElement (or window) wrapped by the 
+			<p>The control instance's HTMLElement (or window) wrapped by the
 util library for ease of use. It is set by the first
-parameter to <code>new can.Construct( element, options )</code> 
+parameter to <code>new can.Construct( element, options )</code>
 in <a href="can.Control.prototype.setup.html">can.Control.prototype.setup</a>.  By default, a control listens to events on <code>this.element</code>.</p>
 
 <h3>Quick Example</h3>
@@ -160,7 +171,7 @@ in <a href="can.Control.prototype.setup.html">can.Control.prototype.setup</a>.  
 
 <pre><code>HelloWorld = can.Control({
   init: function(){
-       this.element.text( 'Hello World' );
+this.element.text( 'Hello World' );
   }
 });
 
@@ -177,7 +188,7 @@ NodeList.  To get the raw HTMLElement, write:</p>
 <pre><code>this.element[0] //-&gt; HTMLElement
 </code></pre>
 
-<p>The following details the NodeList used by each library with 
+<p>The following details the NodeList used by each library with
 an example of updating its text:</p>
 
 <p><strong>jQuery</strong> <code>jQuery( HTMLElement )</code></p>
@@ -200,7 +211,7 @@ an example of updating its text:</p>
 <pre><code>this.element.empty().appendText("Hello World")
 </code></pre>
 
-<p><strong>YUI</strong> </p>
+<p><strong>YUI</strong></p>
 
 <pre><code>this.element.set("text", "Hello World")
 </code></pre>
@@ -214,7 +225,7 @@ setup or by unbinding, setting this.element, and rebinding.</p>
 <h3>Overwriting Setup</h3>
 
 <p>The following Combobox overwrites setup to wrap a
-select element with a div.  That div is used 
+select element with a div.  That div is used
 as <code>this.element</code>. Notice how <code>destroy</code> sets back the
 original element.</p>
 
@@ -242,7 +253,7 @@ original element.</p>
 <h3>unbinding, setting, and rebinding.</h3>
 
 <p>You could also change this.element by calling
-[can.Control::off], setting this.element, and 
+[can.Control::off], setting this.element, and
 then calling <a href="can.Control.prototype.on.html">can.Control.prototype.on</a> like:</p>
 
 <pre><code>move: function( newElement ) {
@@ -257,6 +268,12 @@ then calling <a href="can.Control.prototype.on.html">can.Control.prototype.on</a
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"description":"<p>The element the Control is associated with. </p>","types":[{"type":"can.NodeList"}],"title":"element","name":"can.Control.prototype.element","type":"property","parent":"can.Control.prototype","comment":" ","src":"can/control/control.js","line":318,"id":101};
+
+	console.log(docData);
+</script>
 
 
 

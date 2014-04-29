@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>link</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-link
-
+	
+	
 	
 		<span class="module">can.route.link</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -126,7 +132,8 @@ link
 
 		
 		<section class="signature">
-			<h2>can.route.link( innerText, data, props [, merge] )</h2>
+			<h2>can.route.link( innerText, data, props [, merge] )
+</h2>
 <div class="signature-wrapper">
 <p>Make an anchor tag (<code>&lt;A&gt;</code>) that when clicked on will update can.route's properties
 to match those in <code>data</code>.</p>
@@ -188,7 +195,13 @@ to match those in <code>data</code>.</p>
 		<div class="description">
 			<p>A string with an anchor tag that points to the populated route.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -203,7 +216,7 @@ to match those in <code>data</code>.</p>
 
 		
 		<section class="comment">
-			<p>Creates and returns an anchor tag with an href of the route 
+			<p>Creates and returns an anchor tag with an href of the route
 attributes passed into it, as well as any properies desired
 for the tag.</p>
 
@@ -214,8 +227,8 @@ for the tag.</p>
 <p>Other attributes besides href can be added to the anchor tag
 by passing in a data object with the attributes desired.</p>
 
-<pre><code>can.route.link( "My videos", { type: "videos" }, 
-  { className: "new" }, false ) 
+<pre><code>can.route.link( "My videos", { type: "videos" },
+  { className: "new" }, false )
      // -&gt; &lt;a href="#!type=videos" class="new"&gt;My Videos&lt;/a&gt;
 </code></pre>
 
@@ -224,11 +237,11 @@ tags in order to make your code more reusable. If merge is set to true,
 the route options passed into <code>can.route.link</code> will be passed into the
 current ones.</p>
 
-<pre><code>location.hash = "#!type=videos" 
+<pre><code>location.hash = "#!type=videos"
 can.route.link( "The zoo", { id: 5 }, true )
      // -&gt; &lt;a href="#!type=videos&amp;id=5"&gt;The zoo&lt;/true&gt;
 
-location.hash = "#!type=pictures" 
+location.hash = "#!type=pictures"
 can.route.link( "The zoo", { id: 5 }, true )
      // -&gt; &lt;a href="#!type=pictures&amp;id=5"&gt;The zoo&lt;/true&gt;
 </code></pre>
@@ -238,6 +251,12 @@ can.route.link( "The zoo", { id: 5 }, true )
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.route.link","parent":"can.route.static","description":"","title":"link","signatures":[{"code":"can.route.link( innerText, data, props [, merge] )","description":"<p>Make an anchor tag (<code>&lt;A&gt;</code>) that when clicked on will update can.route's properties\nto match those in <code>data</code>.</p>","params":[{"types":[{"type":"Object","options":[]}],"name":"innerText","description":"<p>The text inside the link.</p>"},{"types":[{"type":"Object","options":[]}],"name":"data","description":"<p>The data to populate the route with.</p>"},{"types":[{"type":"Object","options":[]}],"name":"props","description":"<p>Properties for the anchor other than <code>href</code>.</p>"},{"types":[{"type":"Boolean"}],"optional":true,"name":"merge","description":"<p>Whether the given options should be merged into the current state of the route.</p>"}],"returns":{"types":[{"type":"String"}],"description":"<p>A string with an anchor tag that points to the populated route.</p>"}}],"comment":" ","src":"can/route/route.js","line":433,"id":93};
+
+	console.log(docData);
+</script>
 
 
 

@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>destroy</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-destroy
-
+	
+	
 	
 		<span class="module">can.Model.destroy</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Destroy a resource on the server. </p>
@@ -126,7 +132,8 @@ destroy
 
 		
 		<section class="signature">
-			<h2>can.Model.destroy: function(id) -&gt; deferred</h2>
+			<h2>can.Model.destroy: function(id) -&gt; deferred
+</h2>
 <div class="signature-wrapper">
 <p>If you provide a function, the Model will expect you to do your own AJAX requests.</p>
 
@@ -154,7 +161,13 @@ destroy
 		<div class="description">
 			<p>A Deferred that resolves to the destroyed model.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -162,7 +175,8 @@ destroy
 		</section>
 		
 		<section class="signature">
-			<h2>can.Model.destroy: &quot;[METHOD] /path/to/resource&quot;</h2>
+			<h2>can.Model.destroy: &#34;[METHOD] /path/to/resource&#34;
+</h2>
 <div class="signature-wrapper">
 <p>If you provide a URL, the Model will send a request to that URL using
 the method specified (or DELETE if none is specified) when deleting an
@@ -175,7 +189,13 @@ instance on the server. (See below for more details.)</p>
 		<div class="description">
 			<p>A Deferred that resolves to the destroyed model.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -190,7 +210,7 @@ instance on the server. (See below for more details.)</p>
 
 		
 		<section class="comment">
-			<p><code>destroy(id) -&gt; Deferred</code> is used by <a href="can.Model.prototype.destroy.html">can.Model.prototype.destroy</a> remove a model 
+			<p><code>destroy(id) -&gt; Deferred</code> is used by <a href="can.Model.prototype.destroy.html">can.Model.prototype.destroy</a> remove a model
 instance from the server.</p>
 
 <h2>Implement with a URL</h2>
@@ -205,7 +225,7 @@ instance from the server.</p>
 <p>And use <a href="can.Model.prototype.destroy.html">can.Model.prototype.destroy</a> to destroy it like:</p>
 
 <pre><code>Recipe.findOne({id: 1}, function(recipe){
-      recipe.destroy();
+     recipe.destroy();
 });
 </code></pre>
 
@@ -236,6 +256,12 @@ instance from the server.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"name":"can.Model.destroy","type":"function","parent":"can.Model.static","description":"<p>Destroy a resource on the server. </p>","title":"destroy","signatures":[{"code":"can.Model.destroy: function(id) -> deferred","description":"<p>If you provide a function, the Model will expect you to do your own AJAX requests.</p>","params":[{"types":[{"type":"*"}],"name":"id","description":"<p>The ID of the resource to destroy.</p>"}],"returns":{"types":[{"type":"can.Deferred"}],"description":"<p>A Deferred that resolves to the destroyed model.</p>"}},{"code":"can.Model.destroy: \"[METHOD] /path/to/resource\"","description":"<p>If you provide a URL, the Model will send a request to that URL using\nthe method specified (or DELETE if none is specified) when deleting an\ninstance on the server. (See below for more details.)</p>","params":[],"returns":{"types":[{"type":"can.Deferred"}],"description":"<p>A Deferred that resolves to the destroyed model.</p>"}}],"comment":" ","src":"can/model/model.js","line":485,"id":33};
+
+	console.log(docData);
+</script>
 
 
 

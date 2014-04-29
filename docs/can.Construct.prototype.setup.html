@@ -248,37 +248,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>setup</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-setup
-
+	
+	
 	
 		<span class="module">can.Construct.prototype.setup</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			
@@ -286,7 +292,8 @@ setup
 
 		
 		<section class="signature">
-			<h2>construct.setup(...args)</h2>
+			<h2>construct.setup(...args)
+</h2>
 <div class="signature-wrapper">
 <p>A setup function for the instantiation of a constructor function.</p>
 
@@ -313,7 +320,7 @@ setup
 		<h4><code>{Array | undefined}</code></h4>
 		<div class="description">
 			<p>If an array is returned, the array's items are passed as
-arguments to <a href="can.Construct.prototype.init.html">init</a>. The following example always makes 
+arguments to <a href="can.Construct.prototype.init.html">init</a>. The following example always makes
 sure that init is called with a jQuery wrapped element:</p>
 
 <pre><code>WidgetFactory = can.Construct.extend({
@@ -332,7 +339,13 @@ MyWidget = WidgetFactory.extend({
 <p>Otherwise, the arguments to the
 constructor are passed to <a href="can.Construct.prototype.init.html">can.Construct.prototype.init</a> and the return value of <code>setup</code> is discarded.</p>
 		</div>
+		
+		
 	</div>
+	
+
+
+
 
 
 </div>
@@ -353,7 +366,7 @@ constructor are passed to <a href="can.Construct.prototype.init.html">can.Constr
 Use <code>setup</code> instead for:</p>
 
 <ul>
-<li>initialization code that you want to run before the inheriting constructor's 
+<li>initialization code that you want to run before the inheriting constructor's
 <code>init</code> method is called.</li>
 <li>initialization code that should run whether or not inheriting constructors
 call their base's <code>init</code> methods.</li>
@@ -378,7 +391,7 @@ extends the controller's defaults with the options that were passed.</p>
                              );
 
         // pass this.element and this.options to init.
-        return [this.element, this.options];        
+        return [this.element, this.options];
     }
 });
 </code></pre>
@@ -388,6 +401,12 @@ extends the controller's defaults with the options that were passed.</p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.Construct.prototype.setup","parent":"can.Construct.prototype","description":"","title":"setup","signatures":[{"code":"construct.setup(...args)","description":"<p>A setup function for the instantiation of a constructor function.</p>","params":[{"types":[{"type":"*"}],"name":"args","description":"<p>The arguments passed to the constructor.</p>"}],"returns":{"types":[{"type":"Array"},{"type":"undefined"}],"description":"<p>If an array is returned, the array's items are passed as\narguments to [can.Construct::init init]. The following example always makes\nsure that init is called with a jQuery wrapped element:</p>\n\n<pre><code>WidgetFactory = can.Construct.extend({\n    setup: function(element){\n        return [$(element)]\n    }\n})\n\nMyWidget = WidgetFactory.extend({\n    init: function($el){\n        $el.html(\"My Widget!!\")\n    }\n})\n</code></pre>\n\n<p>Otherwise, the arguments to the\nconstructor are passed to [can.Construct::init] and the return value of <code>setup</code> is discarded.</p>"}}],"comment":" ","src":"can/construct/construct.js","line":423,"id":151};
+
+	console.log(docData);
+</script>
 
 
 

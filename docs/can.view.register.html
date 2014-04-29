@@ -88,37 +88,43 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>register</h1>
 	<ul class="tags">
 		<li>function</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-	</ul>
-</div>
-
-<h1>
-register
-
+	
+	
 	
 		<span class="module">can.view.register</span>
 	
+	
+	
+	
+</div>
 
+<div class="sub-heading">
+	
+	<span class="inherits">&nbsp;</span>
+</div>
 
-</h1>
-
-<span class="inherits">&nbsp;</span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p>Register a templating language. </p>
@@ -126,7 +132,8 @@ register
 
 		
 		<section class="signature">
-			<h2>can.view.register(info)</h2>
+			<h2>can.view.register(info)
+</h2>
 <div class="signature-wrapper">
 
 
@@ -190,6 +197,9 @@ The <strong>renderer</strong> function receives the id of the template and the t
 
 
 
+
+
+
 </div>
 
 		</section>
@@ -202,25 +212,25 @@ The <strong>renderer</strong> function receives the id of the template and the t
 
 		
 		<section class="comment">
-			<p>Registers a template engine to be used with 
-view helpers and compression.  </p>
+			<p>Registers a template engine to be used with
+view helpers and compression.</p>
 
 <h2>Example</h2>
 
 <pre><code class="lang-javascript">can.View.register({
-    suffix : "tmpl",
+suffix : "tmpl",
  plugin : "jquery/view/tmpl",
-    renderer: function( id, text ) {
-        return function(data){
-            return jQuery.render( text, data );
-        }
-    },
-    script: function( id, text ) {
-        var tmpl = can.tmpl(text).toString();
-        return "function(data){return ("+
-            tmpl+
-            ").call(jQuery, jQuery, data); }";
+renderer: function( id, text ) {
+return function(data){
+    return jQuery.render( text, data );
     }
+},
+script: function( id, text ) {
+var tmpl = can.tmpl(text).toString();
+return "function(data){return ("+
+        tmpl+
+        ").call(jQuery, jQuery, data); }";
+}
 })</code></pre>     
 		</section>
 		
@@ -228,6 +238,12 @@ view helpers and compression.  </p>
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"function","name":"can.view.register","parent":"can.view.static","description":"<p>Register a templating language. </p>","title":"register","signatures":[{"code":"can.view.register(info)","description":"","params":[{"types":[{"type":"Object","options":[{"name":"plugin","description":"<p>The location of the templating language's plugin.</p>","types":[{"type":"String"}]},{"name":"suffix","description":"<p>Files with this suffix will use this templating language's plugin by default.</p>","types":[{"type":"String"}]},{"name":"renderer","description":"<p>A function that returns a function that, given data, will render the template with that data.\nThe <strong>renderer</strong> function receives the id of the template and the text of the template.</p>","types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}]},{"name":"script","description":"<p>A function that returns the string form of the processed template.</p>","types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}]}]}],"name":"info","description":"<p>Information about the templating language.</p>"}]}],"types":[],"comment":" ","src":"can/view/view.js","line":249,"id":172};
+
+	console.log(docData);
+</script>
 
 
 

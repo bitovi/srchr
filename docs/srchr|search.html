@@ -184,35 +184,41 @@
 	</nav>
 	<article class="content docs">
 		<section class="title">
-			<div class="pull-right">
+			<div class="heading">
+<h1>srchr/search</h1>
 	<ul class="tags">
 		<li>constructor</li>
 	</ul>
-	<ul class="links">
-		
-			<li><a href="">source</a></li>
-		
-		
-			
-		
-		
-			<li><a href="../srchr/search/test.html">tests</a></li>
-		
-	</ul>
+	
+	
+	
+	
 </div>
 
-<h1>
-srchr/search
+<div class="sub-heading">
+	
+	<span class="inherits">inherits: <a href="can.Control.html">can.Control</a></span>
+</div>
 
-
-</h1>
-
-<span class="inherits">inherits: <a href="can.Control.html">can.Control</a></span>
-
+<ul class="links">
+    
+	
+		<li><a href="">source</a></li>
+	
+	
+		
+	
+	
+		<li><a href="../srchr/search/test.html">tests</a></li>
+	
+</ul>
+<br />
 		</section>
 
 		<section class="contents">
 		</section>
+
+		
 
 		<section class="description">
 			<p><code>new SearchControl(element, options)</code> 
@@ -227,7 +233,8 @@ updates <code>currentSearch</code> with a new
 		
 		
 			<section class="signature">
-				<h2>new srchr/search(element, options)</h2>
+				<h2>new srchr.search(element, options)
+</h2>
 <div class="signature-wrapper">
 <p><code>new SearchControl(element, options)</code> 
 listens to a search form being submitted and 
@@ -272,6 +279,9 @@ updates <code>currentSearch</code> with a new
 
 
 
+
+
+
 </div>
 
 			</section>
@@ -308,6 +318,12 @@ new SearchControl("#search",{
 		
 	</article>
 </div>
+
+<script type="text/javascript">
+	var docData = {"type":"constructor","description":"<p><code>new SearchControl(element, options)</code> \nlistens to a search form being submitted and \nupdates <code>currentSearch</code> with a new\n[srchr/models/search Search] instance.</p>","name":"srchr/search","title":"","parent":"srchr","inherits":"can.Control","test":"srchr/search/test.html","params":[{"types":[{"type":"HTMLElement"}],"name":"element","description":"<p>the element to show results within.</p>"},{"types":[{"type":"Object","options":[]}],"name":"options","description":"<p>An object of the following options:</p>\n\n<h4>defaultText <code>{String}</code></h4>\n\n<p>The placeholder text.</p>\n\n<h4>currentSearch <code>{can.compute}</code></h4>\n\n<p>The current search that should be performed.</p>"}],"src":"srchr/search/search.js","line":9,"id":9,"children":[{"type":"static","description":"","name":"srchr/search.static","parent":"srchr/search","src":"srchr/search/search.js","line":53,"id":10},{"type":"prototype","description":"","name":"srchr/search.prototype","parent":"srchr/search","src":"srchr/search/search.js","line":61,"id":11,"children":[{"type":"function","name":"srchr/search.prototype.init","params":[],"parent":"srchr/search.prototype","description":"<p>Initialize a new instance of the Search controller.</p>","src":"srchr/search/search.js","line":63,"id":12},{"type":"function","name":"srchr/search.prototype.flash","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The element to highlight.</p>"},{"types":[{"type":"Object"},{"type":"null"}],"name":"time","description":"<p>The amount of time to highlight for.  Default is 1000 milliseconds</p>"}],"parent":"srchr/search.prototype","description":"<p>Highlights 'el' for 'time' milliseconds.</p>","src":"srchr/search/search.js","line":88,"id":13},{"type":"function","name":"srchr/search.prototype.\"form submit\"","params":[{"types":[{"type":"Object","options":[]}],"name":"el","description":"<p>The event target element.</p>"},{"types":[{"type":"Object","options":[]}],"name":"ev","description":"<p>The event being fired.</p>"}],"parent":"srchr/search.prototype","description":"<p>Binds to the search form submission.  Prevents the default action and fires the \"search.created\" event. </p>","src":"srchr/search/search.js","line":102,"id":14},{"type":"function","name":"srchr/search.prototype.\"{document} load\"","params":[],"parent":"srchr/search.prototype","description":"<p>Focuses on the search query box on page load.</p>","src":"srchr/search/search.js","line":131,"id":15},{"type":"function","name":"srchr/search.prototype.\"{currentSearch} change\"","params":[{"name":"currentSearch","types":[{"type":"*"}]},{"name":"ev","types":[{"type":"*"}]},{"name":"newVal","types":[{"type":"*"}]},{"name":"oldVal","types":[{"type":"*"}]}],"parent":"srchr/search.prototype","description":"<p>Updates the checkboxes to reflect the user's desired search engine preferences.  Also fires search. </p>","src":"srchr/search/search.js","line":139,"id":16}]}]};
+
+	console.log(docData);
+</script>
 
 
 
