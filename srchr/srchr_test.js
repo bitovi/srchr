@@ -12,7 +12,7 @@ steal('funcunit',
 
 	module("srchr", {
 		setup: function() {
-			S.open("//srchr/srchr.html");
+			S.open("srchr.html");
 		}
 	});
 
@@ -51,19 +51,19 @@ steal('funcunit',
 			return size > 1
 		}, function() {
 
-			equals(S('#Flickr').css('display'), 'block', 'Reddit results panel is visible')
+			equal(S('#Flickr').css('display'), 'block', 'Reddit results panel is visible')
 
 		})
 
 		S('#results li:contains(Reddit) a').exists().click(function() {
-			equals(S('#Flickr').css('display'), 'none', 'Flickr results panel is hidden')
-			equals(S('#Reddit').css('display'), 'block', 'Reddit results panel is visible')
+			equal(S('#Flickr').css('display'), 'none', 'Flickr results panel is hidden')
+			equal(S('#Reddit').css('display'), 'block', 'Reddit results panel is visible')
 		})
 	})
 
 	test('Clicking history entries re-creates the search', function() {
 		S('#history li:contains(Dogs)').click(function() {
-			equals(S('#query').val(), "Dogs", 'Dogs was put back into the query field')
+			equal(S('#query').val(), "Dogs", 'Dogs was put back into the query field')
 		});
 		S("#Reddit li.result").exists(function() {
 			ok(true, "We see results in Reddit");

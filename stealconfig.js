@@ -12,6 +12,11 @@ steal.config({
 	shim : {
 		jquery: {
 			exports: "jQuery"
+		},
+
+		funcunit: {
+			deps: ["jquery"],
+			exports: "S"
 		}
 	},
 	ext: {

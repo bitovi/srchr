@@ -3,10 +3,10 @@ steal('ui/placeholder','funcunit', function( Placeholder, S ) {
 	module("ui/placeholder", { 
 		setup: function(){
 			S.open( window );
-			$("#qunit-test-area").html("<input id='placeholder'/>")
+			$("#qunit-fixture").html("<input id='placeholder'/>")
 		},
 		teardown: function(){
-			$("#qunit-test-area").empty();
+			$("#qunit-fixture").empty();
 		}
 	});
 	

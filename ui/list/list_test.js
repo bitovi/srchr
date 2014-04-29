@@ -25,7 +25,7 @@ steal('./list.js',
 				this.searches++;
 				return results;
   			});
-			$("<div id='content'/>").appendTo("#qunit-test-area");
+			$("<div id='content'/>").appendTo("#qunit-fixture");
   			new List("#content",{
   				modelType : Google,
   				params: this.params
@@ -33,7 +33,7 @@ steal('./list.js',
   			
 		},
 		teardown: function(){
-			$("#qunit-test-area").empty()
+			$("#qunit-fixture").empty()
 		}
 	})
 	

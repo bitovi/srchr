@@ -1,5 +1,20 @@
 <html>
-    <body>
-		<script type='text/javascript' src='../steal/steal.js?srchr/srchr_test.js'></script>
-    </body>
+	<head>
+		<link rel="stylesheet" href="../qunit/qunit.css"/>
+	</head>
+
+	<body>
+		<div id="qunit"></div>
+		<div id="qunit-fixture"></div>
+
+		<script src="../qunit/qunit.js"></script>
+		<script src="../steal/steal.js"></script>
+		<script type="text/javascript">
+			QUnit.config.autostart = false;
+
+			steal('srchr/srchr_test.js', function() {
+				QUnit.start();
+			});
+		</script>
+	</body>
 </html>

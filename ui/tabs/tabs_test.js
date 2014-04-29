@@ -12,13 +12,13 @@ var tabsHTML ="<ul id='resultsTab'>\
 
 	module("ui/tabs",{
 		setup : function(){
-			$("#qunit-test-area").html(tabsHTML);
+			$("#qunit-fixture").html(tabsHTML);
 			this.flickrLI = $("#resultsTab li:eq(0)");
 			this.upcomingLI = $("#resultsTab li:eq(1)");
 			this.yahooLI = $("#resultsTab li:eq(1)");
 		},
 		teardown: function(){
-			$("#qunit-test-area").empty()
+			$("#qunit-fixture").empty()
 		}
 	});
 	
@@ -28,10 +28,10 @@ var tabsHTML ="<ul id='resultsTab'>\
 		new Tabs("#resultsTab",{
 			enabled: enabled
 		});
-		
+
 		S("[href=\\#yahoo]").click();
 		S("#yahoo").visible(function() {
-			equals(S("#flickr").css('display'), 'none', "Old tab contents are hidden");
+			equal(S("#flickr").css('display'), 'none', "Old tab contents are hidden");
 			ok(!S("[href=\\#flickr]").parent().hasClass('active'), 'Old tab is not set to active');
 			ok(S("[href=\\#yahoo]").parent().hasClass('active'), 'New tab is set to active');
 		});
@@ -46,7 +46,7 @@ var tabsHTML ="<ul id='resultsTab'>\
 		S("[href=\\#upcoming]").click();
 	
 		S("#upcoming").visible(function() {
-			equals(S("#upcoming").css('display'), 'block', "New tab contents are visible");
+			equal(S("#upcoming").css('display'), 'block', "New tab contents are visible");
 			ok(S("[href=\\#upcoming]").parent().hasClass('active'), 'New tab is set to active');
 		});
 	});

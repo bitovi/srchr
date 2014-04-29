@@ -3,7 +3,7 @@ steal("funcunit", 'srchr/search', function(S, Search){
 	module("srchr/search",{
 		setup : function(){
 			this.currentSearch = can.compute(false);
-			$("<div id='content'/>").appendTo("#qunit-test-area");					
+			$("<div id='content'/>").appendTo("#qunit-fixture");					
 		 	new Search('#content', {currentSearch: this.currentSearch});
 		},
 		teardown: function () {

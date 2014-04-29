@@ -9,7 +9,7 @@ steal('funcunit',
 			
 			var currentSearch = this.current = can.compute();
 			
-			$("<div id='history'>").appendTo( "#qunit-test-area" )
+			$("<div id='history'>").appendTo( "#qunit-fixture" )
 			
 			stop();
 			// set history to use a different part of the store
@@ -29,7 +29,7 @@ steal('funcunit',
 			})
 		},
 		teardown: function() {
-			$("#qunit-test-area").empty()
+			$("#qunit-fixture").empty()
 		}
 	});
 	test("creating history records by changing the current search", function(){

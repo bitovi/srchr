@@ -9,11 +9,11 @@ steal('srchr/results','funcunit', 'srchr/models',function( Results, S, Models ) 
 	module("srchr/results", { 
 		setup: function(){
 			this.currentSearch = can.compute(false);
-			$("<div id='results'/>").appendTo("#qunit-test-area");					
+			$("<div id='results'/>").appendTo("#qunit-fixture");					
 		 	new Results('#results', {currentSearch: this.currentSearch});
 		},
 		teardown: function(){
-			$("#qunit-test-area").empty();
+			$("#qunit-fixture").empty();
 		}
 	});
 	
