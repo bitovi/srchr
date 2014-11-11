@@ -15,33 +15,33 @@
 		</style>
 	</head>
 	<body>
-<div id='demo-html'>
-<form action='' id='searchForm'>
-  <input type='text' id='searchVal' 
+<div id="demo-html">
+<form action="" id="searchForm">
+  <input type="text" id="searchVal" 
          placeholder="Enter Search Term"/>
-  <input type='submit' value='Search' />
+  <input type="submit" value="Search" />
 </form>
 <p>Search Results:</p>
-<div id='content'></div>
-<a href="javascript://" id='toggle'>
+<div id="content"></div>
+<a href="javascript://" id="toggle">
   Toggle search results visibility.
 </a>
-<div id='count'>
-  Ajax Request Count: <span id='searchNum'>0</span>
+<div id="count">
+  Ajax Request Count: <span id="searchNum">0</span>
 </div>
 </div>
 		
         
 		
 		<script>
-			DEMO_HTML = document.getElementById('demo-html').innerHTML
+			DEMO_HTML = document.getElementById("demo-html").innerHTML
 		</script>
-		<script type='text/javascript' 
-                src='../../steal/steal.js'>   
+		<script type="text/javascript" 
+                src="../../bower_components/steal/steal.js">
         </script>
-<script type='text/javascript' id='demo-source'>
-steal('ui/list', 
-	'can/util/fixture',
+<script type="text/javascript" id="demo-source">
+steal("ui/list", 
+	"can/util/fixture",
 	function(List, fixture){
 
 // setup Google model

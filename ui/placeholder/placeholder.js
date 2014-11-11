@@ -96,4 +96,4 @@ return can.Control({
     }
 });
 
-})
+});

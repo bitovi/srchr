@@ -1,4 +1,4 @@
-steal('srchr/results','funcunit', 'srchr/models',function( Results, S, Models ) {
+steal('test/qunit.js', 'funcunit', 'srchr/results', 'srchr/models',function(QUnit, S, Results, Models ) {
 
 	var types = []
 	for(var modelName in Models){
@@ -6,37 +6,32 @@ steal('srchr/results','funcunit', 'srchr/models',function( Results, S, Models ) 
 	}
 
 	// tests integration between currentSearch and Tabs and List
-	module("srchr/results", { 
+	QUnit.module("srchr/results", {
 		setup: function(){
 			this.currentSearch = can.compute(false);
-			$("<div id='results'/>").appendTo("#qunit-fixture");					
+			$("<div id='results'/>").appendTo("#qunit-test-area");
 		 	new Results('#results', {currentSearch: this.currentSearch});
 		},
 		teardown: function(){
-			$("#qunit-fixture").empty();
+			$("#qunit-test-area").empty();
 		}
 	});
 	
 	test("empty current search has disabled tabs", function(){
-		
 		for(var modelName in Models){
 			equal( 
 				$("#results li.disabled:contains("+modelName+")").length,
-				1, "Disabled "+modelName );
+				1, "Disabled " + modelName );
 		}
-		
-		
 	});
 	
 	test("Adding types enables tabs and shows the first one's content'",function(){
 		this.currentSearch({
 			types: types.slice(0),
 			query: "cats"
-		})
+		});
 		for(var modelName in Models){
-			ok( 
-				!$("#results li:contains("+modelName+")").hasClass('disabled'),
-				"enabled "+modelName );
+			ok( !$("#results li:contains("+modelName+")").hasClass('disabled'), "enabled "+modelName );
 		}
 		S("#"+types[0]+" li.result").size(function(size){
 			return size > 2
@@ -47,7 +42,7 @@ steal('srchr/results','funcunit', 'srchr/models',function( Results, S, Models ) 
 		this.currentSearch({
 			types: types.slice(0),
 			query: "cats"
-		})
+		});
 		
 		S("ul.tabs a:contains(Wikipedia)").click();
 		

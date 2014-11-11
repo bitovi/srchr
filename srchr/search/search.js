@@ -1,10 +1,10 @@
 steal(
 	"can",
-	"./init.ejs",
+	"./init.ejs!",
 	'ui/placeholder',
 	'srchr/models',
-	'jquery/dom/form_params',
-	'./search.less',
+	'jquerypp/dom/form_params',
+	'./search.less!',
 	function(can, initEJS, Placeholder, models){
 
 /**

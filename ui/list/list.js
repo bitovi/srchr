@@ -1,8 +1,9 @@
 steal('can',
-	'./results.ejs',
+	'./results.ejs!',
+  './result.ejs!',
 	'can/util/object',
-	'./list.less',
-	function(can, resultsEJS, object){
+	'./list.less!',
+	function(can, resultsEJS, resultEJS, object){
 	
 /**
  * @constructor ui/list
@@ -53,7 +54,7 @@ return can.Control(
 /* @static */
 {
 	defaults: {
-		resultTemplate : "//ui/list/result.ejs"
+		resultTemplate : resultEJS
 	},
 	pluginName: 'ui-list'
 },

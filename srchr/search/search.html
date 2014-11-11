@@ -9,22 +9,22 @@
 		</style>
 	</head>
 	<body>
-        <div id='search'></div>
+        <div id="search"></div>
 		
 		<div id="results"></div>
 		
-		<a href='javascript://' id='set'>Set Search To Cats</a>
-		<script type='text/javascript' 
-                src='../../steal/steal.js'>   
+		<a href="javascript://" id="set">Set Search To Cats</a>
+		<script type="text/javascript" 
+                src="../../bower_components/steal/steal.js">
         </script>
 <script>
-	steal('srchr/search',  function(SearchControl){
+	steal("srchr/search",  function(SearchControl){
 	 	var currentSearch = can.compute();
 	 	
-	 	new SearchControl('#search', {currentSearch: currentSearch});
+	 	new SearchControl("#search", {currentSearch: currentSearch});
 	
 		currentSearch.bind("change", function(ev, data){
-			$('#results').hide().html('Search Created '+data.query).fadeIn();
+			$("#results").hide().html("Search Created "+data.query).fadeIn();
 		});
 
 		$("#set").click(function(){

@@ -8,36 +8,36 @@
 </style>
 </head>
 <body>
-<div id='demo-html'>
-<ul id='resultsTab'>
-	<li><a href='#flickr'>Flickr</a></li>
-	<li><a href='#yahoo'>Yahoo</a></li>
-	<li><a href='#upcoming'>Upcoming</a></li>
+<div id="demo-html">
+<ul id="resultsTab">
+	<li><a href="#flickr">Flickr</a></li>
+	<li><a href="#yahoo">Yahoo</a></li>
+	<li><a href="#upcoming">Upcoming</a></li>
 </ul>
 
-<div id='flickr' class='tab'>Flickr Stuff</div>
-<div id='yahoo' class='tab'>Yahoo Stuff</div>
-<div id='upcoming' class='tab'>Upcoming Stuff</div>
+<div id="flickr" class="tab">Flickr Stuff</div>
+<div id="yahoo" class="tab">Yahoo Stuff</div>
+<div id="upcoming" class="tab">Upcoming Stuff</div>
 
-<button id='enable'>Enable flickr and upcoming</button>
+<button id="enable">Enable flickr and upcoming</button>
 </div>
 <script>
 DEMO_HTML = document.getElementById("demo-html").innerHTML
 </script>
-<script type='text/javascript' 
-        src='../../steal/steal.js'>
+<script type="text/javascript" 
+        src="../../bower_components/steal/steal.js">
 </script>
-<script type='text/javascript' id='demo-source'>
-steal('ui/tabs', function(Tabs){
+<script type="text/javascript" id="demo-source">
+steal("ui/tabs", function(Tabs){
 
-	var enabled = can.compute(['flickr','yahoo'])
+	var enabled = can.compute(["flickr","yahoo"])
 	
-	new Tabs('#resultsTab',{
+	new Tabs("#resultsTab",{
 	  	enabled: enabled
 	});
 
 	$("#enable").click(function(){
-		enabled(['flickr','upcoming'])
+		enabled(["flickr","upcoming"])
 	})
 })
 </script>

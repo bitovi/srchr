@@ -1,7 +1,7 @@
 steal('can',
-	'./init.ejs', 
-	'srchr/models/history.js', 
-	'./history.less', 
+	'./init.ejs!',
+	'srchr/models/history.js',
+	'./history.less!',
 	function( can, initEJS, History ) {
 
 

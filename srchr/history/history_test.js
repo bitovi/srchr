@@ -1,64 +1,66 @@
-steal('funcunit', 
-	'srchr/history', 
-	'srchr/models/history.js', 
-	function( S, HistoryControl, HistoryModel ) {
-		
-		
-	module("srchr/history", {
+steal('jquery',
+  'test/qunit.js',
+  'funcunit',
+	'srchr/history',
+	'srchr/models/history.js',
+	function($, QUnit, S, HistoryControl, HistoryModel ) {
+
+	QUnit.module("srchr/history", {
 		setup: function() {
-			
+
 			var currentSearch = this.current = can.compute();
-			
-			$("<div id='history'>").appendTo( "#qunit-fixture" )
-			
+
+			$("<div id='history'>").appendTo( "#qunit-test-area" );
+
 			stop();
 			// set history to use a different part of the store
-			HistoryModel.localStoreName = "history-test"
+			HistoryModel.localStoreName = "history-test";
 			// remove all items in the store
 			HistoryModel.findAll({}, function(items){
 				can.makeArray(items).forEach(function(item){
 					item.destroy()
-				})
+				});
 				// create the history control
-				
+
 				new HistoryControl("#history", {
 	  				currentSearch: currentSearch
 	  			});
-				
+
 				start();
 			})
 		},
 		teardown: function() {
-			$("#qunit-fixture").empty()
+			$("#qunit-test-area").empty()
 		}
 	});
+
 	test("creating history records by changing the current search", function(){
-		
+
 		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
 		});
-		
-		equal( $("#history li").length, 1, "there is only one history item")
+
+		equal( $("#history li").length, 1, "there is only one history item");
 		equal( $("#history li .query").text(), "Cats", "cats created");
-		
+
 		this.current( {
 			query: "Dogs",
 			types: ["Srchr.Models.Twitter"]
 		});
-		
-		equal( $("#history li").length, 2, "there are two items")
+
+		equal( $("#history li").length, 2, "there are two items");
 		equal( $("#history li:first .query").text(), "Dogs", "Dogs created in first stop");
-		
+
 		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Twitter"]
 		});
-		
+
 		equal( $("#history li").length, 2, "there are two items");
 		equal( $("#history li:first .query").text(), "Cats", "Cats moved to first stop");
-		
-	})
+
+	});
 
 	test("removing a history", function() {
 
@@ -66,7 +68,7 @@ steal('funcunit',
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
 		} );
-		
+
 		// delete all todos
 		S("#history a.remove").click();
 
@@ -75,13 +77,13 @@ steal('funcunit',
 		},"all todos deleted");
 
 	});
-	
+
 	test("updating current search", function(){
 		this.current( {
 			query: "Cats",
 			types: ["Srchr.Models.Flickr"]
 		});
-		
+
 		this.current( {
 			query: "Dogs",
 			types: ["Srchr.Models.Twitter"]
@@ -91,10 +93,9 @@ steal('funcunit',
 		S("#history li:eq(1)").click(function(){
 			var cur = self.current()
 			equal(cur.query,"Cats","set back to cats")
-			
-			
-		})
-	})
-	
-	
+
+
+		});
+	});
+
 });

@@ -27,7 +27,7 @@ steal('can', 'can/construct/super',function(can){
 		 */
 		findAll : function(params){
 			return $.ajax({
-				url : "http://query.yahooapis.com/v1/public/yql",
+				url : "https://query.yahooapis.com/v1/public/yql",
 				dataType : "jsonp",
 				data : {
 					q: can.sub("SELECT * FROM flickr.photos.search "+

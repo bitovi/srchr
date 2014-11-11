@@ -1,22 +1,11 @@
-steal('funcunit',
-	'ui/tabs/tabs_test.js',
-	'ui/list/list_test.js',
-	'ui/placeholder/placeholder_test.js',
-	'srchr/history/history_test.js',
-	'srchr/models/models_test.js',
-	'srchr/search/search_test.js',
-	'srchr/results/results_test.js',
-	
-	function( S ) {
+steal('test/qunit.js', 'funcunit',
+	function(QUnit, S) {
 
-
-	module("srchr", {
+	QUnit.module("srchr", {
 		setup: function() {
-			S.open("srchr.html");
+			S.open(steal.joinURIs(System.baseURL, 'srchr/srchr.html'));
 		}
 	});
-
-
 
 	test('Search shows results in selected service', function() {
 
@@ -36,10 +25,7 @@ steal('funcunit',
 			ok(S('#results li:contains(Flickr)').hasClass('disabled'), "Flickr is disabled.");
 			ok(S('#results li:contains(Google)').hasClass('disabled'), "Google is disabled.");
 		});
-
-
-
-	})
+	});
 
 	test('Switching results tabs', function() {
 		S('input[value=Reddit]').click();
@@ -53,13 +39,13 @@ steal('funcunit',
 
 			equal(S('#Flickr').css('display'), 'block', 'Reddit results panel is visible')
 
-		})
+		});
 
 		S('#results li:contains(Reddit) a').exists().click(function() {
 			equal(S('#Flickr').css('display'), 'none', 'Flickr results panel is hidden')
 			equal(S('#Reddit').css('display'), 'block', 'Reddit results panel is visible')
-		})
-	})
+		});
+	});
 
 	test('Clicking history entries re-creates the search', function() {
 		S('#history li:contains(Dogs)').click(function() {
@@ -67,9 +53,8 @@ steal('funcunit',
 		});
 		S("#Reddit li.result").exists(function() {
 			ok(true, "We see results in Reddit");
-		})
-	})
-
+		});
+	});
 
 	test('All history entries are deletable', function() {
 		for ( var i = S('#history li').size() - 1; i > -1; i-- ) {
@@ -77,6 +62,6 @@ steal('funcunit',
 		}
 		// wait for all entries to be removed
 		S('#history li').size(0, 'All history entries were removed.');
-	})
+	});
 
 });

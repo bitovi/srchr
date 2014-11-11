@@ -1,4 +1,6 @@
-= srchr =
+# Srchr
+
+[![Build Status](https://travis-ci.org/bitovi/srchr.png?branch=master)](https://travis-ci.org/bitovi/srchr)
 
 Srchr is a crowdsourced exercise in collecting JavaScript 
 wisdom. For more information about the project, visit 
