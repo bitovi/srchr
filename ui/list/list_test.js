@@ -1,9 +1,10 @@
-steal('./list.js',
-	'funcunit', 
+steal('test/qunit.js',
+  'funcunit',
+  './list.js',
 	'can/util/fixture',
-	function(List, S, fixture){
+	function(QUnit, S, List, fixture){
 	
-	module("ui/list",{
+	QUnit.module("ui/list",{
 		setup: function(){
 			var self = this;
 			
@@ -19,13 +20,13 @@ steal('./list.js',
 				var length = parseInt( Math.random()*10+1 );
 				for(var i =0; i < length; i++){
 					results.push({
-						title : i+"th search result for "+request.data.query,
+						title : i+"th search result for "+request.data.query
 					})
 				}
 				this.searches++;
 				return results;
   			});
-			$("<div id='content'/>").appendTo("#qunit-fixture");
+			$("<div id='content'/>").appendTo("#qunit-test-area");
   			new List("#content",{
   				modelType : Google,
   				params: this.params
@@ -33,9 +34,9 @@ steal('./list.js',
   			
 		},
 		teardown: function(){
-			$("#qunit-fixture").empty()
+			$("#qunit-test-area").empty()
 		}
-	})
+	});
 	
 	test("results shown", function(){
 		this.params({
@@ -43,7 +44,7 @@ steal('./list.js',
 		} );
 		
 		S("#content li.result").exists("results have been shown");
-	})
+	});
 
 	test("results not retrieved when hidden", function(){
 		$("#content").hide();
@@ -77,7 +78,7 @@ steal('./list.js',
 			equal( self.searches, 1, "" )
 		});
 		
-	})
+	});
 	
 });
 

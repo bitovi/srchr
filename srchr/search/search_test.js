@@ -1,9 +1,9 @@
-steal("funcunit", 'srchr/search', function(S, Search){
+steal('jquery', 'test/qunit.js', 'funcunit', 'srchr/search', function($, QUnit, S, Search){
 
-	module("srchr/search",{
+	QUnit.module("srchr/search",{
 		setup : function(){
 			this.currentSearch = can.compute(false);
-			$("<div id='content'/>").appendTo("#qunit-fixture");					
+			$("<div id='content'/>").appendTo("#qunit-test-area");
 		 	new Search('#content', {currentSearch: this.currentSearch});
 		},
 		teardown: function () {
@@ -15,12 +15,12 @@ steal("funcunit", 'srchr/search', function(S, Search){
 	test("Empty the search field and blur it", function(){
 		S("input[name=query]").click(function(){
 			ok(!$('input[name=query]').val().length, 'Text field is empty!')
-		})
+		});
 		
 		S('input[type=checkbox]').click( function(){		
 			ok($('input[name=query]').val(), 'Text field is filled!')
 			ok($('input[name=query]').hasClass('placeholder'), 'Clicked query box is grayed out')
-		})
+		});
 	});
 	
 	
@@ -68,9 +68,6 @@ steal("funcunit", 'srchr/search', function(S, Search){
 		});
 		
 		ok( $('input#cb_Google[type=checkbox]').is(":checked") , "Google is checked" );
-		
-		
-	})
-	
-	
+	});
+
 });

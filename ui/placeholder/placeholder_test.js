@@ -1,12 +1,12 @@
-steal('ui/placeholder','funcunit', function( Placeholder, S ) {
+steal('test/qunit.js', 'funcunit', 'ui/placeholder', function(QUnit, S, Placeholder) {
 
-	module("ui/placeholder", { 
+	QUnit.module("ui/placeholder", {
 		setup: function(){
 			S.open( window );
-			$("#qunit-fixture").html("<input id='placeholder'/>")
+			$("#qunit-test-area").html("<input id='placeholder'/>")
 		},
 		teardown: function(){
-			$("#qunit-fixture").empty();
+			$("#qunit-test-area").empty();
 		}
 	});
 	
@@ -19,7 +19,7 @@ steal('ui/placeholder','funcunit', function( Placeholder, S ) {
 		
 		S('#placeholder').type("something",function(){
 			ok( !$('#placeholder').hasClass('placeholder'), "placeholder removed");
-		})
+		});
 	});
 
 });

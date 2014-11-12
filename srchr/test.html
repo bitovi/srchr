@@ -1,20 +1,11 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="../qunit/qunit.css"/>
-	</head>
-
-	<body>
-		<div id="qunit"></div>
-		<div id="qunit-fixture"></div>
-
-		<script src="../qunit/qunit.js"></script>
-		<script src="../steal/steal.js"></script>
-		<script type="text/javascript">
-			QUnit.config.autostart = false;
-
-			steal('srchr/srchr_test.js', function() {
-				QUnit.start();
-			});
-		</script>
-	</body>
+<head>
+  <title>Srchr test</title>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-test-area"></div>
+  <script type="text/javascript" src="../bower_components/steal/steal.js" main="srchr/srchr_test"></script>
+</body>
 </html>

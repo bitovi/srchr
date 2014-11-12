@@ -1,6 +1,6 @@
-steal('./flickr.ejs','./google.ejs',
-	'./twitter.ejs','./wikipedia.ejs',
-	'./reddit.ejs',
+steal('./flickr.ejs!','./google.ejs!',
+	'./twitter.ejs!','./wikipedia.ejs!',
+	'./reddit.ejs!',
 	function(Flickr, Google, Twitter, Wikipedia, Reddit){
 	
 	return {

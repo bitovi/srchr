@@ -1,4 +1,4 @@
-steal('can','./tabs.less', function(can) {
+steal('can','./tabs.less!', function(can) {
 
 	/**
 	 * @constructor ui/tabs

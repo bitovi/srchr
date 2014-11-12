@@ -1,0 +1,7 @@
+{
+  "sites": {
+    "srchr/docs": {
+      "glob" : "{srchr,ui}/*.{js,md}"
+    }
+  }
+}

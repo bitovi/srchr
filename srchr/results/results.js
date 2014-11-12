@@ -1,4 +1,4 @@
-steal('can','./init.ejs',
+steal('can','./init.ejs!',
 	'srchr/models',
 	'srchr/results/templates',
 	'ui/list',

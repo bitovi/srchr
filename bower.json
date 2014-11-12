@@ -1,0 +1,28 @@
+{
+  "name": "Srchr",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bitovi/srchr",
+  "authors": [
+    "Bitovi <info@bitovi.com>"
+  ],
+  "description": "A crowdsourced JavaScript exercise",
+  "main": "srchr/srchr.js",
+  "keywords": [
+    "app"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "canjs": "bitovi/canjs#minor",
+    "funcunit": "~2.1.0-pre",
+    "steal": "~0.4.0",
+    "jquerypp": "~1.0.1",
+    "qunit": "1.12.0"
+  }
+}

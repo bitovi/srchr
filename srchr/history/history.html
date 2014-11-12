@@ -16,30 +16,29 @@
 	</form>
 	<p>When you add it, it will appear above.  Refresh the page,
 	   and you should still see it.</p>
-		
-<script src='../../steal/steal.js'></script>
-<script id='demo-source'>
-steal('srchr/history', 
-  function(History){
-  	
-    var currentSearch = can.compute()
-  	
-    new History("#list", {
-      currentSearch: currentSearch
-    });
-	
-    $("#history").submit(function(ev){
-      ev.preventDefault();
 
-      // remove the error class
-      currentSearch({
-        query: $("#name").val(),
-        types: ["Flickr"]
-      });
-      $("#name").val("")[0].focus();
+  <script src="../../bower_components/steal/steal.js"></script>
+  <script id='demo-source'>
+    steal('srchr/history',
+      function(History){
+
+        var currentSearch = can.compute()
+
+        new History("#list", {
+          currentSearch: currentSearch
+        });
+
+        $("#history").submit(function(ev){
+          ev.preventDefault();
+
+          // remove the error class
+          currentSearch({
+            query: $("#name").val(),
+            types: ["Flickr"]
+          });
+          $("#name").val("")[0].focus();
+        });
     });
-})
-</script>
-<script> DEMO_HTML = "<ul id='list'></ul>" </script>
+  </script>
 	</body>
 </html>

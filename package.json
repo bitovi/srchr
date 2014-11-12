@@ -1,0 +1,23 @@
+{
+  "name": "Srchr",
+  "version": "1.0.0",
+  "description": "A crowdsourced JavaScript exercise",
+  "main": "srchr/srchr.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitovi/srchr.git"
+  },
+  "author": "Bitovi <info@bitovi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitovi/srchr/issues"
+  },
+  "homepage": "https://github.com/bitovi/srchr",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "testee": "^0.1.3"
+  }
+}
