@@ -17,7 +17,7 @@ steal.config({
       format: "global",
       deps: [ "jquery" ]
     },
-    "qunit": {
+    qunit: {
       format: "global",
       exports: "QUnit"
     },
@@ -31,3 +31,9 @@ steal.config({
     ejs: "can/view/ejs/system"
   }
 });
+
+System.buildConfig = {
+  map: {
+    "can/util/util" : "can/util/domless/domless"
+  }
+};

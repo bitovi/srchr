@@ -1,3 +1,7 @@
+<!--
+@page srchr
+-->
+
 # Srchr
 
 [![Build Status](https://travis-ci.org/bitovi/srchr.png?branch=master)](https://travis-ci.org/bitovi/srchr)
@@ -10,7 +14,7 @@ This is a JavaScriptMVC version created by [Bitovi](http://bitovi.com).
 
 ## Installing
 
-Clone srchr and install its submodules:
+Clone srchr and install its dependencies:
 
     git clone git://github.com/bitovi/srchr srchr
     cd srchr
@@ -32,35 +36,26 @@ the `srchr` folder and run:
 
 Open a console to the `srchr` folder and run:
 
-    ./js srchr/scripts/build.js
+    grunt build
     
-Open `srchr/srchr.html` in a text editor and change:
+Open `index.html` in a text editor and change:
 
-    <script src='../steal/steal.js?srchr'>  
+    <script src="bower_components/steal/steal.js" data-main="srchr/srchr"></script>
     
 to
 
-    <script src='../steal/steal.production.js?srchr'>  
+     <script type="text/javascript" src="/dist/bundles/srchr.js"></script>  
     
-Open [http://bitovi.github.com/srchr/srchr/srchr.html](srchr/srchr.html) in your browser.
+Open [http://bitovi.github.com/srchr/index.html](index.html) in your browser.
 
 ## Documenting
 
+Install [DocumentJS](http://documentjs.com/):
+
+    npm install documentjs -g
+
 Open a console to the `srchr` folder and run:
 
-    ./js srchr/scripts/docs.js
+    documentjs
     
 Open `docs/index.html`.
-
-
-## Deploying
-
-Check out the gh-pages branch in a folder next to your local srchr  master repository like:
-
-    > git clone -b gh-pages git@github.com:bitovi/srchr srchr-pages
-
-In the master repo, run the build, and the documentation scripts.  Then copy everything to srchr-pages with:
-
-    > node copy_to_srchr_pages.js
-    
-Then cd into srchr-pages, commit any changes, and push them back to the gh-pages branch.
