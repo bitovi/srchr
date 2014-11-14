@@ -7,18 +7,18 @@ steal('can',
 
 
 	/**
-	 * @constructor srchr/history
+	 * @module {function():srchr/history} srchr/history
 	 * @parent srchr
 	 * @inherits can.Control
 	 * @test srchr/history/test.html
-	 * 
-	 * Saves a list of [srchr/models/search] instances 
+	 *
+	 * Saves a list of [srchr/models/history] instances
 	 * in local storage and allows you to remove these
 	 * instances and set them as the new `currentSearch`.
-	 * 
+	 *
 	 * Create a `History` control with a compute representing
 	 * the current search like:
-	 * 
+	 *
 	 *     var currentSearch = can.compute(
 	 *           new Search({
 	 *             query: "ice cream",
@@ -27,7 +27,7 @@ steal('can',
 	 *     new History("#list", {
 	 *       currentSearch: currentSearch
 	 *     });
-	 * 
+	 *
 	 * @demo srchr/history/history.html
 	 */
 	return can.Control({
@@ -41,14 +41,14 @@ steal('can',
 		init: function() {
 			var currentSearch = this.options.currentSearch
 			// create a list of items retrieved from the model
-			this.options.histories = 
+			this.options.histories =
 				new History.List( History.findAll({}) );
-			
+
 			// render the list
 			this.element.html(initEJS(this.options,{
 				// helper to display the types
 				prettyTypes: function(history){
-					return  can.map(history.types,function(type){ 
+					return  can.map(history.types,function(type){
 						return type.substr(0,1).toLowerCase()
 					}).join();
 				},
@@ -60,8 +60,8 @@ steal('can',
 					}
 				}
 			}));
-			
-			// make sure we are listening to changes 
+
+			// make sure we are listening to changes
 			// in the model
 			this.on()
 		},
@@ -75,7 +75,7 @@ steal('can',
 				this.options.histories.splice(
 						this.options.histories.indexOf(history),
 						1);
-				this.options.histories.unshift(history);	
+				this.options.histories.unshift(history);
 			} else {
 				// create a new history and move it to the start of the list
 				var history = new History(search)
