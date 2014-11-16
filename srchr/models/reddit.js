@@ -1,18 +1,18 @@
 steal('can', 'can/construct/super',function(can){
-	
+
 	/**
 	 * @constructor srchr/models/reddit
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent srchr
-	 * 
+	 * @parent srchr/models
+	 *
 	 * Provides `Reddit.findAll(params, success(results))` to retrieve
 	 * Reddit images like:
-	 * 
+	 *
 	 *     Reddit.findAll({query: "Cats"}, function(results){
-	 *       
+	 *
 	 *     })
-	 * 
+	 *
 	 */
 	return can.Model({
 		/* @static */
@@ -25,7 +25,7 @@ steal('can', 'can/construct/super',function(can){
 				},
 				jsonp: "jsonp"
 			})
-			
+
 		},
 		models : function(data){
 			return this._super(data.data.children)
@@ -36,4 +36,3 @@ steal('can', 'can/construct/super',function(can){
 	},{});
 
 });
-

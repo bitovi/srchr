@@ -4,48 +4,20 @@ steal('can','./init.ejs!',
 	'ui/list',
 	'ui/tabs',
 	function(can, initView, models, templates, List, Tabs){
-    /**
-     * @constructor srchr/results
-     * @parent srchr
-	 * @alias Results  
-	 * @test srchr/results/test.html
-	 * @inherits can.Control
-	 *  
-	 * `new Results(element, options)` shows the currentSearch's
-	 * search results in a tabbed interface. It
-	 * combines [ui/list] and [ui/tabs].
-	 * 
-	 * 
-	 *     var currentSearch = can.compute({
-	 *       query: "cats",
-	 *       types: ["Google","Twitter"]
-	 *     });
-	 * 
-	 *     new Results("#results",{
-	 *       currentSearch: currentSearch
-	 *     })
-	 * 
-	 * @demo srchr/results/results.html
-	 * 
-	 * @param {HTMLElement} element the elements to put the results in.
-	 * 
-	 * @param {Object} an options object with the following properties:
-	 * 
-	 * ### currentSearch `can.compute`
-	 * 
-	 * The current search.
-     */
+		/** @add srchr/results */
     return can.Control(
-	/** @Static */
 	{
 		defaults : {},
 		pluginName: 'srchr-results'
 	},
-	/** @Prototype */
+	/** @prototype */
 	{
+		/**
+		 * Initialize the search results list
+		 */
 		init : function(){
 			var currentSearch = this.options.currentSearch;
-			
+
 			var params = can.compute(function(){
 				return {query: currentSearch() && currentSearch().query}
 			})
@@ -64,7 +36,7 @@ steal('can','./init.ejs!',
 					}
 				}
 			}));
-			
+
 			var enabled = can.compute(function(){
 				var current = currentSearch()
 				if(current){
@@ -73,7 +45,7 @@ steal('can','./init.ejs!',
 					return [];
 				}
 			})
-			
+
 			new Tabs( this.element.children('.resultsTab'),{
 				enabled: enabled
 			});

@@ -5,15 +5,15 @@ steal("can","can/construct/super",function(can){
 	 * @constructor srchr/models/twitter
 	 * @inherits can.Model
 	 * @test srchr/models/test.html
-	 * @parent srchr
-	 * 
+	 * @parent srchr/models
+	 *
 	 * Provides `Twitter.findAll(params, success(results))` to retrieve
 	 * twitter results like:
-	 * 
+	 *
 	 *     Twitter.findAll({query: "Cats"}, function(results){
-	 *       
+	 *
 	 *     })
-	 * 
+	 *
 	 */
 	return can.Model({
 		/* @static */
@@ -30,7 +30,7 @@ steal("can","can/construct/super",function(can){
 			return this._super(data.results)
 		}
 	},{
-		
+
 	});
 
 

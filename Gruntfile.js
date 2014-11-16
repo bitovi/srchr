@@ -14,6 +14,14 @@ module.exports = function(grunt) {
       }
     },
 
+    documentjs: {
+      "sites": {
+        "srchr/docs": {
+          "glob" : "{srchr,ui}/**/*.{js,md}"
+        }
+      }
+    },
+
     testee: {
       options: {
         browsers: ['firefox']
@@ -23,8 +31,10 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('steal-tools');
+  grunt.loadNpmTasks('testee');
+  grunt.loadNpmTasks('documentjs');
+
   grunt.registerTask('test', [ 'testee:phantom' ]);
   grunt.registerTask('build', [ 'stealBuild' ]);
-
-  grunt.loadNpmTasks('testee');
+  grunt.registerTask('document', [ 'documentjs' ]);
 };

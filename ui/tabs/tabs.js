@@ -1,57 +1,5 @@
 steal('can','./tabs.less!', function(can) {
-
-	/**
-	 * @constructor ui/tabs
-	 * @parent srchr
-	 * @inherits can.Control
-	 * @test ui/tabs/test.html
-	 * @alias Tabs
-	 * @description 
-	 * 
-	 * A Tabs widget for showing and hiding content. 
-	 * 
-	 * @signature `new Tabs(element, options)`
-	 * 
-	 * @param {jQuery|HTMLElement|String} element An element the 
-	 * tabs will be created on.
-	 * 
-	 * @param {{enabled:can.compute}} options A object of option name-value pairs.
-	 * 
-	 * @option {can.compute} enabled 
-	 * 
-	 * Enabled is a can.compute that specifies which tabs should be enabled. The 
-	 * compute should return an array of tab content ids.
-	 * 
-	 * @body
-	 * 
-	 * ## Use
-	 * 
-	 * Given
-	 * content like:
-	 * 
-	 *     <ul id='resultsTab'>
-	 *       <li><a href='#flickr'>Flickr</a></li>
-	 *       <li><a href='#yahoo'>Yahoo</a></li>
-	 *       <li><a href='#upcoming'>Upcoming</a></li>
-	 *     </ul>
-	 * 
-	 *     <div id='flickr'></div>
-	 *     <div id='yahoo'></div>
-	 *     <div id='upcoming'></div>
-	 * 
-	 * Create a Tabs like:
-	 * 
-	 *     new Tabs("#resultsTab",{
-	 *       enabled: can.compute(["flickr","yahoo"])
-	 *     })
-	 * 
-	 * Notice that each `li` should have an `href` that points to an id of 
-	 * the tab content to be shown.
-	 * 
-	 * @demo ui/tabs/tabs.html
-	 * 
-	 * 
-	 */
+	/** @add ui/tabs  */
 	return can.Control(
 	/** @prototype */
 	{
@@ -75,7 +23,7 @@ steal('can','./tabs.less!', function(can) {
 				self = this,
 				current =  self.tab(this.element.find('active')).prop('id'),
 				firstEnabled;
-			
+
 			this.element.find("li").each(function(){
 				var el = $(this);
 
@@ -89,14 +37,14 @@ steal('can','./tabs.less!', function(can) {
 					self.tab(el).hide()
 				}
 			});
-			
+
 			if( current && enabled.indexOf(current) >= 0 ) {
 				// just change everyone's enabled /disabled
 			} else if(firstEnabled){
 				// move to the first new element
 				self.activate(firstEnabled);
-				
-			} 		
+
+			}
 		},
 		// helper function finds the tab for a given li
 		/**
@@ -107,7 +55,7 @@ steal('can','./tabs.less!', function(can) {
 			return $(li.find("a").attr("href"));
 		},
 
-		// on an li click, activates new tab 
+		// on an li click, activates new tab
 		/**
 		 * Binds on an LI to trigger "activate" on a new tab.
 		 * @param {Object} el The element to trigger "activate" on.
