@@ -10,6 +10,9 @@ for(var name in models){
 			Model.findAll({query: "Cats"},function(results){
 				ok(results.length)
 				start();
+			}, function(){
+				ok(false, "error");
+				start();
 			})
 			
 		});
